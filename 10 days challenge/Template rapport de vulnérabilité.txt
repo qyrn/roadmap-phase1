@@ -1,0 +1,36 @@
+# [TITRE DE LA VULNÉRABILITÉ]
+
+## Informations générales
+- **Date de découverte** : 
+- **Testeur** : 
+- **Cible** : (URL, IP, application)
+- **Sévérité** : Critique / Haute / Moyenne / Basse / Info
+
+## Résumé exécutif
+[2-3 phrases max. Explique la faille comme si tu parlais à un directeur non-technique. 
+Quel est le risque business ?]
+
+## Description technique
+[Explique la faille techniquement. C'est quoi ? Pourquoi ça existe ?]
+
+## Étapes de reproduction
+1. Aller sur [URL]
+2. Entrer [payload] dans le champ [X]
+3. Observer [résultat]
+
+## Preuve (Proof of Concept)
+[Screenshots, code, requêtes HTTP]
+
+## Impact
+[Qu'est-ce qu'un attaquant pourrait faire avec cette faille ?]
+- Vol de données ?
+- Prise de contrôle ?
+- Déni de service ?
+
+## Recommandations
+[Comment corriger la faille ?]
+
+## Références
+- [Lien OWASP]
+- [Lien CVE si applicable]
+```
