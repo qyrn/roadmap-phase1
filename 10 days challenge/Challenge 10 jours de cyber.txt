@@ -10,25 +10,25 @@ Heure : 19h -> 19h40
 Ce que j'ai fait : Premier segment de la roadmap TryHackMe, regarder la vidéo de Fransosiche sur le pentesting, apprendre à faire un rapport sur une faille IDOR
 Durée : 40~ minutes
 Mood (1-5) : 5 
-Notes : J'ai appris une première faille et comment elle fonctionnait en demandant une explication un peu + précise à ChatGPT, j'ai fait ma première leçon THM et ça me donne envie de prendre l'abonnement (mais je n'ai pas d'argent pour le moment), regarder la vidéo m'a donné envie de commencer par un secteur + ouvert que le pentesting et me spécialiser par la suite en attaque offensive. J'apprécie bien découvrir de nouvelle chose et j'aime écrire aussi donc pour l'instant, j'ai hâte d'être demain pour continuer.
+Notes : J'ai appris une première faille et comment elle fonctionnait en demandant une explication un peu + précise à ChatGPT, j'ai fait ma première leçon THM et ça me donne envie de prendre l'abonnement (mais je n'ai pas d'argent pour le moment), regarder la vidéo m'a donné envie de commencer par un secteur + ouvert que le pentesting et me spécialiser par la suite en attaque offensive. J'apprécie bien découvrir de nouvelle chose et j'aime écrire aussi donc pour l'instant, j'ai hâte d'être demain pour continuer. J'ai appris aussi qu'il fallait savoir bien communiquer avec les autres, ce que je ne fais pas du tout pour le moment (j'adore être solitaire), je sais pas comment faire pour l'avenir pour m'ouvrir sur ça et à la communauté cyber, mais je pense que tu me donneras des exercices ou des trucs à faire pour y arriver.
 
 ---
 
 JOUR 2 - 17/01
-Heure : 
-Ce que j'ai fait : 
-Durée : 
-Mood (1-5) : 
-Notes : 
+Heure : 19h -> 19h15
+Ce que j'ai fait : J'ai fait 5 tasks de tryhackme que j'ai compris à moitié parce que j'étais pas 100% dedans et je galère à prendre l'habitude de lire qu'en anglais mais j'ai appris quelques trucs sur shodan, virustotal mais faudra que je refasse tout encore une fois pour ancrer ça, j'ai aussi fait ma première box hack the box, c'était cool j'ai répondu sans trop galérer aux questions, juste le root flag j'avais compris donc j'ai cherché la réponse sur google, donc ça sera à refaire sans tricher
+Durée : 30 min
+Mood (1-5) : 3
+Notes : J'ai déjà tout dit dans ce que j'ai fait, j'ai rien de + à dire pour aujourd'hui
 
 ---
 
 JOUR 3 - 18/01
-Heure : 
-Ce que j'ai fait : 
-Durée : 
-Mood (1-5) : 
-Notes : 
+Heure : 19h25 -> 19h55
+Ce que j'ai fait : I learned pentesting fundamentals path on tryhackme, saw a fransosiche's video and a bug bounty vids 
+Durée : 35 minutes
+Mood (1-5) : 5
+Notes : Dont know what to say but i'm trying to make report in English starting today, not perfect, but i will be better at the end.
 
 ---
 
