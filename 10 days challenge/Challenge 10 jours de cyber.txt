@@ -33,24 +33,24 @@ Notes : Dont know what to say but i'm trying to make report in English starting 
 ---
 
 JOUR 4 - 19/01
-Heure : 
-Ce que j'ai fait : 
-Durée : 
-Mood (1-5) : 
-Notes : 
+Heure : 20h40
+Ce que j'ai fait : I wanted to discover a new path on tryhackme but without premium i cant, so i hop on hackthebox to do one lab but i already used my pwned machine free time so i tried to do a challenge but without vm i cant too, so i watched some vids from Fransosiche to learn new things, i discovered the 5 pillars of cybersecurity and i will review it tomorrow
+Durée : 40 mins
+Mood (1-5) : 4
+Notes : Nothing to say today, just i feel useless because i cant practice without paying.. im a bit frustrated for this but it is what it is, tomorrow i will do some flashcards and read the 5 pillars to understand correctly, even more things if i got the motivation, today i started late because i was busy but it has not affected my motivation or learning path
 
 ---
 
 JOUR 5 - 20/01
-Heure : 
-Ce que j'ai fait : 
-Durée : 
-Mood (1-5) : 
-Notes : 
+Heure : 19h40 -> 20h20
+Ce que j'ai fait : Some quizz with notebookLM based on the 5 pillars of cybersecurity repo, watched a fransosiche's vid on the worldskills 2025
+Durée : 44 mins
+Mood (1-5) : 5
+Notes : Today i learned some things but i'm afraid i cant remember it, i got some troubles on this (remembering the wrong things ig); but i learned a new thing : Bloodhound, its use for active directory and get admin access easily to see if the machine is compromised, i discoreved "the heacker recipes" and will review it tomorrow
 
 ---
 
-JOUR 6 - 21/01
+JOUR 6 - 21/01 (https://www.thehacker.recipes/)
 Heure : 
 Ce que j'ai fait : 
 Durée : 
