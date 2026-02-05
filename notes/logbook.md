@@ -1,5 +1,10 @@
-Day 1 - I watched some vids of fransosiche for about 40 mins.
+# Pentesting Journey Logbook
 
-Day 2 - Nothing extreme today, i got not time to make some bandit level or sums, i just installed a new version of linux to make my experience better for the future
+## Day 1
+Watched educational videos on penetration testing fundamentals for approximately 40 minutes.
 
-Day 3 - I installed Ubuntu again for a clear installation and watched a video about the react hack
+## Day 2
+Focused on environment setup and optimization. Installed a fresh Linux distribution to establish a more robust foundation for future penetration testing exercises.
+
+## Day 3
+Performed a clean Ubuntu installation and reviewed a tutorial on web application security (React exploitation techniques).
