@@ -15,8 +15,3 @@ J'apprends le pentest en suivant une roadmap sur 18 mois, avec comme objectif d'
 - Apprendre PrivEsc Linux & Windows
 - Comprendre AD
 - Passer la certif eJPT
-
-### 📍 Contexte :
-- 21 ans, basé à Saint-Étienne
-- Étudie en autonomie (3–4h/j)
-- Travaille en intérim (nuit + weekend)
