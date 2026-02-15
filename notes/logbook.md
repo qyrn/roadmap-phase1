@@ -1,10 +1,2 @@
-# Pentesting Journey Logbook
-
-## Day 1
-Watched educational videos on penetration testing fundamentals for approximately 40 minutes.
-
-## Day 2
-Focused on environment setup and optimization. Installed a fresh Linux distribution to establish a more robust foundation for future penetration testing exercises.
-
-## Day 3
-Performed a clean Ubuntu installation and reviewed a tutorial on web application security (React exploitation techniques).
+Current Date and Time (UTC - YYYY-MM-DD HH:MM:SS formatted): 2026-02-15 03:23:35
+Current User's Login: qyrn
