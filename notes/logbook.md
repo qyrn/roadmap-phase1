@@ -60,5 +60,22 @@
 ### Blockers
 - None
 
-### Tomorrow
+---
+
+## 📅 2026-02-18 - Day 1 (Restart)
+
+**Duration:** 60 min
+**Mood:** 5/5
+**Focus:** Linux Fundamentals
+
+### What I Did
+- Learn some commands for linux
+- Do Linux Fundamentals1 on TryHackMe
+
+### What I learned
+- Can navigate filesystem, search files recursively, and use output redirection.
+
+### Blockers
+- None
+-### Tomorrow
 - Deepen web exploitation techniques
