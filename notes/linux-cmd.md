@@ -1,4 +1,3 @@
-````markdown
 ## 🐧 Linux Fundamentals – Commands Learned
 
 ### 📌 echo
@@ -243,5 +242,4 @@ Meaning:
 * `x` → enter/traverse directory
 * `w` → create/delete files inside directory
 
-```
 ```
