@@ -241,5 +241,3 @@ Meaning:
 * `r` → list directory contents
 * `x` → enter/traverse directory
 * `w` → create/delete files inside directory
-
-```
