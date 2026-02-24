@@ -1,204 +1,204 @@
-# Journal de progression – Pentest Journey
+# Progress Logbook – Pentest Journey
 
 ---
 
-## 2026-02-03 — Jour 1
+## 2026-02-03 — Day 1
 
-**Durée :** 40 min
-**Humeur :** 5/5
-**Focus :** Fondamentaux du pentest
+**Duration:** 40 min
+**Mood:** 5/5
+**Focus:** Penetration Testing Fundamentals
 
-### Ce que j'ai fait
-- Visionnage de vidéos sur les fondamentaux du test d'intrusion
+### What I did
+- Watched educational videos on penetration testing fundamentals
 
-### Ce que j'ai appris
-- Concepts de base du penetration testing
-- Principes fondamentaux de la sécurité
+### What I learned
+- Basic concepts of penetration testing
+- Fundamental security principles
 
-### Blocages
-- Aucun
+### Blockers
+- None
 
-### Demain
-- Mettre en place l'environnement de travail
-
----
-
-## 2026-02-04 — Jour 2
-
-**Durée :** 120 min
-**Humeur :** 4/5
-**Focus :** Installation de l'environnement
-
-### Ce que j'ai fait
-- Installation d'une distribution Linux fraîche
-- Optimisation de l'environnement de travail
-
-### Ce que j'ai appris
-- Mise en place d'une base solide pour les exercices de pentest
-- Bonnes pratiques système sous Linux
-
-### Blocages
-- Aucun
-
-### Demain
-- Passer aux tutoriels de sécurité web
+### Tomorrow
+- Set up the work environment
 
 ---
 
-## 2026-02-05 — Jour 3
+## 2026-02-04 — Day 2
 
-**Durée :** 60 min
-**Humeur :** 4/5
-**Focus :** Sécurité des applications web
+**Duration:** 120 min
+**Mood:** 4/5
+**Focus:** Environment Setup
 
-### Ce que j'ai fait
-- Installation propre d'Ubuntu
-- Tutoriel sur les techniques d'exploitation React
+### What I did
+- Installed a fresh Linux distribution
+- Optimized the work environment
 
-### Ce que j'ai appris
-- Configuration système pour le pentest
-- Bases de l'exploitation d'applications web (React)
+### What I learned
+- How to set up a solid foundation for penetration testing exercises
+- Linux system best practices
 
-### Blocages
-- Aucun
+### Blockers
+- None
 
----
-
-## 2026-02-18 — Jour 1 (Reprise)
-
-**Durée :** 60 min
-**Humeur :** 5/5
-**Focus :** Fondamentaux Linux
-
-### Ce que j'ai fait
-- Apprentissage des commandes de base Linux
-- Complétion de Linux Fundamentals 1 sur TryHackMe
-
-### Ce que j'ai appris
-- Navigation dans le système de fichiers, recherche récursive et redirection de sorties
-
-### Blocages
-- Aucun
-
-### Demain
-- Approfondir les techniques d'exploitation web
+### Tomorrow
+- Move on to web security tutorials
 
 ---
 
-## 2026-02-19 — Jour 2
+## 2026-02-05 — Day 3
 
-**Durée :** 30 min
-**Humeur :** 5/5
-**Focus :** Linux Fundamentals Part 2 (TryHackMe)
+**Duration:** 60 min
+**Mood:** 4/5
+**Focus:** Web Application Security
 
-### Ce que j'ai fait
-- Complétion des tâches 1 à 5 de Linux Fundamentals Part 2
-- Pratique des commandes de gestion de fichiers sur la machine THM
-- Apprentissage de SSH, opérations sur fichiers et bases des permissions Linux
+### What I did
+- Clean Ubuntu installation
+- Tutorial on React exploitation techniques
 
-### Ce que j'ai appris
-- Connexion à une machine distante via SSH (accès réseau)
-- Gestion des fichiers et répertoires : `touch`, `mkdir`, `cp`, `mv`, `rm`
-- Différence entre fichiers normaux et répertoires dans `ls -l`
-- Affichage des fichiers cachés avec `ls -a`
-- Identification du type de fichier avec `file`
-- Gestion du terminal avec `clear`
-- Structure des permissions Linux (r, w, x)
-- Sémantique des permissions sur les répertoires (read = lister, execute = traverser)
-- Système de permissions numériques (ex. : 777, 750)
-- Utilisation de base de `su` pour changer d'utilisateur
+### What I learned
+- System configuration for penetration testing
+- Basics of web application exploitation (React)
 
-### Blocages
-- Légère confusion sur la sémantique des permissions sur répertoires (r vs x)
+### Blockers
+- None
 
 ---
 
-## 2026-02-22/23 — Jours 3 et 4
+## 2026-02-18 — Day 1 (Restart)
 
-**Durée :** ~1h
-**Humeur :** 5/5
-**Focus :** Linux Fundamentals Part 2 & Part 3 (complétés)
+**Duration:** 60 min
+**Mood:** 5/5
+**Focus:** Linux Fundamentals
 
-### Ce que j'ai fait
-- Complétion de Linux Fundamentals Part 2 et Part 3 sur TryHackMe
-- Pratique du transfert de fichiers, gestion des processus, services et journaux
-- Révision de la structure du système de fichiers Linux
+### What I did
+- Learned basic Linux commands
+- Completed Linux Fundamentals 1 on TryHackMe
 
-### Ce que j'ai appris
+### What I learned
+- Can navigate the filesystem, search files recursively, and use output redirection
 
-#### Structure du système de fichiers
-- `/etc` → fichiers de configuration système
-- `/var` → données variables (logs, cache, spool)
-- `/home` → répertoires personnels des utilisateurs
-- `/root` → répertoire personnel de root
-- `/tmp` → stockage temporaire
+### Blockers
+- None
 
-#### Édition et transfert de fichiers
-- Création et édition de fichiers avec `nano`
-- Téléchargement de fichiers avec `wget`
-- Transfert de fichiers entre machines avec `scp`
-
-#### Gestion des processus
-- Affichage des processus avec `ps` et `ps aux`
-- Surveillance en temps réel avec `top`
-- Gestion des processus avec `kill` (SIGTERM, SIGKILL, SIGSTOP)
-- Suspension avec `CTRL+Z`, reprise avec `fg` / `bg`
-
-#### Services et contrôle système
-- Gestion des services avec `systemctl` (start, stop, enable, disable, status)
-
-#### Automatisation des tâches
-- Compréhension de la structure et du format de planification des cron jobs (`* * * * *`)
-
-#### Gestion des paquets
-- Fonctionnement d'`apt` pour l'installation et la mise à jour depuis les dépôts
-
-#### Bases des journaux système
-- Lecture des logs d'accès Apache dans `/var/log/apache2/access.log`
-- Identification des éléments clés :
-  - IP client
-  - Méthode HTTP (GET / POST)
-  - Ressource demandée
-  - Code de statut HTTP
-
-### Blocages
-- Besoin d'approfondir l'analyse de journaux
-- Légère confusion sur la sémantique des requêtes HTTP
+### Tomorrow
+- Deepen web exploitation techniques
 
 ---
 
-## 2026-02-24 — Jour 5 — FIN DE PREMIÈRE SEMAINE
+## 2026-02-19 — Day 2
 
-**Durée :** ~2–3h
-**Humeur :** 4/5
-**Focus :** OverTheWire – Bandit (Level 0 → 15)
+**Duration:** 30 min
+**Mood:** 5/5
+**Focus:** Linux Fundamentals Part 2 (TryHackMe)
 
-### Ce que j'ai fait
-- Complétion des niveaux Bandit 0 à 15
-- Pratique de l'authentification SSH et utilisation de clés privées
-- Application de techniques de manipulation de fichiers, recherche et filtrage Linux
-- Utilisation des outils réseau (`nc`)
-- Travail avec les encodages et formats de compression
+### What I did
+- Completed Tasks 1 to 5 of Linux Fundamentals Part 2
+- Practiced file management commands on the THM machine
+- Learned about SSH, file operations, and Linux permissions basics
 
-### Compétences renforcées
-- Gestion des noms de fichiers problématiques (tirets, espaces, fichiers cachés)
-- Recherche efficace avec `find`
-- Filtrage de données avec `grep`, `sort`, `uniq`
-- Distinction stdout / stderr (`2>/dev/null`)
-- Décodage Base64
-- Décodage ROT13 avec `tr`
-- Reconstruction depuis un hexdump (`xxd -r`)
-- Identification du type de fichier avec `file`
-- Extraction d'archives compressées (`gzip`, `bzip2`, `tar`)
-- Utilisation de clés SSH privées (`chmod 400`, `ssh -i`)
-- Interaction TCP basique avec `nc`
+### What I learned
+- How to connect to a remote machine using SSH (network-based remote access)
+- File and directory management: `touch`, `mkdir`, `cp`, `mv`, `rm`
+- Difference between normal files and directories in `ls -l`
+- Hidden files listing with `ls -a`
+- File type identification using `file`
+- Terminal management using `clear`
+- Understanding Linux permission structure (r, w, x)
+- Permission logic on directories (read = list, execute = traverse)
+- Numeric permissions system (e.g., 777, 750)
+- Basic usage of `su` to switch users
 
-### Points faibles identifiés
-- Tendance à recourir à Google trop tôt
-- Réflexe `man` à développer
-- Légère hésitation avec les outils de traitement de texte
+### Blockers
+- Minor confusion about permission semantics on directories (r vs x)
 
-### Plan d'action
-- Refaire les niveaux 5 → 12 sans aide extérieure
-- Utiliser `man` avant Google
-- Se concentrer sur la maîtrise des commandes de traitement de texte
+---
+
+## 2026-02-22/23 — Days 3 and 4
+
+**Duration:** ~1h
+**Mood:** 5/5
+**Focus:** Linux Fundamentals Part 2 & Part 3 (completed)
+
+### What I did
+- Completed Linux Fundamentals Part 2 and Part 3 on TryHackMe
+- Practiced file transfer, process management, services, and logging
+- Reviewed Linux filesystem structure and system directories
+
+### What I learned
+
+#### Filesystem Structure
+- `/etc` → system configuration files
+- `/var` → variable data (logs, cache, spool)
+- `/home` → user home directories
+- `/root` → root user's home directory
+- `/tmp` → temporary files storage
+
+#### File Editing & Transfers
+- Used `nano` to create and edit files
+- Downloaded files using `wget`
+- Transferred files between machines using `scp`
+
+#### Process Management
+- Viewed processes with `ps` and `ps aux`
+- Monitored live processes using `top`
+- Managed processes with `kill` (SIGTERM, SIGKILL, SIGSTOP)
+- Suspended tasks with `CTRL+Z`, resumed with `fg` / `bg`
+
+#### Services & System Control
+- Managed services using `systemctl` (start, stop, enable, disable, status)
+
+#### Task Automation
+- Understood cron job structure and scheduling format (`* * * * *`)
+
+#### Package Management
+- Learned how `apt` installs and updates packages from repositories
+
+#### Logging Basics
+- Read Apache access logs in `/var/log/apache2/access.log`
+- Identified:
+  - Client IP
+  - HTTP method (GET / POST)
+  - Requested resource
+  - HTTP status code
+
+### Blockers
+- Need deeper understanding of log analysis
+- Minor confusion around HTTP request semantics
+
+---
+
+## 2026-02-24 — Day 5 — END OF FIRST WEEK
+
+**Duration:** ~2–3h
+**Mood:** 4/5
+**Focus:** OverTheWire – Bandit (Level 0 → 15)
+
+### What I did
+- Completed Bandit levels 0 to 15
+- Practiced SSH authentication and private key usage
+- Applied Linux file manipulation, search and filtering techniques
+- Used networking tools (`nc`)
+- Worked with encodings and compression formats
+
+### Key Skills Reinforced
+- Handling tricky filenames (dashes, spaces, hidden files)
+- Efficient file searching using `find`
+- Filtering data with `grep`, `sort`, `uniq`
+- Understanding stdout vs stderr (`2>/dev/null`)
+- Base64 decoding
+- ROT13 decoding using `tr`
+- Working with hex dumps (`xxd -r`)
+- Identifying file types with `file`
+- Extracting compressed archives (`gzip`, `bzip2`, `tar`)
+- Using SSH private keys (`chmod 400`, `ssh -i`)
+- Basic TCP interaction using `nc`
+
+### Weaknesses Identified
+- Tendency to use Google too early
+- Need stronger reflex with `man` pages
+- Slight hesitation with text processing tools
+
+### Action Plan
+- Redo levels 5 → 12 without any external help
+- Use `man` before Google
+- Focus on mastering text-processing commands

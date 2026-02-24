@@ -1,163 +1,163 @@
-# OverTheWire – Bandit, niveaux 0 à 15
+# OverTheWire – Bandit, Levels 0 to 15
 
-Write-up de progression sur Bandit.
-Objectif : conserver la trace des approches et commandes utiles — **sans stocker les mots de passe**.
-
----
-
-## Contexte
-
-- **Plateforme :** OverTheWire – Bandit
-- **Objectifs personnels :**
-  - Prendre en main le shell Linux
-  - Comprendre SSH, fichiers, permissions et encodages
-  - Commencer à manipuler le réseau (`nc`, ports)
+Write-up of my progress on Bandit.
+Goal: keep a record of approaches and useful commands — **no passwords stored**.
 
 ---
 
-## Résumé par niveau
+## Context
 
-### Niveau 0 → 1
-
-- **Objectif :** se connecter à la box et lire un fichier dans le home (`readme`)
-- **Approche :** utiliser `ssh` puis `ls`, `cat`
-- **Commandes clés :** `ssh`, `ls`, `cat`
-
----
-
-### Niveau 1 → 2
-
-- **Objectif :** lire un fichier dont le nom est un tiret (`-`)
-- **Approche :** utiliser un chemin explicite pour éviter que le shell l'interprète comme une option
-- **Commandes clés :** `cat ./-`
+- **Platform:** OverTheWire – Bandit
+- **Personal goals:**
+  - Get comfortable with the Linux shell
+  - Understand SSH, files, permissions, and encodings
+  - Start working with networking tools (`nc`, ports)
 
 ---
 
-### Niveau 2 → 3
+## Level-by-level summary
 
-- **Objectif :** lire un fichier dont le nom contient des espaces
-- **Approche :** encadrer le nom entre guillemets ou échapper les espaces
-- **Commandes clés :** `cat "./spaces in this filename"`
+### Level 0 → 1
 
----
-
-### Niveau 3 → 4
-
-- **Objectif :** trouver un fichier caché dans un répertoire
-- **Approche :** repérer les fichiers cachés avec `ls -a`
-- **Commandes clés :** `ls -la`, `cat`
+- **Objective:** connect to the box and read a file in the home directory (`readme`)
+- **Approach:** use `ssh` then `ls`, `cat`
+- **Key commands:** `ssh`, `ls`, `cat`
 
 ---
 
-### Niveau 4 → 5
+### Level 1 → 2
 
-- **Objectif :** trouver le seul fichier lisible par un humain dans un dossier
-- **Approche :** utiliser `file` sur tous les fichiers pour identifier le texte
-- **Commandes clés :** `file ./*`, `cat`
-
----
-
-### Niveau 5 → 6
-
-- **Objectif :** trouver un fichier avec des propriétés précises (lisible, 1033 octets, non exécutable) dans une arborescence
-- **Approche :** combiner `find` avec des filtres sur la taille, le type et les permissions
-- **Commandes clés :** `find`, `-size`, `-type f`, `! -executable`
+- **Objective:** read a file whose name is a dash (`-`)
+- **Approach:** use an explicit path to prevent the shell from interpreting it as a flag
+- **Key commands:** `cat ./-`
 
 ---
 
-### Niveau 6 → 7
+### Level 2 → 3
 
-- **Objectif :** trouver un fichier n'importe où sur le serveur avec des contraintes d'utilisateur, de groupe et de taille
-- **Approche :** chercher depuis `/` avec `find` et filtrer sur `-user`, `-group`, `-size`, en supprimant les erreurs
-- **Commandes clés :** `find / -type f -user … -group … -size … 2>/dev/null`
-
----
-
-### Niveau 7 → 8
-
-- **Objectif :** trouver la ligne contenant le mot `millionth` dans un fichier
-- **Approche :** filtrer les lignes contenant le mot-clé
-- **Commandes clés :** `grep "millionth" data.txt`
+- **Objective:** read a file with spaces in the name
+- **Approach:** wrap the name in quotes or escape the spaces
+- **Key commands:** `cat "./spaces in this filename"`
 
 ---
 
-### Niveau 8 → 9
+### Level 3 → 4
 
-- **Objectif :** trouver la seule ligne qui apparaît exactement une fois dans un fichier
-- **Approche :** trier les lignes, compter les occurrences, ne garder que celles uniques
-- **Commandes clés :** `sort`, `uniq -c`, `uniq -u`
-
----
-
-### Niveau 9 → 10
-
-- **Objectif :** repérer une chaîne lisible précédée de `=====` dans un fichier binaire
-- **Approche :** extraire les chaînes lisibles du binaire et filtrer avec `grep`
-- **Commandes clés :** `strings data.txt | grep "="`
+- **Objective:** find a hidden file inside a directory
+- **Approach:** spot hidden files with `ls -a`
+- **Key commands:** `ls -la`, `cat`
 
 ---
 
-### Niveau 10 → 11
+### Level 4 → 5
 
-- **Objectif :** décoder une chaîne encodée en base64
-- **Approche :** reconnaître le format et le décoder
-- **Commandes clés :** `base64 -d data.txt`
-
----
-
-### Niveau 11 → 12
-
-- **Objectif :** décoder du texte chiffré en ROT13
-- **Approche :** utiliser `tr` pour appliquer la rotation sur les lettres
-- **Commandes clés :** `tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+- **Objective:** find the only human-readable file in a folder
+- **Approach:** use `file` on all files to identify the text one
+- **Key commands:** `file ./*`, `cat`
 
 ---
 
-### Niveau 12 → 13
+### Level 5 → 6
 
-- **Objectif :** partir d'un hexdump d'un fichier compressé plusieurs fois, retrouver le texte original
-- **Approche :**
-  1. Reconvertir le hexdump en binaire
-  2. Enchaîner `file` + décompressions successives (gzip, bzip2, tar…) jusqu'au fichier texte
-- **Commandes clés :** `xxd -r`, `file`, `gunzip`, `bunzip2`, `tar xf`
+- **Objective:** find a file with specific properties (readable, 1033 bytes, not executable) within a tree
+- **Approach:** combine `find` with filters on size, type, and permissions
+- **Key commands:** `find`, `-size`, `-type f`, `! -executable`
 
 ---
 
-### Niveau 13 → 14
+### Level 6 → 7
 
-- **Objectif :** utiliser une clé SSH privée pour se connecter au niveau suivant
-- **Approche :**
-  1. Récupérer la clé via `scp`
-  2. Fixer les permissions (`chmod 400`)
-  3. Se connecter avec `ssh -i`
-- **Commandes clés :**
+- **Objective:** find a file anywhere on the server matching user, group, and size constraints
+- **Approach:** search from `/` with `find`, filter on `-user`, `-group`, `-size`, and suppress errors
+- **Key commands:** `find / -type f -user … -group … -size … 2>/dev/null`
+
+---
+
+### Level 7 → 8
+
+- **Objective:** find the line containing the word `millionth` in a file
+- **Approach:** filter lines containing the keyword
+- **Key commands:** `grep "millionth" data.txt`
+
+---
+
+### Level 8 → 9
+
+- **Objective:** find the only line that appears exactly once in a file
+- **Approach:** sort lines, count occurrences, keep only unique ones
+- **Key commands:** `sort`, `uniq -c`, `uniq -u`
+
+---
+
+### Level 9 → 10
+
+- **Objective:** find a readable string preceded by `=====` in a binary file
+- **Approach:** extract readable strings from the binary and filter with `grep`
+- **Key commands:** `strings data.txt | grep "="`
+
+---
+
+### Level 10 → 11
+
+- **Objective:** decode a base64-encoded string
+- **Approach:** recognise the format and decode it
+- **Key commands:** `base64 -d data.txt`
+
+---
+
+### Level 11 → 12
+
+- **Objective:** decode ROT13-encoded text
+- **Approach:** use `tr` to apply the letter rotation
+- **Key commands:** `tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+
+---
+
+### Level 12 → 13
+
+- **Objective:** starting from a hex dump of a multiply-compressed file, recover the original text
+- **Approach:**
+  1. Reconstruct the binary from the hex dump
+  2. Chain `file` + successive decompressions (gzip, bzip2, tar…) until a text file is reached
+- **Key commands:** `xxd -r`, `file`, `gunzip`, `bunzip2`, `tar xf`
+
+---
+
+### Level 13 → 14
+
+- **Objective:** use an SSH private key to connect to the next level
+- **Approach:**
+  1. Retrieve the key via `scp`
+  2. Fix permissions (`chmod 400`)
+  3. Connect with `ssh -i`
+- **Key commands:**
   - `scp -P 2220 bandit13@…:sshkey.private .`
   - `chmod 400 sshkey.private`
   - `ssh -i sshkey.private bandit14@… -p 2220`
 
 ---
 
-### Niveau 14 → 15
+### Level 14 → 15
 
-- **Objectif :** envoyer le mot de passe actuel sur un port TCP pour obtenir le suivant
-- **Approche :** utiliser `nc` vers `localhost:30000`, envoyer le mot de passe et lire la réponse
-- **Commandes clés :** `nc localhost 30000`
+- **Objective:** send the current password to a TCP port to receive the next one
+- **Approach:** use `nc` to connect to `localhost:30000`, send the password and read the response
+- **Key commands:** `nc localhost 30000`
 
 ---
 
-## Bilan intermédiaire
+## Intermediate recap
 
-### Compétences acquises
+### Skills acquired
 
-| Domaine | Commandes |
+| Domain | Commands |
 |---|---|
 | Navigation | `cd`, `ls`, `pwd` |
-| Fichiers | `cat`, `file`, `find` |
-| Traitement de texte | `grep`, `sort`, `uniq`, `strings`, `tr` |
-| Encodage | `base64`, ROT13, hexdump (`xxd`) |
+| Files | `cat`, `file`, `find` |
+| Text processing | `grep`, `sort`, `uniq`, `strings`, `tr` |
+| Encoding | `base64`, ROT13, hex dump (`xxd`) |
 | Compression | `gzip` / `gunzip`, `bzip2` / `bunzip2`, `tar xf` |
-| Réseau | SSH (mot de passe + clé privée), `nc` |
+| Networking | SSH (password + private key), `nc` |
 
 ---
 
-> Aucun mot de passe stocké dans ce dépôt — uniquement les méthodes et commandes.
+> No passwords stored in this repository — methods and commands only.

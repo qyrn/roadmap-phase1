@@ -1,33 +1,33 @@
 # Pentest Journey
 
-Documentation de mon apprentissage en cybersécurité, structurée sur une roadmap de 18 mois.
-Objectif : décrocher un poste junior pentester avant 2027.
+Documentation of my cybersecurity learning journey, structured over an 18-month roadmap.
+Goal: land a junior pentester position before 2027.
 
 ---
 
-## Structure du dépôt
+## Repository Structure
 
-| Dossier | Contenu |
+| Folder | Content |
 |---|---|
-| `notes/` | Notes techniques au fil de l'apprentissage |
-| `writeups/` | Write-ups de challenges et machines |
-| `cheatsheets/` | Références rapides par domaine |
-| `scripts/` | Scripts personnels développés en cours de formation |
-| `resources/` | Documents, PDF et méthodologies de référence |
+| `notes/` | Technical notes taken throughout learning |
+| `writeups/` | Write-ups for challenges and machines |
+| `cheatsheets/` | Quick-reference sheets by topic |
+| `scripts/` | Personal scripts developed during training |
+| `resources/` | Reference documents, PDFs and methodologies |
 
 ---
 
-## Objectifs techniques
+## Technical Goals
 
-- Maîtriser le Web Pentesting : XSS, SQLi, IDOR, SSRF…
-- Comprendre et pratiquer la PrivEsc Linux & Windows
-- Appréhender Active Directory et ses vecteurs d'attaque
-- Obtenir la certification eJPT
+- Master Web Pentesting: XSS, SQLi, IDOR, SSRF…
+- Understand and practice Linux & Windows PrivEsc
+- Learn Active Directory and its attack vectors
+- Obtain the eJPT certification
 
 ---
 
-## Progression
+## Progress Tracking
 
-Suivi quotidien dans [`notes/logbook.md`](notes/logbook.md).
-Revues hebdomadaires dans [`notes/loghebdo.md`](notes/loghebdo.md).
-Revues mensuelles dans [`notes/logmensu.md`](notes/logmensu.md).
+Daily log in [`notes/logbook.md`](notes/logbook.md).
+Weekly reviews in [`notes/loghebdo.md`](notes/loghebdo.md).
+Monthly reviews in [`notes/logmensu.md`](notes/logmensu.md).

@@ -1,51 +1,51 @@
-# Modèle – Revue Hebdomadaire (Dimanche)
+# Template – Weekly Review (Sunday)
 
 ---
 
-## Semaine [X] — [Dates]
+## Week [X] — [Dates]
 
-### Statistiques
+### Stats
 
-| Indicateur       | Valeur      |
+| Metric           | Value       |
 |------------------|-------------|
-| Jours complétés  | [X] / 7     |
-| Temps total      | [X]h [X]min |
-| Humeur moyenne   | [X] / 5     |
-| Score quiz       | [X] / 10    |
+| Days completed   | [X] / 7     |
+| Total time       | [X]h [X]min |
+| Average mood     | [X] / 5     |
+| Quiz score       | [X] / 10    |
 
 ---
 
-### Accomplissements
+### Accomplishments
 
-- [ ] [Tâche majeure 1]
-- [ ] [Tâche majeure 2]
-- [ ] [Tâche majeure 3]
-
----
-
-### Compétences acquises
-
-- [Compétence 1]
-- [Compétence 2]
+- [ ] [Major task 1]
+- [ ] [Major task 2]
+- [ ] [Major task 3]
 
 ---
 
-### Points faibles identifiés
+### Skills acquired
 
-- [Domaine à retravailler]
-
----
-
-### Livrables publiés
-
-- [ ] Write-up publié
-- [ ] Code publié sur GitHub
-- [ ] Cheatsheet mis à jour
+- [Skill 1]
+- [Skill 2]
 
 ---
 
-### Objectifs semaine prochaine
+### Weaknesses identified
 
-1. [Objectif 1]
-2. [Objectif 2]
-3. [Objectif 3]
+- [Area to work on]
+
+---
+
+### Deliverables published
+
+- [ ] Write-up published
+- [ ] Code pushed to GitHub
+- [ ] Cheatsheet updated
+
+---
+
+### Goals for next week
+
+1. [Goal 1]
+2. [Goal 2]
+3. [Goal 3]

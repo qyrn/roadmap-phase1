@@ -1,65 +1,65 @@
-# Modèle – Revue Mensuelle
+# Template – Monthly Review
 
 ---
 
-## Mois de [MOIS] 2026
+## Month of [MONTH] 2026
 
-### Vue d'ensemble
+### Overview
 
-| Indicateur           | Valeur |
-|----------------------|--------|
-| Semaines complétées  | [X] / 4 |
-| Temps total          | [X]h   |
-| Quiz validés         | [X] / 4 |
-| Write-ups publiés    | [X]    |
-| Projets terminés     | [X]    |
-
----
-
-### Compétences maîtrisées
-
-1. [Compétence 1]
-2. [Compétence 2]
-3. [Compétence 3]
+| Metric              | Value   |
+|---------------------|---------|
+| Weeks completed     | [X] / 4 |
+| Total time          | [X]h    |
+| Quizzes passed      | [X] / 4 |
+| Write-ups published | [X]     |
+| Projects completed  | [X]     |
 
 ---
 
-### Projets livrés
+### Skills mastered
 
-- [Projet 1] — [Lien GitHub]
-- [Projet 2] — [Lien GitHub]
-
----
-
-### Classements
-
-| Plateforme   | Score / Progression              |
-|--------------|----------------------------------|
-| Root Me      | [X] points                       |
-| TryHackMe    | [X] rooms, [X]% rank             |
-| PortSwigger  | [X] labs résolus                 |
+1. [Skill 1]
+2. [Skill 2]
+3. [Skill 3]
 
 ---
 
-### Ce qui a bien fonctionné
+### Projects delivered
 
-- [Point positif]
-
----
-
-### Ce qui doit changer
-
-- [Point à améliorer]
+- [Project 1] — [GitHub link]
+- [Project 2] — [GitHub link]
 
 ---
 
-### Objectifs du mois prochain
+### Rankings
 
-1. [Objectif 1]
-2. [Objectif 2]
+| Platform    | Score / Progress             |
+|-------------|------------------------------|
+| Root Me     | [X] points                   |
+| TryHackMe   | [X] rooms, [X]% rank         |
+| PortSwigger | [X] labs solved              |
 
 ---
 
-### État d'esprit
+### What went well
 
-[Bilan personnel sur la progression du mois]
+- [Positive point]
+
+---
+
+### What needs to change
+
+- [Area to improve]
+
+---
+
+### Goals for next month
+
+1. [Goal 1]
+2. [Goal 2]
+
+---
+
+### Mindset
+
+[Personal assessment of progress this month]

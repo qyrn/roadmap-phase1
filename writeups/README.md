@@ -1,32 +1,32 @@
 # Write-ups
 
-Ce dossier contient mes write-ups de challenges, labs et machines.
+This folder contains my write-ups for challenges, labs, and machines.
 
 ---
 
-## Structure d'un write-up
+## Structure of a write-up
 
-Chaque fichier documente :
+Each file documents:
 
-- Ce qui a été tenté
-- Ce qui a fonctionné
-- Comment la vulnérabilité a été exploitée
-- Ce qui a été appris
+- What was attempted
+- What worked
+- How the vulnerability was exploited
+- What was learned
 
 ---
 
-## Fichiers
+## Files
 
-| Fichier | Contenu |
+| File | Content |
 |---|---|
-| `overthewire_bandit_0-15.md` | Write-up détaillé Bandit niveaux 0 à 15 |
-| `overthewire_bandit_0-15v2.md` | Référence rapide des commandes Bandit 0–15 |
+| `overthewire_bandit_0-15.md` | Detailed write-up – Bandit levels 0 to 15 |
+| `overthewire_bandit_0-15v2.md` | Quick command reference – Bandit 0–15 |
 
 ---
 
-> Objectif : documenter une progression réelle et démontrable — utile pour les recruteurs.
+> Goal: document real, demonstrable progress — useful for recruiters.
 
-Exemples de write-ups à venir :
+Upcoming write-ups:
 - `xss-basic.md`
 - `sql-injection-lab-1.md`
 - `privesc-linux-cron.md`

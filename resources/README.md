@@ -1,17 +1,17 @@
 # Resources
 
-Bibliothèque personnelle de référence pour la formation en cybersécurité.
+Personal reference library for cybersecurity training.
 
 ---
 
-## Contenu
+## Content
 
-- Guides et méthodologies de pentest
-- Schémas réseau et diagrammes d'architecture
-- Documents OWASP
-- Feuilles de cours et supports pédagogiques
-- PDF de référence
+- Pentest guides and methodologies
+- Network diagrams and architecture schemas
+- OWASP documents
+- Course materials and educational resources
+- Reference PDFs
 
 ---
 
-> Ce dossier centralise les documents utiles à la consultation pendant les labs et les révisions.
+> This folder centralises useful documents for consultation during labs and revision sessions.

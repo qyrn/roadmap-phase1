@@ -1,16 +1,16 @@
 # Scripts
 
-Scripts personnels développés au cours de la formation.
+Personal scripts developed throughout training.
 
 ---
 
-## Catégories prévues
+## Planned categories
 
-- Automatisation de tâches répétitives
-- Énumération
+- Simple task automation
+- Enumeration
 - Reconnaissance (recon)
-- Exploitation basique
+- Basic exploitation
 
 ---
 
-> Ce dossier se remplira progressivement à mesure que les outils personnels seront développés.
+> This folder will fill up progressively as personal tools get built.

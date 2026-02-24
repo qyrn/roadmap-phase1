@@ -1,70 +1,70 @@
-# Mémo commandes – Bandit 0–15
+# Command Memo – Bandit 0–15
 
-Référence rapide des commandes utilisées pour résoudre les niveaux 0 à 15 de Bandit (OverTheWire).
-
----
-
-## Navigation et fichiers
-
-| Commande | Description |
-|---|---|
-| `pwd` | Affiche le répertoire courant |
-| `ls`, `ls -la` | Liste les fichiers (y compris cachés) |
-| `cd <dir>` | Change de répertoire |
-| `cat <fichier>` | Affiche le contenu d'un fichier |
-| `file <fichier>` | Détecte le type (texte, gzip, bzip2, tar, binaire…) |
+Quick reference for commands used to solve levels 0 to 15 of Bandit (OverTheWire).
 
 ---
 
-## Recherche
+## Navigation & Files
 
-| Commande | Description |
+| Command | Description |
 |---|---|
-| `grep "mot" fichier` | Affiche les lignes contenant `mot` |
-| `sort fichier` | Trie les lignes alphabétiquement |
-| `uniq` | Supprime les doublons consécutifs |
-| `uniq -c` | Compte les occurrences |
-| `uniq -u` | Ne conserve que les lignes uniques |
-| `find / -type f -user X -group Y -size 33c 2>/dev/null` | Recherche avec filtres multiples |
-
-Options `find` utiles : `-type`, `-user`, `-group`, `-size`, `! -executable`
+| `pwd` | Print current directory |
+| `ls`, `ls -la` | List files (including hidden) |
+| `cd <dir>` | Change directory |
+| `cat <file>` | Display file content |
+| `file <file>` | Detect file type (text, gzip, bzip2, tar, binary…) |
 
 ---
 
-## Encodage et traitement de texte
+## Search
 
-| Commande | Description |
+| Command | Description |
 |---|---|
-| `strings fichier` | Extrait les chaînes lisibles d'un binaire |
-| `base64 -d fichier` | Décode du base64 |
-| `tr 'A-Za-z' 'N-ZA-Mn-za-m'` | Applique le chiffrement ROT13 |
+| `grep "word" file` | Show lines containing `word` |
+| `sort file` | Sort lines alphabetically |
+| `uniq` | Remove consecutive duplicates |
+| `uniq -c` | Count occurrences |
+| `uniq -u` | Keep only unique lines |
+| `find / -type f -user X -group Y -size 33c 2>/dev/null` | Search with multiple filters |
+
+Useful `find` options: `-type`, `-user`, `-group`, `-size`, `! -executable`
 
 ---
 
-## Hexdump
+## Encoding & Text Processing
 
-| Commande | Description |
+| Command | Description |
 |---|---|
-| `xxd fichier` | Affiche un hexdump |
-| `xxd -r hexdump > binaire` | Reconstruit le binaire depuis un hexdump |
+| `strings file` | Extract readable strings from a binary |
+| `base64 -d file` | Decode base64 |
+| `tr 'A-Za-z' 'N-ZA-Mn-za-m'` | Apply ROT13 cipher |
 
 ---
 
-## Compression et archives
+## Hex Dump
 
-| Format | Décompresser |
+| Command | Description |
 |---|---|
-| Gzip | `gunzip fichier.gz` ou `gunzip -c fichier.gz > sortie` |
-| Bzip2 | `bunzip2 fichier.bz2` ou `bzip2 -dc fichier.bz2 > sortie` |
-| Tar | `tar tf archive.tar` (lister) / `tar xf archive.tar` (extraire) |
+| `xxd file` | Display a hex dump |
+| `xxd -r hexdump > binary` | Rebuild binary from hex dump |
 
 ---
 
-## Réseau
+## Compression & Archives
 
-| Commande | Description |
+| Format | Decompress |
 |---|---|
-| `ssh user@host -p 2220` | Connexion SSH classique |
-| `ssh -i clé user@host -p 2220` | Connexion SSH avec clé privée |
-| `scp -P 2220 user@host:fichier .` | Copie sécurisée via SSH |
-| `nc host port` | Connexion TCP avec Netcat |
+| Gzip | `gunzip file.gz` or `gunzip -c file.gz > output` |
+| Bzip2 | `bunzip2 file.bz2` or `bzip2 -dc file.bz2 > output` |
+| Tar | `tar tf archive.tar` (list) / `tar xf archive.tar` (extract) |
+
+---
+
+## Network
+
+| Command | Description |
+|---|---|
+| `ssh user@host -p 2220` | Standard SSH connection |
+| `ssh -i key user@host -p 2220` | SSH with private key |
+| `scp -P 2220 user@host:file .` | Secure copy via SSH |
+| `nc host port` | TCP connection with Netcat |

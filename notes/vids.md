@@ -1,22 +1,22 @@
-# Notes – Vidéos
+# Notes – Videos
 
-Notes prises sur chaque vidéo regardée : concept clé, commandes retenues, idées à approfondir.
+Notes taken on each video watched: key concept, commands retained, ideas to explore further.
 
 ---
 
-<!-- Exemple de format à utiliser :
+<!-- Example format to use:
 
-## [Titre de la vidéo] — [Auteur / Chaîne]
+## [Video Title] — [Author / Channel]
 
-**Date :** AAAA-MM-JJ
-**Durée :** Xmin
-**Thème :** [ex. XSS, PrivEsc, Nmap…]
+**Date:** YYYY-MM-DD
+**Duration:** Xmin
+**Topic:** [e.g. XSS, PrivEsc, Nmap…]
 
-### Ce que j'ai retenu
+### Key takeaways
 - Point 1
 - Point 2
 
-### Commandes / outils notés
-- `commande` : description
+### Commands / tools noted
+- `command` : description
 
 -->

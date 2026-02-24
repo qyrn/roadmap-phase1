@@ -1,21 +1,21 @@
 # Cheatsheets
 
-Références rapides par domaine : Linux, Nmap, Web, PrivEsc, Active Directory…
+Quick-reference sheets by topic: Linux, Nmap, Web, PrivEsc, Active Directory…
 
 ---
 
-## Objectif
+## Purpose
 
-Ces fichiers servent à :
+These files are meant for:
 
-- Réviser rapidement avant un exercice ou un lab
-- Se rappeler les commandes essentielles sans chercher dans la doc
-- Accélérer la résolution de challenges
+- Quick review before a lab or exercise
+- Recalling key commands without digging through documentation
+- Speeding up challenge solving
 
 ---
 
-## Principes de rédaction
+## Writing principles
 
-- Courts, clairs, pratiques
-- Une commande = une ligne avec son utilité
-- Pas de blabla, que de l'opérationnel
+- Short, clear, practical
+- One command = one line with its purpose
+- No fluff, only operational content

@@ -1,28 +1,28 @@
 # Notes
 
-Ce dossier contient mes notes personnelles organisées par thème, constituées au fil de ma formation en cybersécurité.
+This folder contains personal notes organized by topic, built up over the course of my cybersecurity training.
 
 ---
 
-## Objectifs de ces notes
+## Purpose
 
-- Réviser rapidement des concepts techniques
-- Conserver une trace structurée de ce que j'apprends
-- Suivre ma progression de manière cohérente
+- Quickly review technical concepts
+- Keep a structured record of what I learn
+- Track progress consistently
 
 ---
 
-## Fichiers
+## Files
 
-| Fichier | Contenu |
+| File | Content |
 |---|---|
-| `logbook.md` | Journal quotidien de progression |
-| `loghebdo.md` | Modèle de revue hebdomadaire |
-| `logmensu.md` | Modèle de revue mensuelle |
-| `linux-cmd.md` | Référence des commandes Linux |
-| `bandit_shell_tools.md` | Mémo commandes utiles – OverTheWire Bandit |
-| `vids.md` | Notes sur les vidéos regardées |
+| `logbook.md` | Daily progress log |
+| `loghebdo.md` | Weekly review template |
+| `logmensu.md` | Monthly review template |
+| `linux-cmd.md` | Linux commands reference |
+| `bandit_shell_tools.md` | Command memo – OverTheWire Bandit |
+| `vids.md` | Notes on videos watched |
 
 ---
 
-> Ces notes peuvent être incomplètes ou évoluer dans le temps — c'est le principe d'un apprentissage en cours.
+> These notes may be incomplete or evolve over time — that's the nature of active learning.
