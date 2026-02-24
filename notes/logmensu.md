@@ -4,7 +4,7 @@
 
 ## Month of [MONTH] 2026
 
-### Overview
+### 📊 Overview
 
 | Metric              | Value   |
 |---------------------|---------|
@@ -16,7 +16,7 @@
 
 ---
 
-### Skills mastered
+### 💪 Skills mastered
 
 1. [Skill 1]
 2. [Skill 2]
@@ -24,14 +24,14 @@
 
 ---
 
-### Projects delivered
+### 🚀 Projects delivered
 
 - [Project 1] — [GitHub link]
 - [Project 2] — [GitHub link]
 
 ---
 
-### Rankings
+### 🏆 Rankings
 
 | Platform    | Score / Progress             |
 |-------------|------------------------------|
@@ -41,25 +41,25 @@
 
 ---
 
-### What went well
+### ✅ What went well
 
 - [Positive point]
 
 ---
 
-### What needs to change
+### ⚠️ What needs to change
 
 - [Area to improve]
 
 ---
 
-### Goals for next month
+### 🎯 Goals for next month
 
 1. [Goal 1]
 2. [Goal 2]
 
 ---
 
-### Mindset
+### 🧠 Mindset
 
 [Personal assessment of progress this month]

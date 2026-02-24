@@ -5,7 +5,7 @@ Goal: keep a record of approaches and useful commands — **no passwords stored*
 
 ---
 
-## Context
+## 🌐 Context
 
 - **Platform:** OverTheWire – Bandit
 - **Personal goals:**
@@ -15,7 +15,7 @@ Goal: keep a record of approaches and useful commands — **no passwords stored*
 
 ---
 
-## Level-by-level summary
+## 📖 Level-by-level summary
 
 ### Level 0 → 1
 
@@ -145,7 +145,7 @@ Goal: keep a record of approaches and useful commands — **no passwords stored*
 
 ---
 
-## Intermediate recap
+## 📊 Intermediate recap
 
 ### Skills acquired
 

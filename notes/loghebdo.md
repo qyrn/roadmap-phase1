@@ -4,7 +4,7 @@
 
 ## Week 1 — Feb 18 → Feb 24
 
-### Stats
+### 📊 Stats
 
 | Metric           | Value         |
 |------------------|---------------|
@@ -15,7 +15,7 @@
 
 ---
 
-### Accomplishments
+### ✅ Accomplishments
 
 - [x] Completed TryHackMe – Linux Fundamentals Part 1
 - [x] Completed TryHackMe – Linux Fundamentals Part 2
@@ -24,7 +24,7 @@
 
 ---
 
-### Skills acquired
+### 🧠 Skills acquired
 
 - Linux filesystem navigation and file management (`cd`, `ls`, `cp`, `mv`, `rm`, `touch`, `mkdir`)
 - SSH remote access and SCP file transfer
@@ -43,14 +43,14 @@
 
 ---
 
-### Weaknesses identified
+### ⚠️ Weaknesses identified
 
 - Reflex to Google before checking `man` pages
 - Slight hesitation with text processing pipelines
 
 ---
 
-### Deliverables published
+### 📦 Deliverables published
 
 - [x] Write-up published: `overthewire_bandit_0-15.md`
 - [x] Quick reference published: `overthewire_bandit_0-15v2.md`
@@ -59,7 +59,7 @@
 
 ---
 
-### Goals for next week
+### 🎯 Goals for next week
 
 1. Redo Bandit levels 5 → 12 without any external help
 2. Use `man` before Google — build the reflex
@@ -69,7 +69,7 @@
 
 ## Template – Future weeks
 
-### Stats
+### 📊 Stats
 
 | Metric           | Value       |
 |------------------|-------------|
@@ -80,7 +80,7 @@
 
 ---
 
-### Accomplishments
+### ✅ Accomplishments
 
 - [ ] [Major task 1]
 - [ ] [Major task 2]
@@ -88,20 +88,20 @@
 
 ---
 
-### Skills acquired
+### 🧠 Skills acquired
 
 - [Skill 1]
 - [Skill 2]
 
 ---
 
-### Weaknesses identified
+### ⚠️ Weaknesses identified
 
 - [Area to work on]
 
 ---
 
-### Deliverables published
+### 📦 Deliverables published
 
 - [ ] Write-up published
 - [ ] Code pushed to GitHub
@@ -109,7 +109,7 @@
 
 ---
 
-### Goals for next week
+### 🎯 Goals for next week
 
 1. [Goal 1]
 2. [Goal 2]

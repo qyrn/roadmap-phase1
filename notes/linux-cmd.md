@@ -4,18 +4,18 @@
 
 ## Table of Contents
 
-1. [Navigation & Files](#navigation--files)
-2. [Text Editors](#text-editors)
-3. [Search](#search)
-4. [Network & Transfer](#network--transfer)
-5. [Processes & System](#processes--system)
-6. [Package Management](#package-management)
-7. [Automation](#automation)
-8. [Linux Permissions](#linux-permissions)
+1. [🗂️ Navigation & Files](#navigation--files)
+2. [✏️ Text Editors](#text-editors)
+3. [🔍 Search](#search)
+4. [🌐 Network & Transfer](#network--transfer)
+5. [⚙️ Processes & System](#processes--system)
+6. [📦 Package Management](#package-management)
+7. [⏰ Automation](#automation)
+8. [🔑 Linux Permissions](#linux-permissions)
 
 ---
 
-## Navigation & Files
+## 🗂️ Navigation & Files
 
 ### `echo`
 Displays text or the value of a variable in the terminal.
@@ -153,7 +153,7 @@ clear
 
 ---
 
-## Text Editors
+## ✏️ Text Editors
 
 ### `nano`
 Terminal-based text editor — simple and beginner-friendly.
@@ -171,7 +171,7 @@ Keyboard shortcuts:
 
 ---
 
-## Search
+## 🔍 Search
 
 ### `find`
 Searches for files and directories recursively.
@@ -200,7 +200,7 @@ grep -c "admin" file.txt
 
 ---
 
-## Network & Transfer
+## 🌐 Network & Transfer
 
 ### `su`
 Switches to another user account.
@@ -252,7 +252,7 @@ scp user@192.168.1.10:/path/file.txt .
 
 ---
 
-## Processes & System
+## ⚙️ Processes & System
 
 ### `ps`
 Displays running processes.
@@ -318,7 +318,7 @@ fg
 
 ---
 
-## Package Management
+## 📦 Package Management
 
 ### `apt`
 Package manager for Debian-based systems (Ubuntu, Kali, etc.).
@@ -331,7 +331,7 @@ sudo apt install package_name      # install a package
 
 ---
 
-## Automation
+## ⏰ Automation
 
 ### `cron`
 Schedules recurring tasks.
@@ -356,7 +356,7 @@ Cron format:
 
 ---
 
-## Linux Permissions
+## 🔑 Linux Permissions
 
 Permissions are structured across three levels:
 

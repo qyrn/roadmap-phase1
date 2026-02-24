@@ -8,17 +8,17 @@
 **Mood:** 5/5
 **Focus:** Penetration Testing Fundamentals
 
-### What I did
+### 🛠️ What I did
 - Watched educational videos on penetration testing fundamentals
 
-### What I learned
+### 📚 What I learned
 - Basic concepts of penetration testing
 - Fundamental security principles
 
-### Blockers
+### 🚧 Blockers
 - None
 
-### Tomorrow
+### ➡️ Tomorrow
 - Set up the work environment
 
 ---
@@ -29,18 +29,18 @@
 **Mood:** 4/5
 **Focus:** Environment Setup
 
-### What I did
+### 🛠️ What I did
 - Installed a fresh Linux distribution
 - Optimized the work environment
 
-### What I learned
+### 📚 What I learned
 - How to set up a solid foundation for penetration testing exercises
 - Linux system best practices
 
-### Blockers
+### 🚧 Blockers
 - None
 
-### Tomorrow
+### ➡️ Tomorrow
 - Move on to web security tutorials
 
 ---
@@ -51,15 +51,15 @@
 **Mood:** 4/5
 **Focus:** Web Application Security
 
-### What I did
+### 🛠️ What I did
 - Clean Ubuntu installation
 - Tutorial on React exploitation techniques
 
-### What I learned
+### 📚 What I learned
 - System configuration for penetration testing
 - Basics of web application exploitation (React)
 
-### Blockers
+### 🚧 Blockers
 - None
 
 ---
@@ -70,17 +70,17 @@
 **Mood:** 5/5
 **Focus:** Linux Fundamentals
 
-### What I did
+### 🛠️ What I did
 - Learned basic Linux commands
 - Completed Linux Fundamentals 1 on TryHackMe
 
-### What I learned
+### 📚 What I learned
 - Can navigate the filesystem, search files recursively, and use output redirection
 
-### Blockers
+### 🚧 Blockers
 - None
 
-### Tomorrow
+### ➡️ Tomorrow
 - Deepen web exploitation techniques
 
 ---
@@ -91,12 +91,12 @@
 **Mood:** 5/5
 **Focus:** Linux Fundamentals Part 2 (TryHackMe)
 
-### What I did
+### 🛠️ What I did
 - Completed Tasks 1 to 5 of Linux Fundamentals Part 2
 - Practiced file management commands on the THM machine
 - Learned about SSH, file operations, and Linux permissions basics
 
-### What I learned
+### 📚 What I learned
 - How to connect to a remote machine using SSH (network-based remote access)
 - File and directory management: `touch`, `mkdir`, `cp`, `mv`, `rm`
 - Difference between normal files and directories in `ls -l`
@@ -108,7 +108,7 @@
 - Numeric permissions system (e.g., 777, 750)
 - Basic usage of `su` to switch users
 
-### Blockers
+### 🚧 Blockers
 - Minor confusion about permission semantics on directories (r vs x)
 
 ---
@@ -119,12 +119,12 @@
 **Mood:** 5/5
 **Focus:** Linux Fundamentals Part 2 & Part 3 (completed)
 
-### What I did
+### 🛠️ What I did
 - Completed Linux Fundamentals Part 2 and Part 3 on TryHackMe
 - Practiced file transfer, process management, services, and logging
 - Reviewed Linux filesystem structure and system directories
 
-### What I learned
+### 📚 What I learned
 
 #### Filesystem Structure
 - `/etc` → system configuration files
@@ -161,26 +161,26 @@
   - Requested resource
   - HTTP status code
 
-### Blockers
+### 🚧 Blockers
 - Need deeper understanding of log analysis
 - Minor confusion around HTTP request semantics
 
 ---
 
-## 2026-02-24 — Day 5 — END OF FIRST WEEK
+## 2026-02-24 — Day 5 🏁
 
 **Duration:** ~2–3h
 **Mood:** 4/5
 **Focus:** OverTheWire – Bandit (Level 0 → 15)
 
-### What I did
+### 🛠️ What I did
 - Completed Bandit levels 0 to 15
 - Practiced SSH authentication and private key usage
 - Applied Linux file manipulation, search and filtering techniques
 - Used networking tools (`nc`)
 - Worked with encodings and compression formats
 
-### Key Skills Reinforced
+### 💪 Key Skills Reinforced
 - Handling tricky filenames (dashes, spaces, hidden files)
 - Efficient file searching using `find`
 - Filtering data with `grep`, `sort`, `uniq`
@@ -193,12 +193,12 @@
 - Using SSH private keys (`chmod 400`, `ssh -i`)
 - Basic TCP interaction using `nc`
 
-### Weaknesses Identified
+### ⚠️ Weaknesses Identified
 - Tendency to use Google too early
 - Need stronger reflex with `man` pages
 - Slight hesitation with text processing tools
 
-### Action Plan
+### 🗺️ Action Plan
 - Redo levels 5 → 12 without any external help
 - Use `man` before Google
 - Focus on mastering text-processing commands

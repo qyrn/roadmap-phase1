@@ -5,7 +5,7 @@ Goal: land a junior pentester position before 2027.
 
 ---
 
-## Repository Structure
+## 🗂️ Repository Structure
 
 | Folder | Content |
 |---|---|
@@ -17,7 +17,7 @@ Goal: land a junior pentester position before 2027.
 
 ---
 
-## Technical Goals
+## 🎯 Technical Goals
 
 - Master Web Pentesting: XSS, SQLi, IDOR, SSRF…
 - Understand and practice Linux & Windows PrivEsc
@@ -26,7 +26,7 @@ Goal: land a junior pentester position before 2027.
 
 ---
 
-## Progress Tracking
+## 📈 Progress Tracking
 
 Daily log in [`notes/logbook.md`](notes/logbook.md).
 Weekly reviews in [`notes/loghebdo.md`](notes/loghebdo.md).

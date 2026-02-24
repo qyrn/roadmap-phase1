@@ -4,7 +4,7 @@ Quick reference for commands used to solve levels 0 to 15 of Bandit (OverTheWire
 
 ---
 
-## Navigation & Files
+## 📁 Navigation & Files
 
 | Command | Description |
 |---|---|
@@ -16,7 +16,7 @@ Quick reference for commands used to solve levels 0 to 15 of Bandit (OverTheWire
 
 ---
 
-## Search
+## 🔍 Search
 
 | Command | Description |
 |---|---|
@@ -31,7 +31,7 @@ Useful `find` options: `-type`, `-user`, `-group`, `-size`, `! -executable`
 
 ---
 
-## Encoding & Text Processing
+## 🔤 Encoding & Text Processing
 
 | Command | Description |
 |---|---|
@@ -41,7 +41,7 @@ Useful `find` options: `-type`, `-user`, `-group`, `-size`, `! -executable`
 
 ---
 
-## Hex Dump
+## 🧮 Hex Dump
 
 | Command | Description |
 |---|---|
@@ -50,7 +50,7 @@ Useful `find` options: `-type`, `-user`, `-group`, `-size`, `! -executable`
 
 ---
 
-## Compression & Archives
+## 🗜️ Compression & Archives
 
 | Format | Decompress |
 |---|---|
@@ -60,7 +60,7 @@ Useful `find` options: `-type`, `-user`, `-group`, `-size`, `! -executable`
 
 ---
 
-## Network
+## 🌐 Network
 
 | Command | Description |
 |---|---|
