@@ -6,12 +6,14 @@
 
 1. [🗂️ Navigation & Files](#navigation--files)
 2. [✏️ Text Editors](#text-editors)
-3. [🔍 Search](#search)
-4. [🌐 Network & Transfer](#network--transfer)
-5. [⚙️ Processes & System](#processes--system)
-6. [📦 Package Management](#package-management)
-7. [⏰ Automation](#automation)
-8. [🔑 Linux Permissions](#linux-permissions)
+3. [🔍 Search & Text Processing](#search--text-processing)
+4. [🔤 Encoding & Encoding Tools](#encoding--encoding-tools)
+5. [🗜️ Compression & Archives](#compression--archives)
+6. [🌐 Network & Transfer](#network--transfer)
+7. [⚙️ Processes & System](#processes--system)
+8. [📦 Package Management](#package-management)
+9. [⏰ Automation](#automation)
+10. [🔑 Linux Permissions](#linux-permissions)
 
 ---
 
@@ -43,8 +45,9 @@ Lists files and directories in the current (or specified) directory.
 ```bash
 ls
 ls -l      # long format (permissions, owner, size, date)
-ls -a      # show hidden files
+ls -a      # show hidden files (dot files)
 ls -lh     # long format with human-readable sizes
+ls -la     # long format + hidden files
 ```
 
 ---
@@ -55,6 +58,7 @@ Best suited for small files.
 
 ```bash
 cat file.txt
+cat ./-        # read a file whose name starts with a dash
 ```
 
 For large files, use:
@@ -136,10 +140,11 @@ rm -r folder/
 ---
 
 ### `file`
-Determines the type of a file (text, binary, etc.).
+Determines the type of a file (text, binary, gzip, bzip2, tar…).
 
 ```bash
 file document.txt
+file ./*          # check all files in current directory
 ```
 
 ---
@@ -171,16 +176,29 @@ Keyboard shortcuts:
 
 ---
 
-## 🔍 Search
+## 🔍 Search & Text Processing
 
 ### `find`
 Searches for files and directories recursively.
 
 ```bash
 find / -name "*.txt"
+find / -type f -name "secret"
+find / -type f -user bob -group dev -size 33c 2>/dev/null
+find / -type f -size 1033c ! -executable 2>/dev/null
 ```
 
-Quotes prevent the shell from expanding `*` before `find` processes it.
+| Flag | Description |
+|------|-------------|
+| `-type f` | Files only |
+| `-type d` | Directories only |
+| `-name` | Match by name |
+| `-user` | Match by owner |
+| `-group` | Match by group |
+| `-size Nc` | Match by size in bytes |
+| `! -executable` | Exclude executable files |
+
+> `2>/dev/null` suppresses permission error output.
 
 ---
 
@@ -197,6 +215,121 @@ grep -c "admin" file.txt
 |------|-------------------------|
 | `-r` | Recursive search        |
 | `-c` | Count matching lines    |
+
+---
+
+### `sort`
+Sorts lines in a file alphabetically (or numerically).
+
+```bash
+sort file.txt
+sort -u file.txt          # sort and remove duplicates
+sort file.txt | uniq -u   # pipeline: keep only unique lines
+```
+
+---
+
+### `uniq`
+Filters or counts duplicate lines. Usually combined with `sort`.
+
+```bash
+sort file.txt | uniq       # remove duplicates
+sort file.txt | uniq -u    # keep only unique lines
+sort file.txt | uniq -c    # count occurrences of each line
+```
+
+| Flag | Description                    |
+|------|--------------------------------|
+| `-u` | Print only unique lines        |
+| `-c` | Prefix each line with a count  |
+
+---
+
+### `strings`
+Extracts human-readable strings from a binary file.
+
+```bash
+strings binary_file
+strings data.txt | grep "="    # extract and filter
+```
+
+---
+
+## 🔤 Encoding & Encoding Tools
+
+### `base64`
+Encodes or decodes base64 data.
+
+```bash
+base64 file.txt          # encode
+base64 -d file.txt       # decode
+```
+
+---
+
+### `tr`
+Translates or replaces characters in a stream.
+
+```bash
+tr 'A-Za-z' 'N-ZA-Mn-za-m'                    # ROT13
+tr 'a-z' 'A-Z'                                 # lowercase to uppercase
+cat file.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'     # ROT13 via pipe
+```
+
+---
+
+### `xxd`
+Creates a hex dump of a file, or reverses one back to binary.
+
+```bash
+xxd file                   # display hex dump
+xxd -r hexdump > binary    # rebuild binary from hex dump
+```
+
+---
+
+## 🗜️ Compression & Archives
+
+### `gzip` / `gunzip`
+Compresses or decompresses `.gz` files.
+
+```bash
+gzip file.txt              # compress → file.txt.gz
+gunzip file.gz             # decompress
+gzip -d file.gz            # decompress (alternative)
+gunzip -c file.gz > output # decompress to stdout
+```
+
+---
+
+### `bzip2` / `bunzip2`
+Compresses or decompresses `.bz2` files.
+
+```bash
+bzip2 file.txt             # compress → file.txt.bz2
+bunzip2 file.bz2           # decompress
+bzip2 -d file.bz2          # decompress (alternative)
+bzip2 -dc file.bz2 > output
+```
+
+---
+
+### `tar`
+Archives multiple files into a single `.tar` file.
+
+```bash
+tar tf archive.tar               # list contents
+tar xf archive.tar               # extract
+tar czf archive.tar.gz folder/   # create compressed archive
+```
+
+| Flag | Description              |
+|------|--------------------------|
+| `t`  | List contents            |
+| `x`  | Extract                  |
+| `c`  | Create archive           |
+| `f`  | Specify filename         |
+| `z`  | Use gzip compression     |
 
 ---
 
@@ -220,9 +353,20 @@ Connects to a remote machine over a network.
 ```bash
 ssh user@hostname
 ssh user@192.168.1.10
+ssh user@host -p 2220              # specify port
+ssh -i keyfile user@host -p 2220   # authenticate with private key
 ```
 
-Requires network connectivity (LAN or internet).
+---
+
+### `scp`
+Securely copies files between machines over SSH.
+
+```bash
+scp file.txt user@192.168.1.10:/path/        # send
+scp user@192.168.1.10:/path/file.txt .       # receive
+scp -P 2220 user@host:file.txt .             # specify port
+```
 
 ---
 
@@ -235,19 +379,12 @@ wget http://example.com/file.txt
 
 ---
 
-### `scp`
-Securely copies files between machines over SSH.
-
-Send a file to a remote machine:
+### `nc` (Netcat)
+Opens raw TCP/UDP connections. Useful for interacting with services directly.
 
 ```bash
-scp file.txt user@192.168.1.10:/path/
-```
-
-Receive a file from a remote machine:
-
-```bash
-scp user@192.168.1.10:/path/file.txt .
+nc host port            # connect to a host on a port
+nc localhost 30000      # connect to a local service
 ```
 
 ---
@@ -358,6 +495,17 @@ Cron format:
 
 ## 🔑 Linux Permissions
 
+### `chmod`
+Changes the permissions of a file or directory.
+
+```bash
+chmod 750 file.txt
+chmod 400 keyfile      # read-only for owner (SSH private keys)
+chmod +x script.sh     # add execute permission
+```
+
+---
+
 Permissions are structured across three levels:
 
 | Level      | Description                        |
@@ -374,11 +522,7 @@ Numeric values:
 | `w` (write)     | 2     |
 | `x` (execute)   | 1     |
 
-Example:
-
-```bash
-chmod 750 file.txt
-```
+Example — `chmod 750 file.txt`:
 
 | Level  | Permissions | Value |
 |--------|-------------|-------|
