@@ -1,5 +1,7 @@
 # OverTheWire – Bandit (0 → 15) — Quick Reference
 
+*Last updated: February 24, 2026*
+
 Key commands per level. No passwords stored.
 
 ---

@@ -1,5 +1,7 @@
 # OverTheWire – Bandit, Levels 0 to 15
 
+*Completed: November 21, 2025*
+
 Write-up of my progress on Bandit.
 Goal: keep a record of approaches and useful commands — **no passwords stored**.
 
