@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secure App</title>
+</head>
+<body>
+
+<h1>User dashboard</h1>
+
+<button id="adminBtn" disabled>Admin panel</button>
+
+<script>
+  const user = {
+    username: "user",
+    isAdmin: false
+  };
+
+  if (user.isAdmin) {
+    document.getElementById("adminBtn").disabled = false;
+  }
+</script>
+
+</body>
+</html>
