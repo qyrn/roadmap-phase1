@@ -162,3 +162,48 @@
 - Need deeper understanding of log analysis
 - Minor confusion around HTTP request semantics
 
+---
+
+## 📅 2026-02-24 - Day 5 (FIRST WEEK FINISHED)
+
+**Duration:** ~2-3h  
+**Mood:** 4/5  
+**Focus:** OverTheWire – Bandit (Level 0 → 15)
+
+---
+
+### What I Did
+- Completed Bandit levels 0 to 15
+- Practiced SSH authentication and private key usage
+- Applied Linux file manipulation, search and filtering techniques
+- Used networking tools (`nc`)
+- Worked with encodings and compression formats
+
+---
+
+### Key Skills Reinforced
+- Handling tricky filenames (dashes, spaces, hidden files)
+- Efficient file searching using `find`
+- Filtering data with `grep`, `sort`, `uniq`
+- Understanding stdout vs stderr (`2>/dev/null`)
+- Base64 decoding
+- ROT13 decoding using `tr`
+- Working with hex dumps (`xxd -r`)
+- Identifying file types with `file`
+- Extracting compressed archives (`gzip`, `bzip2`, `tar`)
+- Using SSH private keys (`chmod 400`, `ssh -i`)
+- Basic TCP interaction using `nc`
+
+---
+
+### Weaknesses Identified
+- Tendency to use Google too early
+- Need stronger reflex with `man` pages
+- Slight hesitation with text processing tools
+
+---
+
+### Action Plan
+- Redo levels 5 → 12 without any external help
+- Use `man` before Google
+- Focus on mastering text-processing commands
