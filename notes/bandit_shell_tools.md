@@ -64,6 +64,7 @@ Useful `find` options: `-type`, `-user`, `-group`, `-size`, `! -executable`
 
 | Command | Description |
 |---|---|
+| `chmod 400 keyfile` | Set read-only for owner (required for SSH private keys) |
 | `ssh user@host -p 2220` | Standard SSH connection |
 | `ssh -i key user@host -p 2220` | SSH with private key |
 | `scp -P 2220 user@host:file .` | Secure copy via SSH |
