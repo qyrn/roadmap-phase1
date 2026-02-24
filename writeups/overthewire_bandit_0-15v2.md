@@ -1,96 +1,157 @@
-# OverTheWire – Bandit (0 → 15)
+# OverTheWire – Bandit (0 → 15) — Référence rapide
 
-## Level 0 → 1
-`cat readme`
-
----
-
-## Level 1 → 2
-Handle dashed filename:
-`cat ./-`
+Commandes clés par niveau. Aucun mot de passe stocké.
 
 ---
 
-## Level 2 → 3
-Handle spaced filename:
-`cat ./--spaces\ in\ this\ filename--`
+## Niveau 0 → 1
+
+```bash
+cat readme
+```
 
 ---
 
-## Level 3 → 4
-Hidden file:
-`ls -a`
-`cat .hidden`
+## Niveau 1 → 2
+
+Fichier dont le nom est un tiret (`-`) :
+
+```bash
+cat ./-
+```
 
 ---
 
-## Level 4 → 5
-Identify human-readable file:
-`file ./*`
-`cat ./fileX`
+## Niveau 2 → 3
+
+Fichier avec des espaces dans le nom :
+
+```bash
+cat "./spaces in this filename"
+```
 
 ---
 
-## Level 5 → 6
-Search with constraints:
-`find / -type f -size 1033c ! -executable 2>/dev/null`
+## Niveau 3 → 4
+
+Fichier caché :
+
+```bash
+ls -a
+cat .hidden
+```
 
 ---
 
-## Level 6 → 7
-Search by owner, group and size:
-`find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`
+## Niveau 4 → 5
+
+Identifier le seul fichier lisible par un humain :
+
+```bash
+file ./*
+cat ./fileX
+```
 
 ---
 
-## Level 7 → 8
-Search keyword:
-`grep "millionth" data.txt`
+## Niveau 5 → 6
+
+Recherche avec contraintes (taille, non exécutable) :
+
+```bash
+find / -type f -size 1033c ! -executable 2>/dev/null
+```
 
 ---
 
-## Level 8 → 9
-Unique line:
-`sort data.txt | uniq -u`
+## Niveau 6 → 7
+
+Recherche par propriétaire, groupe et taille :
+
+```bash
+find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+```
 
 ---
 
-## Level 9 → 10
-Extract readable strings:
-`strings data.txt | grep "="`
+## Niveau 7 → 8
+
+Recherche par mot-clé dans un fichier :
+
+```bash
+grep "millionth" data.txt
+```
 
 ---
 
-## Level 10 → 11
-Decode base64:
-`base64 -d data.txt`
+## Niveau 8 → 9
+
+Trouver la ligne unique :
+
+```bash
+sort data.txt | uniq -u
+```
 
 ---
 
-## Level 11 → 12
-ROT13:
-`cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+## Niveau 9 → 10
+
+Extraire les chaînes lisibles d'un binaire :
+
+```bash
+strings data.txt | grep "="
+```
 
 ---
 
-## Level 12 → 13
-Hex + compression chain:
-- `xxd -r`
-- `file`
-- `gzip -d`
-- `bzip2 -d`
-- `tar -xf`
+## Niveau 10 → 11
+
+Décoder du base64 :
+
+```bash
+base64 -d data.txt
+```
 
 ---
 
-## Level 13 → 14
-SSH private key:
-- `scp -P 2220`
-- `chmod 400 keyfile`
-- `ssh -i keyfile`
+## Niveau 11 → 12
+
+Décodage ROT13 :
+
+```bash
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
 
 ---
 
-## Level 14 → 15
-Netcat:
-`nc localhost 30000`
+## Niveau 12 → 13
+
+Reconstruction depuis hexdump + décompressions successives :
+
+```bash
+xxd -r hexdump > binaire
+file binaire
+gzip -d / bzip2 -d / tar -xf   # répéter jusqu'au fichier texte
+```
+
+---
+
+## Niveau 13 → 14
+
+Clé SSH privée :
+
+```bash
+scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
+chmod 400 sshkey.private
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+```
+
+---
+
+## Niveau 14 → 15
+
+Envoi du mot de passe via Netcat :
+
+```bash
+nc localhost 30000
+```

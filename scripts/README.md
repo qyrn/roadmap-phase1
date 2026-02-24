@@ -1,10 +1,16 @@
 # Scripts
 
-Scripts personnels créés au cours de mon apprentissage :
-- automation simple
-- enumeration
-- reconnaissance
-- exploitation basique
+Scripts personnels développés au cours de la formation.
 
-Au début il peut ne rien y avoir, c’est normal.
-Ce dossier va se remplir quand je commencerai à coder mes propres outils.
+---
+
+## Catégories prévues
+
+- Automatisation de tâches répétitives
+- Énumération
+- Reconnaissance (recon)
+- Exploitation basique
+
+---
+
+> Ce dossier se remplira progressivement à mesure que les outils personnels seront développés.

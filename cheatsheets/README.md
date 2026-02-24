@@ -1,10 +1,21 @@
 # Cheatsheets
 
-Références rapides (Linux, Nmap, Web, PrivEsc, AD…)
+Références rapides par domaine : Linux, Nmap, Web, PrivEsc, Active Directory…
 
-Utiles pour :
-- réviser vite avant un exercice
-- me rappeler des commandes importantes
-- accélérer mes futures résolutions d’exercices
+---
 
-Ces fichiers doivent être courts, clairs et pratiques.
+## Objectif
+
+Ces fichiers servent à :
+
+- Réviser rapidement avant un exercice ou un lab
+- Se rappeler les commandes essentielles sans chercher dans la doc
+- Accélérer la résolution de challenges
+
+---
+
+## Principes de rédaction
+
+- Courts, clairs, pratiques
+- Une commande = une ligne avec son utilité
+- Pas de blabla, que de l'opérationnel

@@ -1,27 +1,27 @@
-# 🐧 Linux Fundamentals – Commands Reference
+# Référence Linux – Commandes fondamentales
 
 ---
 
-## 📋 Table of Contents
+## Table des matières
 
-1. [🗂️ Navigation & Files](#️-navigation--files)
-2. [✏️ Text Editors](#️-text-editors)
-3. [🔍 Search](#-search)
-4. [🌐 Network & Transfer](#-network--transfer)
-5. [⚙️ Processes & System](#️-processes--system)
-6. [📦 Package Management](#-package-management)
-7. [⏰ Automation](#-automation)
-8. [🔑 Linux Permissions](#-linux-permissions)
+1. [Navigation et fichiers](#navigation-et-fichiers)
+2. [Éditeurs de texte](#éditeurs-de-texte)
+3. [Recherche](#recherche)
+4. [Réseau et transfert](#réseau-et-transfert)
+5. [Processus et système](#processus-et-système)
+6. [Gestion des paquets](#gestion-des-paquets)
+7. [Automatisation](#automatisation)
+8. [Permissions Linux](#permissions-linux)
 
 ---
 
-## 🗂️ Navigation & Files
+## Navigation et fichiers
 
 ### `echo`
-Displays text or the value of a variable in the terminal.
+Affiche du texte ou la valeur d'une variable dans le terminal.
 
 ```bash
-echo Hello
+echo Bonjour
 echo "Hello world"
 echo $HOME
 ```
@@ -29,7 +29,7 @@ echo $HOME
 ---
 
 ### `whoami`
-Displays the username of the currently logged-in user.
+Affiche le nom de l'utilisateur actuellement connecté.
 
 ```bash
 whoami
@@ -38,46 +38,46 @@ whoami
 ---
 
 ### `ls`
-Lists files and directories in the current (or specified) directory.
+Liste les fichiers et répertoires du répertoire courant (ou spécifié).
 
 ```bash
 ls
-ls -l      # long format (permissions, owner, size, date)
-ls -a      # show hidden files
-ls -lh     # long format with human-readable sizes
+ls -l      # format long (permissions, propriétaire, taille, date)
+ls -a      # afficher les fichiers cachés
+ls -lh     # format long avec tailles lisibles
 ```
 
 ---
 
 ### `cat`
-Displays the content of a file directly in the terminal.
-Best suited for small files.
+Affiche le contenu d'un fichier directement dans le terminal.
+Adapté aux petits fichiers.
 
 ```bash
-cat file.txt
+cat fichier.txt
 ```
 
-For large files, use:
+Pour les gros fichiers, préférer :
 
 ```bash
-less file.txt
+less fichier.txt
 ```
 
 ---
 
 ### `cd`
-Changes the current working directory.
+Change le répertoire courant.
 
 ```bash
-cd folder
+cd dossier
 cd ..
-cd /absolute/path
+cd /chemin/absolu
 ```
 
 ---
 
 ### `pwd`
-Prints the absolute path of the current working directory.
+Affiche le chemin absolu du répertoire courant.
 
 ```bash
 pwd
@@ -86,57 +86,57 @@ pwd
 ---
 
 ### `mkdir`
-Creates a new directory.
+Crée un nouveau répertoire.
 
 ```bash
-mkdir new_folder
+mkdir nouveau_dossier
 ```
 
 ---
 
 ### `touch`
-Creates a new empty file or updates its timestamp if it already exists.
+Crée un fichier vide ou met à jour son horodatage s'il existe déjà.
 
 ```bash
-touch file.txt
+touch fichier.txt
 ```
 
 ---
 
 ### `cp`
-Copies files or directories.
+Copie des fichiers ou répertoires.
 
 ```bash
-cp file.txt backup.txt
-cp -r folder/ backup_folder/
+cp fichier.txt sauvegarde.txt
+cp -r dossier/ dossier_backup/
 ```
 
 ---
 
 ### `mv`
-Moves or renames files and directories.
+Déplace ou renomme des fichiers et répertoires.
 
 ```bash
-mv file.txt /home/user/
-mv old.txt new.txt
+mv fichier.txt /home/user/
+mv ancien.txt nouveau.txt
 ```
 
 ---
 
 ### `rm`
-Removes files or directories.
+Supprime des fichiers ou répertoires.
 
 ```bash
-rm file.txt
-rm -r folder/
+rm fichier.txt
+rm -r dossier/
 ```
 
-⚠️ `rm -rf` can be destructive if misused.
+> ⚠️ `rm -rf` peut être destructeur en cas de mauvais usage.
 
 ---
 
 ### `file`
-Determines the type of a file (text, binary, etc.).
+Détermine le type d'un fichier (texte, binaire, etc.).
 
 ```bash
 file document.txt
@@ -145,7 +145,7 @@ file document.txt
 ---
 
 ### `clear`
-Clears the terminal screen.
+Efface le terminal.
 
 ```bash
 clear
@@ -153,109 +153,109 @@ clear
 
 ---
 
-## ✏️ Text Editors
+## Éditeurs de texte
 
 ### `nano`
-Terminal-based text editor — simple and beginner-friendly.
+Éditeur de texte en terminal — simple et accessible.
 
 ```bash
-nano file.txt
+nano fichier.txt
 ```
 
-Keyboard shortcuts:
+Raccourcis clavier :
 
-| Shortcut   | Action  |
-|------------|---------|
-| `CTRL + O` | Save    |
-| `CTRL + X` | Exit    |
+| Raccourci  | Action       |
+|------------|--------------|
+| `CTRL + O` | Sauvegarder  |
+| `CTRL + X` | Quitter      |
 
 ---
 
-## 🔍 Search
+## Recherche
 
 ### `find`
-Searches for files and directories recursively.
+Recherche des fichiers et répertoires récursivement.
 
 ```bash
 find / -name "*.txt"
 ```
 
-Quotes prevent the shell from expanding `*` before `find` processes it.
+Les guillemets empêchent le shell d'expandre `*` avant que `find` le traite.
 
 ---
 
 ### `grep`
-Searches for a specific pattern inside files.
+Recherche un motif dans des fichiers.
 
 ```bash
-grep "admin" file.txt
-grep -r "admin" /path
-grep -c "admin" file.txt
+grep "admin" fichier.txt
+grep -r "admin" /chemin
+grep -c "admin" fichier.txt
 ```
 
-| Flag | Description             |
-|------|-------------------------|
-| `-r` | Recursive search        |
-| `-c` | Count matching lines    |
+| Option | Description                        |
+|--------|------------------------------------|
+| `-r`   | Recherche récursive                |
+| `-c`   | Compter les lignes correspondantes |
 
 ---
 
-## 🌐 Network & Transfer
+## Réseau et transfert
 
 ### `su`
-Switches to another user account.
+Change d'utilisateur.
 
 ```bash
-su username
-su -l username
+su utilisateur
+su -l utilisateur
 ```
 
-`-l` provides a full login shell environment.
+`-l` ouvre un shell de connexion complet.
 
 ---
 
 ### `ssh`
-Connects to a remote machine over a network.
+Connexion à une machine distante via le réseau.
 
 ```bash
 ssh user@hostname
 ssh user@192.168.1.10
 ```
 
-Requires network connectivity (LAN or internet).
+Nécessite une connexion réseau (LAN ou internet).
 
 ---
 
 ### `wget`
-Downloads files from a URL.
+Télécharge des fichiers depuis une URL.
 
 ```bash
-wget http://example.com/file.txt
+wget http://example.com/fichier.txt
 ```
 
 ---
 
 ### `scp`
-Securely copies files between machines over SSH.
+Copie des fichiers entre machines via SSH.
 
-Send a file to a remote machine:
+Envoyer un fichier vers une machine distante :
 
 ```bash
-scp file.txt user@192.168.1.10:/path/
+scp fichier.txt user@192.168.1.10:/chemin/
 ```
 
-Receive a file from a remote machine:
+Récupérer un fichier depuis une machine distante :
 
 ```bash
-scp user@192.168.1.10:/path/file.txt .
+scp user@192.168.1.10:/chemin/fichier.txt .
 ```
 
 ---
 
-## ⚙️ Processes & System
+## Processus et système
 
 ### `ps`
-Displays running processes.
+Affiche les processus en cours d'exécution.
 
 ```bash
 ps
@@ -265,7 +265,7 @@ ps aux
 ---
 
 ### `top`
-Displays real-time process statistics (CPU, memory, PID).
+Affiche les statistiques des processus en temps réel (CPU, mémoire, PID).
 
 ```bash
 top
@@ -274,43 +274,43 @@ top
 ---
 
 ### `kill`
-Sends signals to processes.
+Envoie des signaux aux processus.
 
 ```bash
-kill PID       # SIGTERM – graceful stop
-kill -9 PID    # SIGKILL – forced stop
+kill PID       # SIGTERM – arrêt propre
+kill -9 PID    # SIGKILL – arrêt forcé
 ```
 
 ---
 
 ### `systemctl`
-Manages system services.
+Gère les services système.
 
 ```bash
 systemctl start apache2
 systemctl stop apache2
-systemctl enable apache2    # auto-start on boot
+systemctl enable apache2    # démarrage automatique au boot
 systemctl disable apache2
 systemctl status apache2
 ```
 
 ---
 
-### ⏸️ Job Control
+### Contrôle des tâches (Job Control)
 
-Suspend a running process:
+Suspendre un processus en cours :
 
 ```bash
 CTRL + Z
 ```
 
-Resume in the background:
+Reprendre en arrière-plan :
 
 ```bash
 bg
 ```
 
-Resume in the foreground:
+Reprendre au premier plan :
 
 ```bash
 fg
@@ -318,86 +318,86 @@ fg
 
 ---
 
-## 📦 Package Management
+## Gestion des paquets
 
 ### `apt`
-Package manager for Debian-based systems (Ubuntu, Kali, etc.).
+Gestionnaire de paquets pour les systèmes Debian (Ubuntu, Kali, etc.).
 
 ```bash
-sudo apt update                    # refresh package list
-sudo apt upgrade                   # upgrade installed packages
-sudo apt install package_name      # install a package
+sudo apt update                    # actualiser la liste des paquets
+sudo apt upgrade                   # mettre à jour les paquets installés
+sudo apt install nom_du_paquet     # installer un paquet
 ```
 
 ---
 
-## ⏰ Automation
+## Automatisation
 
 ### `cron`
-Schedules recurring tasks.
+Planifie des tâches récurrentes.
 
-Edit the crontab:
+Éditer le crontab :
 
 ```bash
 crontab -e
 ```
 
-Cron format:
+Format cron :
 
 ```
-* * * * * command
+* * * * * commande
 │ │ │ │ │
-│ │ │ │ └── day of week  (0–7, 0 and 7 = Sunday)
-│ │ │ └──── month        (1–12)
-│ │ └────── day of month (1–31)
-│ └──────── hour         (0–23)
-└────────── minute       (0–59)
+│ │ │ │ └── jour de la semaine (0–7, 0 et 7 = dimanche)
+│ │ │ └──── mois               (1–12)
+│ │ └────── jour du mois       (1–31)
+│ └──────── heure              (0–23)
+└────────── minute             (0–59)
 ```
 
 ---
 
-## 🔑 Linux Permissions
+## Permissions Linux
 
-Permissions are structured across three levels:
+Les permissions sont structurées en trois niveaux :
 
-| Level     | Description                        |
-|-----------|------------------------------------|
-| **Owner** | The user who owns the file         |
-| **Group** | Members of the associated group    |
-| **Others**| Every other user                   |
+| Niveau        | Description                                  |
+|---------------|----------------------------------------------|
+| **Propriétaire** | L'utilisateur propriétaire du fichier     |
+| **Groupe**    | Les membres du groupe associé                |
+| **Autres**    | Tous les autres utilisateurs                 |
 
-Numeric values:
+Valeurs numériques :
 
-| Permission     | Value |
-|----------------|-------|
-| `r` (read)     | 4     |
-| `w` (write)    | 2     |
-| `x` (execute)  | 1     |
+| Permission      | Valeur |
+|-----------------|--------|
+| `r` (lecture)   | 4      |
+| `w` (écriture)  | 2      |
+| `x` (exécution) | 1      |
 
-Example:
+Exemple :
 
 ```bash
-chmod 750 file.txt
+chmod 750 fichier.txt
 ```
 
-| Level  | Permissions | Value |
-|--------|-------------|-------|
-| Owner  | `rwx`       | 7     |
-| Group  | `r-x`       | 5     |
-| Others | `---`       | 0     |
+| Niveau        | Permissions | Valeur |
+|---------------|-------------|--------|
+| Propriétaire  | `rwx`       | 7      |
+| Groupe        | `r-x`       | 5      |
+| Autres        | `---`       | 0      |
 
-### On files:
+### Sur les fichiers
 
-| Permission | Meaning           |
-|------------|-------------------|
-| `r`        | Read file content |
-| `w`        | Modify file       |
-| `x`        | Execute file      |
+| Permission | Signification         |
+|------------|-----------------------|
+| `r`        | Lire le contenu       |
+| `w`        | Modifier le fichier   |
+| `x`        | Exécuter le fichier   |
 
-### On directories:
+### Sur les répertoires
 
-| Permission | Meaning                               |
-|------------|---------------------------------------|
-| `r`        | List directory contents               |
-| `x`        | Enter / traverse directory            |
-| `w`        | Create or delete files inside         |
+| Permission | Signification                              |
+|------------|--------------------------------------------|
+| `r`        | Lister le contenu du répertoire            |
+| `x`        | Entrer / traverser le répertoire           |
+| `w`        | Créer ou supprimer des fichiers à l'intérieur |

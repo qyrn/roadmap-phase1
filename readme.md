@@ -1,17 +1,33 @@
 # Pentest Journey
 
-Bienvenue dans mon repo d'apprentissage en cybersécurité.
-J'apprends le pentest en suivant une roadmap sur 18 mois, avec comme objectif d'obtenir un CDI junior pentester avant 2027.
+Documentation de mon apprentissage en cybersécurité, structurée sur une roadmap de 18 mois.
+Objectif : décrocher un poste junior pentester avant 2027.
 
-### 🌐 Contenu :
-- notes/ → Notes que j'apprends au fur et à mesure
-- writeups/ → Résumés de challenges et machines
-- cheatsheets/ → Références rapides
-- scripts/ → Scripts perso
-- resources/ → Documents utiles
+---
 
-### 🎯 Objectif :
-- Maîtriser Web Pentesting (XSS, SQLi, IDOR…)
-- Apprendre PrivEsc Linux & Windows
-- Comprendre AD
-- Passer la certif eJPT
+## Structure du dépôt
+
+| Dossier | Contenu |
+|---|---|
+| `notes/` | Notes techniques au fil de l'apprentissage |
+| `writeups/` | Write-ups de challenges et machines |
+| `cheatsheets/` | Références rapides par domaine |
+| `scripts/` | Scripts personnels développés en cours de formation |
+| `resources/` | Documents, PDF et méthodologies de référence |
+
+---
+
+## Objectifs techniques
+
+- Maîtriser le Web Pentesting : XSS, SQLi, IDOR, SSRF…
+- Comprendre et pratiquer la PrivEsc Linux & Windows
+- Appréhender Active Directory et ses vecteurs d'attaque
+- Obtenir la certification eJPT
+
+---
+
+## Progression
+
+Suivi quotidien dans [`notes/logbook.md`](notes/logbook.md).
+Revues hebdomadaires dans [`notes/loghebdo.md`](notes/loghebdo.md).
+Revues mensuelles dans [`notes/logmensu.md`](notes/logmensu.md).

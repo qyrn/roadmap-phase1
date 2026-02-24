@@ -1,17 +1,32 @@
-# Writeups
+# Write-ups
 
-Ce dossier contient mes writeups de challenges, labs et machines.
+Ce dossier contient mes write-ups de challenges, labs et machines.
 
-Un writeup est un résumé propre de :
-- ce que j’ai tenté
-- ce qui a marché
-- comment j’ai exploité la vulnérabilité
-- ce que j’ai appris
+---
 
-Chaque writeup est dans un fichier séparé.
-Exemples : 
-- xss-basic.md
-- sql-injection-lab-1.md
-- privesc-linux-cron.md
+## Structure d'un write-up
 
-Objectif : montrer ma progression réelle (utile pour recruteurs).
+Chaque fichier documente :
+
+- Ce qui a été tenté
+- Ce qui a fonctionné
+- Comment la vulnérabilité a été exploitée
+- Ce qui a été appris
+
+---
+
+## Fichiers
+
+| Fichier | Contenu |
+|---|---|
+| `overthewire_bandit_0-15.md` | Write-up détaillé Bandit niveaux 0 à 15 |
+| `overthewire_bandit_0-15v2.md` | Référence rapide des commandes Bandit 0–15 |
+
+---
+
+> Objectif : documenter une progression réelle et démontrable — utile pour les recruteurs.
+
+Exemples de write-ups à venir :
+- `xss-basic.md`
+- `sql-injection-lab-1.md`
+- `privesc-linux-cron.md`

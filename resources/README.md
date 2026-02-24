@@ -1,10 +1,17 @@
 # Resources
 
-Fichiers, PDF, images et documents utiles :
-- guides
-- méthodologies
-- schémas réseau
-- documents OWASP
-- feuilles de cours
+Bibliothèque personnelle de référence pour la formation en cybersécurité.
 
-Ce dossier sert de bibliothèque personnelle pour mon apprentissage.
+---
+
+## Contenu
+
+- Guides et méthodologies de pentest
+- Schémas réseau et diagrammes d'architecture
+- Documents OWASP
+- Feuilles de cours et supports pédagogiques
+- PDF de référence
+
+---
+
+> Ce dossier centralise les documents utiles à la consultation pendant les labs et les révisions.
