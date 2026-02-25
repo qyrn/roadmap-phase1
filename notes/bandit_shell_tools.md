@@ -15,6 +15,7 @@ Quick reference for commands used to solve levels 0 to 15 of Bandit (OverTheWire
 | `cat ./-` | Read a file whose name is a dash |
 | `cat "./file name"` | Read a file whose name contains spaces |
 | `file <file>` | Detect file type (text, gzip, bzip2, tar, binary…) |
+| `file ./*` | Check all files in the current directory at once |
 | `mkdir /tmp/<dir>` | Create a temp working directory (level 12) |
 | `cp <file> <dest>` | Copy a file to a writable location |
 

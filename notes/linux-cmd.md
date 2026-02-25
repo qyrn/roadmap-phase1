@@ -96,6 +96,7 @@ Creates a new directory.
 
 ```bash
 mkdir new_folder
+mkdir -p parent/child/grandchild    # create nested directories in one shot
 ```
 
 ---
@@ -247,13 +248,18 @@ Searches for a specific pattern inside files.
 ```bash
 grep "admin" file.txt
 grep -r "admin" /path
-grep -c "admin" file.txt
+grep -i "admin" file.txt
+grep -n "admin" file.txt
+grep -v "admin" file.txt
 ```
 
-| Flag | Description             |
-|------|-------------------------|
-| `-r` | Recursive search        |
-| `-c` | Count matching lines    |
+| Flag | Description                          |
+|------|--------------------------------------|
+| `-r` | Recursive search                     |
+| `-c` | Count matching lines                 |
+| `-i` | Case-insensitive search              |
+| `-n` | Show line numbers                    |
+| `-v` | Invert — show lines that do NOT match |
 
 ---
 
@@ -263,8 +269,16 @@ Sorts lines in a file alphabetically (or numerically).
 ```bash
 sort file.txt
 sort -u file.txt          # sort and remove duplicates
+sort -n file.txt          # sort numerically
+sort -r file.txt          # reverse order
 sort file.txt | uniq -u   # pipeline: keep only unique lines
 ```
+
+| Flag | Description                     |
+|------|---------------------------------|
+| `-u` | Sort and remove duplicates      |
+| `-n` | Numeric sort                    |
+| `-r` | Reverse order                   |
 
 ---
 
