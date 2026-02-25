@@ -12,7 +12,11 @@ Quick reference for commands used to solve levels 0 to 15 of Bandit (OverTheWire
 | `ls`, `ls -la` | List files (including hidden) |
 | `cd <dir>` | Change directory |
 | `cat <file>` | Display file content |
+| `cat ./-` | Read a file whose name is a dash |
+| `cat "./file name"` | Read a file whose name contains spaces |
 | `file <file>` | Detect file type (text, gzip, bzip2, tar, binary…) |
+| `mkdir /tmp/<dir>` | Create a temp working directory (level 12) |
+| `cp <file> <dest>` | Copy a file to a writable location |
 
 ---
 

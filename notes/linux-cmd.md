@@ -59,7 +59,8 @@ Best suited for small files.
 
 ```bash
 cat file.txt
-cat ./-        # read a file whose name starts with a dash
+cat ./-                      # file whose name is a dash
+cat "./file with spaces"     # file whose name contains spaces
 ```
 
 For large files, use:
