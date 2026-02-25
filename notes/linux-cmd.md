@@ -251,15 +251,19 @@ grep -r "admin" /path
 grep -i "admin" file.txt
 grep -n "admin" file.txt
 grep -v "admin" file.txt
+grep -E "error|warning" file.txt
+grep -o "[0-9]\+" file.txt
 ```
 
-| Flag | Description                          |
-|------|--------------------------------------|
-| `-r` | Recursive search                     |
-| `-c` | Count matching lines                 |
-| `-i` | Case-insensitive search              |
-| `-n` | Show line numbers                    |
+| Flag | Description                           |
+|------|---------------------------------------|
+| `-r` | Recursive search                      |
+| `-c` | Count matching lines                  |
+| `-i` | Case-insensitive search               |
+| `-n` | Show line numbers                     |
 | `-v` | Invert — show lines that do NOT match |
+| `-E` | Extended regex (alternation, `+`, `?`, etc.) |
+| `-o` | Print only the matched part, not the whole line |
 
 ---
 
