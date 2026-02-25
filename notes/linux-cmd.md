@@ -5,15 +5,16 @@
 ## Table of Contents
 
 1. [🗂️ Navigation & Files](#navigation--files)
-2. [✏️ Text Editors](#text-editors)
-3. [🔍 Search & Text Processing](#search--text-processing)
-4. [🔤 Encoding & Encoding Tools](#encoding--encoding-tools)
-5. [🗜️ Compression & Archives](#compression--archives)
-6. [🌐 Network & Transfer](#network--transfer)
-7. [⚙️ Processes & System](#processes--system)
-8. [📦 Package Management](#package-management)
-9. [⏰ Automation](#automation)
-10. [🔑 Linux Permissions](#linux-permissions)
+2. [🔧 Shell Operators](#shell-operators)
+3. [✏️ Text Editors](#text-editors)
+4. [🔍 Search & Text Processing](#search--text-processing)
+5. [🔤 Encoding & Encoding Tools](#encoding--encoding-tools)
+6. [🗜️ Compression & Archives](#compression--archives)
+7. [🌐 Network & Transfer](#network--transfer)
+8. [⚙️ Processes & System](#processes--system)
+9. [📦 Package Management](#package-management)
+10. [⏰ Automation](#automation)
+11. [🔑 Linux Permissions](#linux-permissions)
 
 ---
 
@@ -149,11 +150,48 @@ file ./*          # check all files in current directory
 
 ---
 
+### `man`
+Opens the manual page for a command.
+
+```bash
+man ls
+man find
+man chmod
+```
+
+> Always check `man` before Googling — the answer is usually there.
+
+---
+
 ### `clear`
 Clears the terminal screen.
 
 ```bash
 clear
+```
+
+---
+
+## 🔧 Shell Operators
+
+Operators control how commands interact with each other and with files.
+
+| Operator | Name | Description |
+|----------|------|-------------|
+| `\|` | Pipe | Pass the output of one command as input to another |
+| `>` | Redirect | Write output to a file (overwrites) |
+| `>>` | Append | Append output to a file |
+| `&` | Background | Run a command in the background |
+| `&&` | And | Run the second command only if the first succeeds |
+
+Examples:
+
+```bash
+ls -la | grep ".txt"          # pipe: filter ls output
+echo "hello" > file.txt       # redirect: write to file
+echo "world" >> file.txt      # append: add to file
+sleep 10 &                    # background: run without blocking
+apt update && apt upgrade     # and: update then upgrade
 ```
 
 ---
@@ -242,6 +280,18 @@ sort file.txt | uniq -c    # count occurrences of each line
 |------|--------------------------------|
 | `-u` | Print only unique lines        |
 | `-c` | Prefix each line with a count  |
+
+---
+
+### `wc`
+Counts lines, words, or characters in a file.
+
+```bash
+wc file.txt          # lines, words, characters
+wc -l file.txt       # count lines only
+wc -w file.txt       # count words only
+cat file.txt | wc -l # count lines via pipe
+```
 
 ---
 
@@ -389,6 +439,22 @@ nc localhost 30000      # connect to a local service
 
 ---
 
+### `python3 -m http.server`
+Starts a simple HTTP server in the current directory. Useful for transferring files between machines.
+
+```bash
+python3 -m http.server          # serve on port 8000
+python3 -m http.server 9000     # serve on custom port
+```
+
+Then fetch from another machine:
+
+```bash
+wget http://<ip>:8000/file.txt
+```
+
+---
+
 ## ⚙️ Processes & System
 
 ### `ps`
@@ -494,6 +560,17 @@ Cron format:
 ---
 
 ## 🔑 Linux Permissions
+
+### `chown`
+Changes the owner (and optionally the group) of a file or directory.
+
+```bash
+chown user file.txt
+chown user:group file.txt
+chown -R user folder/       # recursive
+```
+
+---
 
 ### `chmod`
 Changes the permissions of a file or directory.
