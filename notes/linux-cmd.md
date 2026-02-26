@@ -15,6 +15,7 @@
 9. [📦 Package Management](#package-management)
 10. [⏰ Automation](#automation)
 11. [🔑 Linux Permissions](#linux-permissions)
+12. [🔨 Bash Scripting](#bash-scripting)
 
 ---
 
@@ -171,6 +172,31 @@ Clears the terminal screen.
 ```bash
 clear
 ```
+
+---
+
+### `date`
+Displays the current system date and time. Supports custom output formatting.
+
+```bash
+date                       # full date and time
+date +"%Y-%m-%d"           # formatted: 2026-02-26
+date +"%H:%M:%S"           # time only: 14:35:00
+```
+
+The `+` prefix defines a custom format using strftime-style specifiers.
+
+---
+
+### `basename`
+Returns the last component of a path — the filename or directory name without the leading path.
+
+```bash
+basename /home/user/docs/report.txt    # → report.txt
+basename /home/user/docs/              # → docs
+```
+
+Useful in scripts to extract a clean name from a full path.
 
 ---
 
@@ -641,3 +667,108 @@ Example — `chmod 750 file.txt`:
 | `r`        | List directory contents               |
 | `x`        | Enter / traverse directory            |
 | `w`        | Create or delete files inside         |
+
+---
+
+## 🔨 Bash Scripting
+
+### Shebang
+
+The shebang must be alone on the first line and tells the OS which interpreter to run the script with.
+
+```bash
+#!/usr/bin/env bash
+```
+
+`/usr/bin/env bash` is more portable than `#!/bin/bash` — it resolves `bash` via `PATH` instead of assuming a fixed location.
+
+---
+
+### Variables
+
+Declare a variable without spaces around `=`. Reference it with `$VAR` (case-sensitive).
+
+```bash
+SOURCE="/path/to/dir"
+echo "$SOURCE"
+```
+
+Always quote variables to handle paths with spaces:
+
+```bash
+cp -r "$SOURCE" "$DESTINATION"
+```
+
+Concatenate variables using `${}`:
+
+```bash
+BACKUP_NAME="${DIR_NAME}_${DATE}"
+```
+
+---
+
+### Command Substitution
+
+Store the output of a command in a variable:
+
+```bash
+DATE=$(date +"%Y-%m-%d")
+DIR_NAME=$(basename "$SOURCE")
+```
+
+---
+
+### Conditionals
+
+```bash
+if [ condition ]; then
+    # commands
+fi
+```
+
+Common condition flags:
+
+| Flag | Meaning                        |
+|------|--------------------------------|
+| `-d` | Path exists and is a directory |
+| `-f` | Path exists and is a file      |
+| `-z` | String is empty                |
+| `!`  | Negate the condition           |
+
+Example — check that a directory exists before proceeding:
+
+```bash
+if [ ! -d "$SOURCE" ]; then
+    echo "Error: source directory not found."
+    exit 1
+fi
+```
+
+---
+
+### Exit Codes
+
+Every command returns an exit code when it finishes.
+
+| Code    | Meaning  |
+|---------|----------|
+| `0`     | Success  |
+| Non-zero | Error   |
+
+Use `exit` to terminate a script explicitly:
+
+```bash
+exit 0    # success
+exit 1    # error
+```
+
+If a script finishes without an explicit `exit`, it returns the exit code of the last command.
+
+---
+
+### Copying Directories
+
+```bash
+cp -r "$SOURCE" "$DESTINATION"      # copies the directory itself
+cp -r "$SOURCE"/* "$DESTINATION"    # copies only the contents
+```

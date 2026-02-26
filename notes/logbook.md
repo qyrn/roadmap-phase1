@@ -202,3 +202,41 @@
 - Redo levels 5 → 12 without any external help
 - Use `man` before Google
 - Focus on mastering text-processing commands
+
+---
+
+## 2026-02-26 — Week 2 Day 1
+
+**Duration:** ~1h
+**Mood:** 4/5
+**Focus:** Bash Scripting – Automated Backup Script
+
+### 🛠️ What I did
+- Built a complete Bash backup script from scratch
+- Implemented variables for source and destination paths
+- Used `date +"%Y-%m-%d"` for dynamic date formatting
+- Used `basename` to extract directory names cleanly
+- Added directory existence validation with `if [ ! -d ]`
+- Added error handling with `exit 1`
+- Used `mkdir -p` to safely create the destination directory
+- Used `cp -r` to copy directory contents recursively
+
+### 📚 What I learned
+- Shebang portability: `#!/usr/bin/env bash` locates bash via `PATH` instead of a hardcoded path
+- Variable declaration: `VAR=value`, referenced with `$VAR`
+- Command substitution: `VAR=$(command)` stores a command's output in a variable
+- Conditionals: `if [ condition ]; then ... fi`
+- Directory existence check: `[ -d "$DIR" ]`
+- Exit codes: `0` = success, non-zero = error
+- Always quote variables (`"$VAR"`) to handle paths with spaces
+- `cp -r "$SOURCE"` copies the directory itself; `cp -r "$SOURCE"/*` copies its contents
+- `basename /path/to/dir` returns only the last component of a path
+
+### ⚠️ Weaknesses Identified
+- Initially confused `>` (redirect) with copy logic
+- Attempted to use `|` between unrelated, independent commands
+- Minor hesitation with `date` format specifiers
+
+### ➡️ Next
+- Make the script accept arguments instead of hardcoded paths
+- Add logging capability
