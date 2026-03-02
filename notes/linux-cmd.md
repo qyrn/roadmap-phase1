@@ -16,6 +16,7 @@
 10. [⏰ Automation](#automation)
 11. [🔑 Linux Permissions](#linux-permissions)
 12. [🔨 Bash Scripting](#bash-scripting)
+13. [🔐 Security & Exploitation Tools](#security--exploitation-tools)
 
 ---
 
@@ -293,6 +294,22 @@ grep -o "[0-9]\+" file.txt
 
 ---
 
+### `cut`
+Extracts specific fields from lines based on a delimiter.
+
+```bash
+cut -d ' ' -f 1 file.txt        # extract first field, space-delimited
+echo "a b c" | cut -d ' ' -f 2  # → b
+md5sum file | cut -d ' ' -f 1   # extract only the hash
+```
+
+| Flag | Description                      |
+|------|----------------------------------|
+| `-d` | Delimiter character              |
+| `-f` | Field number to extract (1-based)|
+
+---
+
 ### `sort`
 Sorts lines in a file alphabetically (or numerically).
 
@@ -351,6 +368,17 @@ strings data.txt | grep "="    # extract and filter
 ---
 
 ## 🔤 Encoding & Encoding Tools
+
+### `md5sum`
+Computes the MD5 hash of a file or input string.
+
+```bash
+md5sum file.txt
+echo "I am user bandit23" | md5sum
+echo "I am user bandit23" | md5sum | cut -d ' ' -f 1    # hash only
+```
+
+---
 
 ### `base64`
 Encodes or decodes base64 data.
@@ -478,9 +506,45 @@ wget http://example.com/file.txt
 Opens raw TCP/UDP connections. Useful for interacting with services directly.
 
 ```bash
-nc host port            # connect to a host on a port
-nc localhost 30000      # connect to a local service
+nc host port              # connect to a host on a port
+nc localhost 30000        # connect to a local service
+nc -l -p 1234             # listen on port 1234 (TCP server mode)
+echo "data" | nc -l -p 1234 &   # serve data in background
 ```
+
+---
+
+### `openssl s_client`
+Connects to a host using SSL/TLS. Required when the service does not accept plaintext.
+
+```bash
+openssl s_client -connect localhost:30001
+openssl s_client -connect localhost:30001 -ign_eof
+```
+
+`-ign_eof` prevents the connection from closing when stdin reaches EOF — necessary when piping input.
+
+---
+
+### `nmap`
+Scans hosts and port ranges to identify open services.
+
+```bash
+nmap host                          # default scan
+nmap -p 31000-32000 localhost      # scan a specific port range
+nmap -sV localhost                 # detect service versions
+```
+
+---
+
+### `diff`
+Compares two files line by line and shows differences.
+
+```bash
+diff file1.txt file2.txt
+```
+
+Output convention: `<` = line from the first file, `>` = line from the second file.
 
 ---
 
@@ -537,9 +601,10 @@ Manages system services.
 ```bash
 systemctl start apache2
 systemctl stop apache2
-systemctl enable apache2    # auto-start on boot
+systemctl enable apache2       # auto-start on boot
 systemctl disable apache2
 systemctl status apache2
+systemctl is-active apache2    # returns "active" or "inactive"
 ```
 
 ---
@@ -672,6 +737,52 @@ Example — `chmod 750 file.txt`:
 
 ## 🔨 Bash Scripting
 
+### `seq`
+Generates a sequence of numbers.
+
+```bash
+seq 5             # 1 2 3 4 5
+seq 0 9999        # 0 to 9999
+seq 1 2 10        # 1 3 5 7 9  (step of 2)
+```
+
+Commonly used in loops for brute force or iteration:
+
+```bash
+for i in $(seq 0 9999); do echo "input $i"; done | nc localhost 30002
+```
+
+---
+
+### `printf`
+Formats and prints data — more powerful than `echo` for precise formatting.
+
+```bash
+printf '%04d\n' 7        # → 0007
+printf '%s %04d\n' "abc" 42
+```
+
+| Format | Description                        |
+|--------|------------------------------------|
+| `%d`   | Integer                            |
+| `%04d` | Integer, padded to 4 digits with zeros |
+| `%s`   | String                             |
+| `%f`   | Float                              |
+
+---
+
+### `export`
+Sets an environment variable and makes it available to child processes.
+
+```bash
+export VAR=value
+export PATH=/tmp/mydir:$PATH    # prepend a directory to PATH
+```
+
+Used in PATH Hijacking — prepending a custom directory to `$PATH` forces the shell to find fake binaries before real ones.
+
+---
+
 ### Shebang
 
 The shebang must be alone on the first line and tells the OS which interpreter to run the script with.
@@ -771,4 +882,50 @@ If a script finishes without an explicit `exit`, it returns the exit code of the
 ```bash
 cp -r "$SOURCE" "$DESTINATION"      # copies the directory itself
 cp -r "$SOURCE"/* "$DESTINATION"    # copies only the contents
+```
+
+---
+
+## 🔐 Security & Exploitation Tools
+
+### `sudo`
+Executes a command as another user (default: root). Requires the target user to be specified with `-u`.
+
+```bash
+sudo command
+sudo -u username command
+sudo -u app-admin /bin/cat /path/to/file
+```
+
+The allowed commands per user are configured in `/etc/sudoers`.
+
+---
+
+### SUID Binaries
+
+A binary with the SUID bit set runs with the **file owner's** privileges, regardless of who executes it.
+
+```bash
+ls -la ./binary    # look for 's' in owner permissions: -rwsr-xr-x
+./binary command   # runs as the file owner
+```
+
+Identifying SUID binaries:
+
+```bash
+find / -perm -4000 -type f 2>/dev/null
+```
+
+---
+
+### PATH Hijacking
+
+If a SUID binary calls a command without an absolute path (e.g., `ls` instead of `/bin/ls`), the shell resolves it via `$PATH`. Prepending a custom directory allows substituting the real binary with a fake one.
+
+```bash
+mkdir /tmp/fake
+echo -e '#!/bin/bash\ncat /path/to/secret' > /tmp/fake/ls
+chmod +x /tmp/fake/ls
+export PATH=/tmp/fake:$PATH
+./vulnerable_suid_binary
 ```

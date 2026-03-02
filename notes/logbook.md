@@ -240,3 +240,123 @@
 ### ➡️ Next
 - Make the script accept arguments instead of hardcoded paths
 - Add logging capability
+
+---
+
+## 2026-02-27 — Week 2 Day 2
+
+**Duration:** ~1h
+**Mood:** 3/5
+**Focus:** TryHackMe – Bash Scripting & Linux Shells
+
+### 🛠️ What I did
+- Completed TryHackMe – Bash Scripting module
+- Completed TryHackMe – Linux Shells module
+
+### 📚 What I learned
+
+#### Bash Scripting THM
+- Nothing new — concepts already covered when building the backup script the day before
+
+#### Linux Shells THM
+- Learned about different shell types and shell-specific features
+- Covered environment variables, shell variables, and scripting basics
+- *(Notes from this session were lost before saving)*
+
+### 🚧 Blockers
+- Frustrating to lose the Linux Shells notes — need to write them down immediately next time
+
+### ➡️ Tomorrow
+- Move on to OverTheWire Bandit — continue from level 15
+
+---
+
+## 2026-02-28 — Week 2 Day 3
+
+**Duration:** ~2h30
+**Mood:** 4/5
+**Focus:** OverTheWire – Bandit (Level 15 → 25)
+
+### 🛠️ What I did
+- Completed Bandit levels 15 to 25
+- Worked with SSL/TLS connections using `openssl s_client`
+- Used `nmap` to scan port ranges and identify SSL-speaking services
+- Retrieved and used an RSA private key
+- Bypassed a hostile `.bashrc` by passing commands directly to SSH
+- Exploited a SUID binary to read protected files
+- Set up a `nc` listener in the background to interact with a TCP daemon
+- Analyzed cron jobs to find auto-executed scripts
+- Reverse-engineered a cron script generating MD5-based filenames
+- Injected a custom script into a cron-monitored directory
+- Brute-forced a 4-digit PIN by piping all combinations to a daemon via `nc`
+
+### 📚 What I learned
+- `openssl s_client` connects to SSL/TLS services — unlike `nc` which is plaintext
+- `-ign_eof` keeps the connection alive until a response is received
+- `nmap -p PORT_RANGE localhost` scans a range of ports for open services
+- `diff` compares two files and shows differences (`<` = file1, `>` = file2)
+- SSH can execute a single command without loading a shell: `ssh user@host command`
+- SUID binaries run with the file owner's privileges — can be used to read protected files
+- `nc -l -p PORT` creates a TCP listener — `&` runs it in the background
+- `* * * * *` in cron = every minute; cron jobs can be found in `/etc/cron.d/`
+- `md5sum` generates a hash; `cut -d ' ' -f 1` extracts the hash part
+- `chmod 777` on a directory allows any user to write inside it
+- `seq 0 9999` generates a numeric sequence; `printf '%04d'` formats with leading zeros
+- Piping all PIN combinations in one `nc` session avoids 10,000 reconnections
+
+### 🚧 Blockers
+- Level 22 required understanding the exact string fed to `md5sum` — took time to reconstruct it
+
+### ➡️ Tomorrow
+- Root-Me App Script challenges
+- Start Python scripting
+
+---
+
+## 2026-03-01 — Week 2 Day 4
+
+**Duration:** ~2h
+**Mood:** 4/5
+**Focus:** Root-Me App Script + Python Scripting
+
+### 🛠️ What I did
+- Solved 4 Root-Me App Script challenges
+- Built a Python script to check service status via `systemctl`
+- Built a Python script to parse SSH auth logs and detect brute force attempts
+
+### 📚 What I learned
+
+#### Root-Me — App Script
+
+**PATH Hijacking (System 1 & 2)**
+- A SUID binary calling a command without an absolute path can be hijacked
+- Create a fake binary with the same name, put its directory first in `$PATH`
+- When the binary has arguments (`ls -lA`), `$1` can't be used — hardcode the path instead
+
+**Sudo Path Traversal**
+- A `*` wildcard in a sudo rule (`/bin/cat notes/*`) can be abused with `../` to escape the allowed directory
+- `sudo -u user /bin/cat /allowed/path/../target/.passwd` reads outside the intended scope
+
+**LaTeX Injection**
+- A script compiling user-supplied `.tex` with elevated rights can be exploited
+- `\openin` + `\read` + `\typeout` reads a file and prints its content to the compile log
+- `%` is a LaTeX comment character — `\catcode\`\%=12` must disable it if the secret starts with `%`
+
+**PowerShell Command Injection**
+- Unsanitized input in a PowerShell script allows injecting commands via `;`
+- `gc` is PowerShell's alias for `Get-Content` (equivalent of `cat`)
+
+#### Python Scripting
+- `sys.argv` — access command-line arguments
+- `subprocess.run(["cmd", "arg"], capture_output=True, text=True)` — run a shell command from Python
+- `result.stdout.strip()` — clean the command output
+- `open(file, "r")` + `for line in f` — read a file line by line
+- `line.split()` + `.index("word")` — parse structured log lines
+- `dict.get(key, default)` — count occurrences safely with a default value
+
+### 🚧 Blockers
+- LaTeX Injection took multiple attempts due to the `%` character issue
+
+### ➡️ Next
+- Publish write-up for Bandit 15–25
+- Continue Root-Me challenges

@@ -67,6 +67,74 @@
 
 ---
 
+## Week 2 — Feb 26 → Mar 1
+
+### 📊 Stats
+
+| Metric           | Value         |
+|------------------|---------------|
+| Days completed   | 4 / 7         |
+| Total time       | ~6h30         |
+| Average mood     | 3.8 / 5       |
+| Quiz score       | N/A           |
+
+---
+
+### ✅ Accomplishments
+
+- [x] Completed TryHackMe – Bash Scripting module
+- [x] Completed TryHackMe – Linux Shells module
+- [x] Completed OverTheWire – Bandit levels 15 to 25
+- [x] Solved 4 Root-Me App Script challenges (PATH Hijacking, Path Traversal, LaTeX Injection, Command Injection)
+- [x] Built 2 Python scripts: service checker and SSH log parser
+
+---
+
+### 🧠 Skills acquired
+
+- SSL/TLS connection with `openssl s_client`
+- Port scanning with `nmap`
+- File comparison with `diff`
+- Running SSH commands without loading a shell
+- SUID binary exploitation
+- Setting up a TCP listener with `nc -l -p PORT`
+- Cron job enumeration and analysis (`/etc/cron.d/`)
+- MD5 hashing and filename reconstruction
+- Script injection into cron-monitored directories
+- Brute force automation with `seq`, `printf`, and `nc`
+- PATH Hijacking — exploiting SUID binaries with unqualified command calls
+- Sudo misconfiguration — wildcard path traversal
+- LaTeX Injection — reading files via `\openin` / `\typeout`
+- PowerShell Command Injection via unsanitized input
+- Python: `sys.argv`, `subprocess.run()`, file reading, log parsing, dictionary usage
+
+---
+
+### ⚠️ Weaknesses identified
+
+- Linux Shells THM notes lost before saving — must write immediately
+- Still spending too long on levels requiring `md5sum` reconstruction
+- Need to build faster reflex for SUID binary recognition
+
+---
+
+### 📦 Deliverables published
+
+- [x] Write-up published: `overthewire_bandit_15-25.md`
+- [x] Cheatsheet updated: `bandit_shell_tools.md`
+- [x] Reference updated: `linux-cmd.md`
+- [x] Scripts pushed: `backup-script.sh`, `service_checker.py`, `log_parser.py`
+
+---
+
+### 🎯 Goals for next week
+
+1. Continue Root-Me App Script challenges
+2. Start web security track (PortSwigger / TryHackMe Web)
+3. Improve Python scripting — add argument parsing and error handling patterns
+
+---
+
 ## Template – Future weeks
 
 ### 📊 Stats
