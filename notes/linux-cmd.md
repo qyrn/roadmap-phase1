@@ -548,6 +548,71 @@ Output convention: `<` = line from the first file, `>` = line from the second fi
 
 ---
 
+### `ping`
+Sends ICMP echo requests to test whether a host is reachable.
+
+```bash
+ping hostname
+ping 8.8.8.8
+ping -4 hostname          # force IPv4 only
+ping -i 0.5 hostname      # set interval between packets (seconds)
+ping -v hostname          # verbose output
+```
+
+| Flag | Description                        |
+|------|------------------------------------|
+| `-4` | Force IPv4 requests only           |
+| `-i` | Set interval between pings         |
+| `-v` | Verbose output                     |
+
+---
+
+### `traceroute`
+Maps the path packets take to reach a destination by recording each hop.
+
+```bash
+traceroute hostname
+traceroute -i eth0 hostname   # specify the network interface
+traceroute -T hostname        # use TCP SYN instead of default UDP
+```
+
+Uses the Internet layer (IP) by default.
+
+| Flag | Description                   |
+|------|-------------------------------|
+| `-i` | Specify network interface     |
+| `-T` | Use TCP SYN packets           |
+
+---
+
+### `whois`
+Queries domain registration information and IP address ownership.
+
+```bash
+whois example.com
+whois 8.8.8.8
+```
+
+---
+
+### `dig`
+Manually queries DNS servers to resolve domain names.
+
+```bash
+dig example.com                   # standard DNS lookup
+dig example.com @8.8.8.8          # query a specific DNS server
+dig -x 8.8.8.8                    # reverse DNS lookup
+```
+
+Key sections in the output:
+
+| Section | Description                              |
+|---------|------------------------------------------|
+| ANSWER  | The resolved IP address                  |
+| TTL     | Cache duration in seconds before refresh |
+
+---
+
 ### `python3 -m http.server`
 Starts a simple HTTP server in the current directory. Useful for transferring files between machines.
 

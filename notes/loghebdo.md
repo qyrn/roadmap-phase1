@@ -11,7 +11,7 @@
 | Days completed   | 5 / 7         |
 | Total time       | ~5h           |
 | Average mood     | 4.8 / 5       |
-| Quiz score       | N/A           |
+| Quiz score       | 4 / 5         |
 
 ---
 
@@ -76,7 +76,7 @@
 | Days completed   | 4 / 7         |
 | Total time       | ~6h30         |
 | Average mood     | 3.8 / 5       |
-| Quiz score       | N/A           |
+| Quiz score       | 4 / 5         |
 
 ---
 
@@ -132,6 +132,65 @@
 1. Continue Root-Me App Script challenges
 2. Start web security track (PortSwigger / TryHackMe Web)
 3. Improve Python scripting — add argument parsing and error handling patterns
+
+---
+
+## Week 3 — Mar 2 → Mar 8
+
+### 📊 Stats
+
+| Metric           | Value         |
+|------------------|---------------|
+| Days completed   | 7 / 7         |
+| Total time       | ~7h           |
+| Average mood     | 4 / 5         |
+| Quiz score       | 4 / 5         |
+
+---
+
+### ✅ Accomplishments
+
+- [x] Completed TryHackMe – What Is Networking module
+- [x] Completed TryHackMe – Introductory Networking module
+- [x] Captured and analyzed TCP, DNS, HTTP traffic in Wireshark
+
+---
+
+### 🧠 Skills acquired
+
+- OSI model (7 layers) and TCP/IP model (4 layers) — structure and roles
+- TCP Three-Way Handshake (SYN / SYN+ACK / ACK)
+- Common port numbers (FTP, SSH, DNS, HTTP, HTTPS, RDP)
+- DNS resolution process — hosts file → cache → recursive → root → TLD → authoritative
+- DNS TTL (Time To Live) — cache expiry
+- `dig` — manual DNS queries, reading ANSWER section and TTL
+- `ping` — ICMP reachability test, flags `-4` `-i` `-v`
+- `traceroute` — path mapping, flags `-i` `-t`
+- `whois` — domain and IP ownership queries
+- Wireshark — live packet capture, filtering, TCP/DNS/HTTP analysis
+
+---
+
+### ⚠️ Weaknesses identified
+
+- OSI layers need regular review to stay solid (especially layers 2-4)
+- DNS hierarchy still requires deliberate recall effort
+
+---
+
+### 📦 Deliverables published
+
+- [x] Reference created: `network.md`
+- [x] Cheatsheet updated: `linux-cmd.md` (ping, traceroute, whois, dig)
+- [ ] Code pushed to GitHub
+
+---
+
+### 🎯 Goals for next week
+
+1. Continue Root-Me App Script challenges
+2. Start PortSwigger Web Security Academy
+3. Deepen Wireshark usage — write filters and capture analysis
 
 ---
 

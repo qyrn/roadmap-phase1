@@ -360,3 +360,230 @@
 ### ➡️ Next
 - Publish write-up for Bandit 15–25
 - Continue Root-Me challenges
+
+---
+
+## 2026-03-02 — Week 3 Day 1
+
+**Duration:** ~45min
+**Mood:** 4/5
+**Focus:** TryHackMe – What Is Networking
+
+### 🛠️ What I did
+- Completed TryHackMe – What Is Networking module
+
+### 📚 What I learned
+- Mostly consolidation — nothing fundamentally new, but good to have structured mémos for review
+- A network = two or more devices connected to share resources
+- Devices are identified by IP address and MAC address
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- OSI Model in depth
+
+---
+
+## 2026-03-03 — Week 3 Day 2
+
+**Duration:** ~1h
+**Mood:** 4/5
+**Focus:** TryHackMe – Introductory Networking (OSI Model)
+
+### 🛠️ What I did
+- Studied the OSI model in full (7 layers)
+
+### 📚 What I learned
+
+#### OSI Model (7 layers — application to physical)
+- Layer 7 Application — interface between apps and the network (browser, mail client, API)
+- Layer 6 Presentation — data format translation, encryption/decryption, compression
+- Layer 5 Session — session creation and management, allows multiple simultaneous connections
+- Layer 4 Transport — transport protocol selection (TCP vs UDP), data segmentation
+  - TCP: reliable, verifies packets, retransmits on loss — segments
+  - UDP: fast, no verification, used for streaming/VoIP — datagrams
+- Layer 3 Network — packet routing, IP addressing (logical addressing)
+- Layer 2 Data Link — LAN communication, MAC addressing (physical addressing), NIC
+- Layer 1 Physical — physical data transmission, converts bits to signals (electrical / optical / radio)
+
+Mnemonic (FR): "Alain part servir trois nachos à des péruviens"
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- TCP/IP model
+
+---
+
+## 2026-03-04 — Week 3 Day 3
+
+**Duration:** ~1h
+**Mood:** 4/5
+**Focus:** TryHackMe – Introductory Networking (TCP/IP model)
+
+### 🛠️ What I did
+- Studied the TCP/IP model and its historical context
+- Compared TCP/IP layers to OSI layers
+
+### 📚 What I learned
+
+#### TCP/IP Model (4 layers)
+- Application / Transport / Internet / Network Interface
+- TCP/IP is the real standard used on the internet — OSI is a pedagogical model
+- Standardized in 1982 by the US DoD to replace incompatible proprietary systems
+
+#### TCP vs UDP
+- TCP: reliable, verifies packets, retransmits on loss, slower
+- UDP: fast, no verification, used for streaming and VoIP
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- Three-Way Handshake + common ports
+
+---
+
+## 2026-03-05 — Week 3 Day 4
+
+**Duration:** ~45min
+**Mood:** 4/5
+**Focus:** TryHackMe – Introductory Networking (Three-Way Handshake + ports)
+
+### 🛠️ What I did
+- Analyzed the TCP Three-Way Handshake in detail
+- Mapped common port numbers to their protocols
+
+### 📚 What I learned
+
+#### Three-Way Handshake (TCP connection setup)
+1. SYN — client requests connection
+2. SYN + ACK — server accepts
+3. ACK — client confirms, connection established
+
+#### Common ports
+| Port | Protocol |
+|------|----------|
+| 21   | FTP      |
+| 22   | SSH      |
+| 43   | DNS      |
+| 80   | HTTP     |
+| 443  | HTTPS    |
+| 3389 | RDP      |
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- DNS in depth
+
+---
+
+## 2026-03-06 — Week 3 Day 5
+
+**Duration:** ~1h
+**Mood:** 4/5
+**Focus:** TryHackMe – Introductory Networking (DNS)
+
+### 🛠️ What I did
+- Studied DNS resolution process and hierarchy in depth
+- Practiced with `dig` to query DNS manually
+
+### 📚 What I learned
+
+#### DNS (Domain Name System)
+- Translates domain names to IP addresses (`www.google.com → 142.250.x.x`)
+- Resolution order:
+  1. Local hosts file (`/etc/hosts`)
+  2. DNS cache
+  3. Recursive DNS server (ISP or public like 8.8.8.8)
+  4. Root Name Server → TLD Server (.com / .org) → Authoritative Name Server
+
+#### TTL (Time To Live)
+- Tells the computer how long to cache a DNS record before re-querying
+- Example: TTL = 157 → after 157 seconds, a new DNS query is required
+
+#### dig
+- `dig domain` — standard DNS lookup
+- `dig domain @8.8.8.8` — query a specific DNS server
+- ANSWER section shows resolved IP; TTL shows cache duration
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- ping, traceroute, whois
+
+---
+
+## 2026-03-07 — Week 3 Day 6
+
+**Duration:** ~1h
+**Mood:** 4/5
+**Focus:** TryHackMe – Introductory Networking (ping / traceroute / whois)
+
+### 🛠️ What I did
+- Studied `ping`, `traceroute`, and `whois` — flags and use cases
+
+### 📚 What I learned
+
+#### ping
+- Sends ICMP echo requests to test host reachability
+- `-4` forces IPv4, `-i` sets interval between packets, `-v` verbose output
+
+#### traceroute
+- Maps the path packets take to a destination, recording each hop
+- Uses the Internet layer by default
+- `-i` specifies the interface, `-t` uses TCP SYN instead of default UDP
+
+#### whois
+- Queries domain registration info and IP address ownership
+- Predecessor to domain name resolution (pre-DNS era)
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- Wireshark practical
+
+---
+
+## 2026-03-08 — Week 3 Day 7
+
+**Duration:** ~1h30
+**Mood:** 4/5
+**Focus:** Wireshark – Live traffic capture and analysis
+
+### 🛠️ What I did
+- Installed and configured Wireshark
+- Captured a TCP Three-Way Handshake
+- Captured DNS traffic using `dig`
+- Captured HTTP traffic using `curl`
+
+### 📚 What I learned
+
+#### Wireshark
+- Open source cross-platform packet analyzer
+- Captures and inspects live network traffic in real time
+- Allows filtering by protocol, IP, port, and other criteria
+
+#### TCP Handshake capture
+- Observed SYN → SYN+ACK → ACK sequence
+- Confirms TCP connection establishment between client and server
+
+#### DNS capture
+- Generated with `dig example.com`
+- Observed: standard query (client → DNS server) + standard query response
+
+#### HTTP capture
+- Generated with `curl http://example.com`
+- Observed: `GET / HTTP/1.1` request → `200 OK` response
+
+### 🚧 Blockers
+- None
+
+### ➡️ Next
+- Continue Root-Me challenges
+- Start PortSwigger Web Security Academy
