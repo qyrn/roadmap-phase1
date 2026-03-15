@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion — NordTech Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">Nord<span>Tech</span> Solutions</a>
+    <nav>
+      <a href="/about.html">À propos</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/shop.html">Boutique</a>
+      <a href="/login.html">Connexion</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card" style="max-width: 420px; margin: 0 auto;">
+      <h1>Espace employés</h1>
+      <p>Connectez-vous avec vos identifiants NordTech.</p>
+
+      <div id="message"></div>
+
+      <input type="text" id="username" placeholder="Nom d'utilisateur">
+      <input type="password" id="password" placeholder="Mot de passe">
+      <button class="btn" onclick="doLogin()">Se connecter</button>
+    </div>
+  </main>
+
+  <footer>NordTech Solutions &copy; 2024 — Oslo, Norvège</footer>
+
+  <script>
+    async function doLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const msg = document.getElementById('message');
+
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        msg.innerHTML = '<div class="alert alert-success"><strong>Accès autorisé</strong><br>' + data.flag + '</div>';
+      } else {
+        msg.innerHTML = '<div class="alert alert-error">Identifiants incorrects. Réessayez.</div>';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie — FrameCity</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">Frame<span>City</span></a>
+    <nav>
+      <a href="/gallery.html">Galerie</a>
+      <a href="/submit.html">Soumettre</a>
+      <a href="/about.html">À propos</a>
+      <a href="/account.html">Mon compte</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h1>Galerie publique</h1>
+      <p>Les dernières photos soumises par la communauté.</p>
+      <div id="photo-grid" class="photo-grid"></div>
+    </div>
+
+    <div class="card">
+      <h2>Contenu sélectionné</h2>
+      <p>Notre sélection hebdomadaire est réservée aux membres VIP.</p>
+      <button class="btn" onclick="loadFeatured()">Voir la sélection</button>
+      <div id="featured-result" style="margin-top:1rem"></div>
+    </div>
+  </main>
+
+  <footer>FrameCity &copy; 2024</footer>
+
+  <script>
+    async function loadFeatured() {
+      const res = await fetch('/api/gallery/featured');
+      const data = await res.json();
+      const el = document.getElementById('featured-result');
+      if (res.ok) {
+        el.innerHTML = '<div class="alert alert-success"><strong>' + data.flag + '</strong></div>';
+      } else {
+        el.innerHTML = '<div class="alert alert-error">' + data.error + ' (tier actuel : <code>' + data.tier + '</code>)</div>';
+      }
+    }
+  </script>
+</body>
+</html>

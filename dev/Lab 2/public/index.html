@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 2 — Network Challenges</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #111;
+      --border: #222;
+      --text: #eee;
+      --dim: #666;
+      --green: #22c55e;
+      --red: #ef4444;
+      --blue: #3b82f6;
+      --yellow: #eab308;
+      --cyan: #06b6d4;
+      --orange: #f97316;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px;
+    }
+    .container { max-width: 780px; margin: 0 auto; }
+    header { margin-bottom: 40px; }
+    .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle { color: var(--dim); font-size: 0.9rem; }
+    .scenario {
+      background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(59,130,246,0.08));
+      border: 1px solid rgba(6,182,212,0.25);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 0.88rem;
+      color: #bbb;
+    }
+    .scenario strong { color: var(--text); }
+    .challenges { display: flex; flex-direction: column; gap: 16px; }
+    .challenge {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+    }
+    .challenge-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .n1 { background: rgba(6,182,212,0.15); color: var(--cyan); }
+    .n2 { background: rgba(59,130,246,0.15); color: var(--blue); }
+    .n3 { background: rgba(234,179,8,0.15); color: var(--yellow); }
+    .n4 { background: rgba(249,115,22,0.15); color: var(--orange); }
+    .n5 { background: rgba(239,68,68,0.15); color: var(--red); }
+    .challenge h2 { font-size: 1rem; font-weight: 600; }
+    .concept {
+      font-size: 0.75rem;
+      color: var(--dim);
+      margin-bottom: 10px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .desc { font-size: 0.88rem; color: #bbb; margin-bottom: 14px; }
+    .endpoint {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      background: #0d0d0d;
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      padding: 10px 14px;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    details { margin-top: 8px; }
+    summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      color: var(--dim);
+      user-select: none;
+    }
+    summary:hover { color: var(--text); }
+    .hint {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: #888;
+      background: #0d0d0d;
+      border-left: 2px solid #333;
+      padding: 10px 14px;
+      margin-top: 8px;
+      border-radius: 0 4px 4px 0;
+    }
+    .answer-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .answer-input {
+      flex: 1;
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 4px;
+      padding: 8px 12px;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .answer-input:focus { border-color: #444; }
+    .answer-input.correct { border-color: var(--green); background: rgba(34,197,94,0.05); }
+    .answer-input.wrong { border-color: var(--red); background: rgba(239,68,68,0.05); }
+    .answer-btn {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 4px;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 8px 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .answer-btn:hover { background: #222; }
+    .answer-result {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      margin-top: 6px;
+      min-height: 18px;
+    }
+    .answer-result.ok { color: var(--green); }
+    .answer-result.ko { color: var(--red); }
+    .challenge.solved { border-color: rgba(34,197,94,0.3); }
+    .challenge.solved .challenge-header::after {
+      content: 'résolu';
+      margin-left: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .scoreboard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .score-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .score-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--cyan);
+    }
+    .footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="label">Semaine 3 — Réseaux</div>
+      <h1>Lab 2 — Network Challenges</h1>
+      <p class="subtitle">5 challenges pour valider les concepts du module réseau</p>
+    </header>
+
+    <div class="scenario">
+      <strong>Contexte :</strong> Un serveur tourne en local sur un port non-standard.
+      Utilise les outils que tu as appris cette semaine pour le reconnaître, inspecter son trafic,
+      et extraire les 5 flags cachés.
+    </div>
+
+    <div class="scoreboard">
+      <span class="score-label">Score</span>
+      <span class="score-value" id="score">0 / 5</span>
+    </div>
+
+    <div class="challenges">
+
+      <div class="challenge">
+        <div class="challenge-header">
+          <span class="num n1">01</span>
+          <h2>Service Discovery</h2>
+        </div>
+        <div class="concept">concept : ss / netstat — connexions actives</div>
+        <p class="desc">
+          Le serveur écoute sur un port non-standard. Identifie-le avec les bons outils réseau,
+          puis récupère le flag via l'endpoint ci-dessous.
+        </p>
+        <div class="endpoint">GET http://localhost:7373/flag/1</div>
+        <details>
+          <summary>Indice</summary>
+          <div class="hint">ss -tulpn | grep node<br>netstat -tulpn | grep node</div>
+        </details>
+        <div class="answer-row">
+          <input class="answer-input" id="ans1" type="text" placeholder="FLAG{...}" autocomplete="off" />
+          <button class="answer-btn" onclick="check(1)">Valider</button>
+        </div>
+        <div class="answer-result" id="res1"></div>
+      </div>
+
+      <div class="challenge">
+        <div class="challenge-header">
+          <span class="num n2">02</span>
+          <h2>Header Hunt</h2>
+        </div>
+        <div class="concept">concept : HTTP headers — inspection de réponse</div>
+        <p class="desc">
+          Le flag de ce challenge n'est pas dans le body de la réponse.
+          Il est dans un header HTTP custom. Inspecte les headers complets.
+        </p>
+        <div class="endpoint">GET http://localhost:7373/flag/2</div>
+        <details>
+          <summary>Indice</summary>
+          <div class="hint">curl -I http://localhost:7373/flag/2<br>curl -v http://localhost:7373/flag/2</div>
+        </details>
+        <div class="answer-row">
+          <input class="answer-input" id="ans2" type="text" placeholder="FLAG{...}" autocomplete="off" />
+          <button class="answer-btn" onclick="check(2)">Valider</button>
+        </div>
+        <div class="answer-result" id="res2"></div>
+      </div>
+
+      <div class="challenge">
+        <div class="challenge-header">
+          <span class="num n3">03</span>
+          <h2>Method Matters</h2>
+        </div>
+        <div class="concept">concept : méthodes HTTP — GET vs POST</div>
+        <p class="desc">
+          Cet endpoint refuse les requêtes GET. Envoie la bonne méthode HTTP
+          avec le body JSON attendu pour obtenir le flag.
+        </p>
+        <div class="endpoint">POST http://localhost:7373/flag/3<br>Body: {"method": "POST"}</div>
+        <details>
+          <summary>Indice</summary>
+          <div class="hint">curl -X POST -H "Content-Type: application/json" \<br>     -d '{"method":"POST"}' http://localhost:7373/flag/3</div>
+        </details>
+        <div class="answer-row">
+          <input class="answer-input" id="ans3" type="text" placeholder="FLAG{...}" autocomplete="off" />
+          <button class="answer-btn" onclick="check(3)">Valider</button>
+        </div>
+        <div class="answer-result" id="res3"></div>
+      </div>
+
+      <div class="challenge">
+        <div class="challenge-header">
+          <span class="num n4">04</span>
+          <h2>Virtual Host</h2>
+        </div>
+        <div class="concept">concept : DNS — résolution de noms, Host header</div>
+        <p class="desc">
+          Ce flag n'est accessible qu'au bon hostname. DNS traduit les noms en IP —
+          ici, simule cette résolution avec le bon header HTTP.
+        </p>
+        <div class="endpoint">GET http://localhost:7373/flag/4</div>
+        <details>
+          <summary>Indice</summary>
+          <div class="hint">curl -H "Host: lab2.local" http://localhost:7373/flag/4</div>
+        </details>
+        <div class="answer-row">
+          <input class="answer-input" id="ans4" type="text" placeholder="FLAG{...}" autocomplete="off" />
+          <button class="answer-btn" onclick="check(4)">Valider</button>
+        </div>
+        <div class="answer-result" id="res4"></div>
+      </div>
+
+      <div class="challenge">
+        <div class="challenge-header">
+          <span class="num n5">05</span>
+          <h2>PIN Bruteforce</h2>
+        </div>
+        <div class="concept">concept : brute force — HTTP POST, automatisation</div>
+        <p class="desc">
+          Un formulaire est protégé par un code PIN à 4 chiffres (0000 → 9999).
+          Écris un script bash ou Python pour tester toutes les combinaisons et récupérer le flag.
+        </p>
+        <div class="endpoint">POST http://localhost:7373/flag/5<br>Body: {"pin": "XXXX"}</div>
+        <details>
+          <summary>Indice</summary>
+          <div class="hint">
+            # Bash<br>
+            for i in $(seq -w 0000 9999); do<br>
+            &nbsp;&nbsp;r=$(curl -s -X POST -H "Content-Type: application/json" \<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -d "{\"pin\":\"$i\"}" http://localhost:7373/flag/5)<br>
+            &nbsp;&nbsp;echo "$r" | grep -q "flag" && echo "$r" && break<br>
+            done
+          </div>
+        </details>
+        <div class="answer-row">
+          <input class="answer-input" id="ans5" type="text" placeholder="FLAG{...}" autocomplete="off" />
+          <button class="answer-btn" onclick="check(5)">Valider</button>
+        </div>
+        <div class="answer-result" id="res5"></div>
+      </div>
+
+    </div>
+
+    <div class="footer">lab2 · s3 networking · localhost:7373</div>
+  </div>
+
+  <script>
+    const FLAGS = {
+      1: 'FLAG{ss_tulpn_service_found}',
+      2: 'FLAG{http_headers_curl_-I}',
+      3: 'FLAG{http_POST_not_GET}',
+      4: 'FLAG{virtual_host_dns_concept}',
+      5: 'FLAG{bruteforce_pin_7431}'
+    };
+
+    const solved = new Set(
+      JSON.parse(localStorage.getItem('lab2_solved') || '[]')
+    );
+
+    function updateScore() {
+      document.getElementById('score').textContent = solved.size + ' / 5';
+    }
+
+    function check(n) {
+      const input = document.getElementById('ans' + n);
+      const result = document.getElementById('res' + n);
+      const card = input.closest('.challenge');
+      const val = input.value.trim();
+
+      if (val === FLAGS[n]) {
+        input.classList.remove('wrong');
+        input.classList.add('correct');
+        result.className = 'answer-result ok';
+        result.textContent = 'Correct.';
+        card.classList.add('solved');
+        solved.add(n);
+        localStorage.setItem('lab2_solved', JSON.stringify([...solved]));
+        updateScore();
+      } else {
+        input.classList.remove('correct');
+        input.classList.add('wrong');
+        result.className = 'answer-result ko';
+        result.textContent = 'Incorrect.';
+      }
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && e.target.classList.contains('answer-input')) {
+        const n = e.target.id.replace('ans', '');
+        check(parseInt(n));
+      }
+    });
+
+    solved.forEach(n => {
+      const input = document.getElementById('ans' + n);
+      const result = document.getElementById('res' + n);
+      const card = input.closest('.challenge');
+      input.value = FLAGS[n];
+      input.classList.add('correct');
+      result.className = 'answer-result ok';
+      result.textContent = 'Correct.';
+      card.classList.add('solved');
+    });
+
+    updateScore();
+  </script>
+</body>
+</html>

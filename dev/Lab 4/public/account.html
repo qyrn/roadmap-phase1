@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon compte — FrameCity</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">Frame<span>City</span></a>
+    <nav>
+      <a href="/gallery.html">Galerie</a>
+      <a href="/submit.html">Soumettre</a>
+      <a href="/about.html">À propos</a>
+      <a href="/account.html">Mon compte</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card" style="max-width:460px">
+      <h1>Mon compte</h1>
+      <p>Connecté en tant que : <code>guest_4821</code></p>
+      <p>Abonnement : <code>free</code></p>
+      <a href="/gallery.html" class="btn">Voir la galerie</a>
+    </div>
+  </main>
+
+  <footer>FrameCity &copy; 2024</footer>
+
+  <script>
+    localStorage.setItem('session_debug', 'FLAG{fc_localstorage_debug_token}');
+    document.cookie = 'tier=free; path=/';
+  </script>
+</body>
+</html>

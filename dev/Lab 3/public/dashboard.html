@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de bord — NordTech Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">Nord<span>Tech</span> Solutions</a>
+    <nav>
+      <a href="/about.html">À propos</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/shop.html">Boutique</a>
+      <a href="/login.html">Connexion</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="content" class="card">
+      <p>Chargement...</p>
+    </div>
+  </main>
+
+  <footer>NordTech Solutions &copy; 2024 — Oslo, Norvège</footer>
+
+  <script>
+    async function loadDashboard() {
+      const res = await fetch('/api/dashboard');
+      const data = await res.json();
+      const el = document.getElementById('content');
+
+      if (res.ok) {
+        el.innerHTML =
+          '<h1>Tableau de bord interne</h1>' +
+          '<div class="alert alert-success"><strong>' + data.flag + '</strong></div>' +
+          '<p>' + data.message + '</p>';
+      } else {
+        el.innerHTML =
+          '<h1>Accès refusé <span class="badge badge-restricted">403</span></h1>' +
+          '<div class="alert alert-error">Vous n\'avez pas les droits nécessaires.</div>' +
+          '<p>Rôle détecté : <code>' + data.role + '</code></p>';
+      }
+    }
+
+    loadDashboard();
+  </script>
+</body>
+</html>

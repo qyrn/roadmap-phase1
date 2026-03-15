@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boutique — NordTech Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">Nord<span>Tech</span> Solutions</a>
+    <nav>
+      <a href="/about.html">À propos</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/shop.html">Boutique</a>
+      <a href="/login.html">Connexion</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Boutique NordTech</h1>
+
+    <div class="card">
+      <h2>NordTech Hoodie</h2>
+      <p>Hoodie officiel NordTech en coton bio. Logo brodé. Livraison en Scandinavie uniquement.</p>
+
+      <div id="order-result"></div>
+
+      <form id="shop-form" onsubmit="submitOrder(event)">
+        <input type="hidden" name="product" value="hoodie">
+        <input type="hidden" name="price" value="59">
+        <button type="submit" class="btn">Acheter — 59 €</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>NordTech Mug</h2>
+      <p>Mug en céramique 330 ml. Disponible en noir et blanc.</p>
+
+      <form id="mug-form" onsubmit="submitOrder(event, 'mug-form')">
+        <input type="hidden" name="product" value="mug">
+        <input type="hidden" name="price" value="18">
+        <button type="submit" class="btn">Acheter — 18 €</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>NordTech Solutions &copy; 2024 — Oslo, Norvège</footer>
+
+  <script>
+    async function submitOrder(e, formId) {
+      e.preventDefault();
+      const form = document.getElementById(formId || 'shop-form');
+      const formData = new FormData(form);
+
+      const res = await fetch('/api/purchase', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          product: formData.get('product'),
+          price: formData.get('price')
+        })
+      });
+
+      const data = await res.json();
+      document.getElementById('order-result').innerHTML =
+        '<div class="alert alert-success">' +
+        data.message +
+        (data.flag ? '<br><strong>' + data.flag + '</strong>' : '') +
+        '</div>';
+    }
+  </script>
+</body>
+</html>
