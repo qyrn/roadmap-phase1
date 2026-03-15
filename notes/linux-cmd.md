@@ -527,13 +527,107 @@ openssl s_client -connect localhost:30001 -ign_eof
 ---
 
 ### `nmap`
-Scans hosts and port ranges to identify open services.
+Scans hosts and port ranges to identify open services and their versions.
 
 ```bash
-nmap host                          # default scan
-nmap -p 31000-32000 localhost      # scan a specific port range
-nmap -sV localhost                 # detect service versions
+nmap host                            # default scan
+nmap -p 31000-32000 localhost        # scan a specific port range
+nmap -p- localhost                   # scan all 65535 ports
+nmap --top-ports 20 host            # scan the 20 most common ports
 ```
+
+#### Scan types
+
+| Flag  | Type                      | Description                                           |
+|-------|---------------------------|-------------------------------------------------------|
+| `-sT` | TCP Connect               | Full Three-Way Handshake — noisier, no root needed    |
+| `-sS` | SYN Half-open             | Most popular — never completes handshake, requires root |
+| `-sU` | UDP                       | Slower — no handshake, port marked open\|filtered if no response |
+| `-sN` | NULL                      | No flags set — firewall evasion, unreliable on Windows |
+| `-sF` | FIN                       | FIN flag only — firewall evasion                      |
+| `-sX` | Xmas                      | PSH+URG+FIN flags — firewall evasion                  |
+
+#### Detection & output flags
+
+```bash
+nmap -sV host                        # service version detection
+nmap -o host                         # OS detection
+nmap -v host                         # verbose output
+nmap -vv host                        # very verbose (recommended)
+nmap -oA output host                 # output in all 3 formats
+nmap -oN output.txt host             # normal output to file
+nmap -oG output.gnmap host          # grepable output
+nmap -a host                         # aggressive mode
+nmap -T4 host                        # timing template (0-5, higher = faster = noisier)
+```
+
+#### NSE (Nmap Scripting Engine)
+
+```bash
+nmap --script vuln host              # run all vuln scripts
+nmap --script ftp-anon host          # run a specific script
+nmap --script=safe host              # run all safe scripts
+```
+
+Script categories: `safe`, `intrusive`, `vuln`, `exploit`, `auth`, `brute`, `discovery`
+
+#### Firewall evasion
+
+```bash
+nmap -Pn host                        # skip ping — useful when ICMP is blocked
+nmap -f host                         # fragment packets (smaller pieces)
+nmap --mtu 16 host                   # custom MTU (must be multiple of 8)
+nmap --scan-delay 200ms host         # delay between packets
+nmap --badsum host                   # invalid checksum to detect firewall
+nmap --data-length 25 host           # append random data to packets
+```
+
+---
+
+### `telnet`
+Opens a raw TCP connection to any port. Must manually speak the target protocol after connecting.
+
+```bash
+telnet <IP> 80         # connect to port 80 (HTTP)
+telnet <IP> 25         # connect to port 25 (SMTP)
+telnet <IP> 110        # connect to port 110 (POP3)
+```
+
+After connecting, send the appropriate protocol command:
+
+| Port | Protocol | Command to send          |
+|------|----------|--------------------------|
+| 80   | HTTP     | `GET / HTTP/1.0` + Enter×2 |
+| 25   | SMTP     | `EHLO domain`            |
+| 110  | POP3     | `USER username`          |
+
+The server response headers reveal the service name and version (`Server: nginx/1.6.2`). This technique is called **banner grabbing**.
+
+---
+
+### `nslookup`
+Queries DNS servers to resolve domain names and retrieve DNS records.
+
+```bash
+nslookup domain.com                        # standard A record lookup
+nslookup -type=A domain.com               # IPv4 address
+nslookup -type=AAAA domain.com            # IPv6 address
+nslookup -type=MX domain.com             # mail servers
+nslookup -type=MX domain.com 1.1.1.1     # MX records via specific DNS server
+nslookup -type=TXT domain.com            # TXT records
+nslookup -type=CNAME domain.com          # canonical name
+```
+
+DNS record types:
+
+| Type  | Result              |
+|-------|---------------------|
+| A     | IPv4 Addresses      |
+| AAAA  | IPv6 Addresses      |
+| CNAME | Canonical Name      |
+| MX    | Mail Servers        |
+| SOA   | Start of Authority  |
+| TXT   | TXT Records         |
 
 ---
 

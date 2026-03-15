@@ -88,9 +88,11 @@ TCP est fiable car il :
 |------|----------|-------------------------------|
 | 21   | FTP      | File Transfer Protocol        |
 | 22   | SSH      | Secure Shell                  |
-| 43   | DNS      | Domain Name System            |
+| 53   | DNS      | Domain Name System            |
 | 80   | HTTP     | Web (non chiffré)             |
 | 443  | HTTPS    | Web (chiffré / TLS)           |
+| 139  | NetBIOS  | NetBIOS Session Service       |
+| 445  | SMB      | Server Message Block          |
 | 3389 | RDP      | Remote Desktop Protocol       |
 
 ---
@@ -127,6 +129,17 @@ Authoritative Name Server → retourne l'IP réelle
 Durée pendant laquelle un enregistrement DNS peut rester en cache avant d'être re-demandé.
 
 Exemple : `TTL = 157` → après 157 secondes, une nouvelle requête DNS est nécessaire.
+
+### Types d'enregistrements DNS
+
+| Type  | Résultat             |
+|-------|----------------------|
+| A     | Adresses IPv4        |
+| AAAA  | Adresses IPv6        |
+| CNAME | Canonical Name       |
+| MX    | Serveurs de mail     |
+| SOA   | Start of Authority   |
+| TXT   | Enregistrements TXT  |
 
 ---
 

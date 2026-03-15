@@ -194,6 +194,71 @@
 
 ---
 
+## Week 4 — Mar 9 → Mar 15
+
+### 📊 Stats
+
+| Metric           | Value         |
+|------------------|---------------|
+| Days completed   | 7 / 7         |
+| Total time       | ~10h          |
+| Average mood     | 4 / 5         |
+| Quiz score       | 4 / 5         |
+
+---
+
+### ✅ Accomplishments
+
+- [x] Completed TryHackMe – NMAP module (scan types, NSE, firewall evasion)
+- [x] Completed TryHackMe – Passive Reconnaissance module
+- [x] Completed TryHackMe – Active Reconnaissance module
+- [x] Completed TryHackMe – Linux Privilege Escalation module
+
+---
+
+### 🧠 Skills acquired
+
+- NMAP scan types: TCP Connect (-sT), SYN Half-open (-sS), UDP (-sU)
+- Advanced scans: NULL (-sN), FIN (-sF), Xmas (-sX) — firewall evasion
+- NSE script categories (safe, vuln, exploit, auth, brute, discovery)
+- NMAP flags: -Pn, -f, --mtu, --scan-delay, --badsum, --data-length
+- Passive vs active reconnaissance distinction
+- DNS record types (A, AAAA, CNAME, MX, SOA, TXT)
+- nslookup — DNS lookups par type d'enregistrement
+- telnet — banner grabbing sur HTTP, SMTP, POP3
+- Netcat options et listener setup
+- Linux PrivEsc — checklist d'énumération complète
+- Exploitation /etc/shadow et /etc/passwd world-writable
+- Sudo GTFOBins (find, vim, awk, nmap, less, man, ftp)
+- LD_PRELOAD / LD_LIBRARY_PATH injection
+- Cron job PATH hijacking
+- NFS no_root_squash exploitation
+
+---
+
+### ⚠️ Weaknesses identified
+
+- Les vecteurs Linux PrivEsc sont nombreux — besoin d'une approche d'énumération systématique
+- Les scripts NSE nécessitent plus de pratique pour savoir lesquels utiliser dans quel contexte
+
+---
+
+### 📦 Deliverables published
+
+- [x] Reference updated: `network.md` (NMAP, recon, DNS record types)
+- [x] Cheatsheet updated: `linux-cmd.md` (nmap étendu, telnet, nslookup)
+- [ ] Code pushed to GitHub
+
+---
+
+### 🎯 Goals for next week
+
+1. Commencer PortSwigger Web Security Academy
+2. Pratiquer NMAP sur des labs HackTheBox ou TryHackMe
+3. Approfondir les techniques Linux PrivEsc avec des labs dédiés
+
+---
+
 ## Template – Future weeks
 
 ### 📊 Stats
