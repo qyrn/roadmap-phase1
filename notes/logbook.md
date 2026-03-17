@@ -884,3 +884,77 @@ Mnemonic (FR): "Alain part servir trois nachos à des péruviens"
 
 ### 🚧 Blockers
 - None
+
+---
+
+## 2026-03-17 — Week 5 Day 1
+
+**Duration:** ~2h
+**Mood:** 4/5
+**Focus:** TryHackMe – Python Basics (module complet)
+
+### What I did
+- Complété le module TryHackMe Python Basics en entier
+- Couvert : syntaxe de base, opérateurs, variables, conditions, boucles, fonctions, fichiers, imports
+
+### What I learned
+
+#### Print & syntaxe de base
+- `print("texte")` — affiche du texte à l'écran
+- `#` — commentaire, non exécuté par l'interpréteur
+
+#### Opérateurs mathématiques
+| Opérateur      | Syntaxe | Exemple           |
+|----------------|---------|-------------------|
+| Addition       | `+`     | `1 + 1 = 2`      |
+| Soustraction   | `-`     | `5 - 1 = 4`      |
+| Multiplication | `*`     | `10 * 10 = 100`  |
+| Division       | `/`     | `10 / 2 = 5`     |
+| Modulo         | `%`     | `10 % 2 = 0`     |
+| Exposant       | `**`    | `5**2 = 25`      |
+
+#### Opérateurs de comparaison
+| Symbole | Signification          |
+|---------|------------------------|
+| `>`     | Supérieur à            |
+| `<`     | Inférieur à            |
+| `==`    | Égal à                 |
+| `!=`    | Différent de           |
+| `>=`    | Supérieur ou égal à    |
+| `<=`    | Inférieur ou égal à    |
+
+#### Variables et types de données
+- Déclaration directe (pas de `var`/`let`/`const` comme en JS) : `age = 30`
+- Types : `str`, `int`, `float`, `bool`, `list`
+- Conversion : `str(nombre)` pour concaténer un nombre avec un string
+
+#### Opérateurs logiques et booléens
+- `and` (équivalent JS `&&`), `or` (`||`), `not` (`!`)
+- Structure conditionnelle : `if` / `elif` / `else` — l'indentation définit les blocs (pas de `{}`)
+
+#### Boucles
+- `while condition:` — tourne tant que la condition est vraie (attention aux boucles infinies)
+- `for item in liste:` — itère sur une liste
+- `for i in range(n):` — itère de 0 à n-1 (remplace le `for (let i = 0; i < n; i++)` du JS)
+
+#### Fonctions
+- `def nomFonction(param1, param2):` — définition (pas de `function` ni `{}`)
+- `return` pour renvoyer une valeur
+- Une fonction = une responsabilité
+
+#### Fichiers
+- Lecture : `open("fichier.txt", "r")` → `.read()` (tout) ou `.readlines()` (ligne par ligne)
+- Écriture : `"a"` (append) ou `"w"` (écrase/crée)
+- Context manager : `with open(...) as f:` — ferme automatiquement le fichier
+- Use case cyber : importer une wordlist, exporter des résultats de scan
+
+#### Imports
+- `import lib` puis `lib.methode()`
+- Libs utiles en pentest : `requests` (HTTP), `scapy` (paquets réseau), `pwntools` (CTF & exploit dev)
+- Installation : `pip install nom_lib`
+
+### Blockers
+- None
+
+### Tomorrow
+- Continuer avec les challenges Python ou démarrer un nouveau module
