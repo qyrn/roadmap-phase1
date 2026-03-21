@@ -1,909 +1,895 @@
-# Progress Logbook – Pentest Journey
+# 🛡️ Progress Logbook – Pentest Journey
 
 ---
 
-## 2026-02-03 — Day 1
+## 📅 2026-02-03 — Day 1
 
-**Duration:** 40 min
-**Mood:** 5/5
-**Focus:** Penetration Testing Fundamentals
+**⏱️ Durée :** 40 min
+**🎯 Focus :** Penetration Testing Fundamentals
 
-### 🛠️ What I did
-- Watched educational videos on penetration testing fundamentals
+### 🛠️ Ce que j'ai fait
+- Regardé des vidéos éducatives sur les fondamentaux du pentesting
 
-### 📚 What I learned
-- Basic concepts of penetration testing
-- Fundamental security principles
+### 🧠 Ce que j'ai appris
+- Concepts de base du penetration testing
+- Principes fondamentaux de la sécurité
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
-- Set up the work environment
+### ➡️ Demain
+- Mettre en place l'environnement de travail
 
 ---
 
-## 2026-02-04 — Day 2
+## 📅 2026-02-04 — Day 2
 
-**Duration:** 120 min
-**Mood:** 4/5
-**Focus:** Environment Setup
+**⏱️ Durée :** 120 min
+**🎯 Focus :** Environment Setup
 
-### 🛠️ What I did
-- Installed a fresh Linux distribution
-- Optimized the work environment
+### 🛠️ Ce que j'ai fait
+- Installé une distribution Linux fraîche
+- Optimisé l'environnement de travail
 
-### 📚 What I learned
-- How to set up a solid foundation for penetration testing exercises
-- Linux system best practices
+### 🧠 Ce que j'ai appris
+- Comment poser une base solide pour les exercices de pentesting
+- Bonnes pratiques système Linux
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
-- Move on to web security tutorials
+### ➡️ Demain
+- Passer aux tutoriels de sécurité web
 
 ---
 
-## 2026-02-05 — Day 3
+## 📅 2026-02-05 — Day 3
 
-**Duration:** 60 min
-**Mood:** 4/5
-**Focus:** Web Application Security
+**⏱️ Durée :** 60 min
+**🎯 Focus :** Web Application Security
 
-### 🛠️ What I did
-- Clean Ubuntu installation
-- Tutorial on React exploitation techniques
+### 🛠️ Ce que j'ai fait
+- Installation propre d'Ubuntu
+- Tutoriel sur les techniques d'exploitation React
 
-### 📚 What I learned
-- System configuration for penetration testing
-- Basics of web application exploitation (React)
+### 🧠 Ce que j'ai appris
+- Configuration système pour le pentesting
+- Bases de l'exploitation d'applications web (React)
 
 ### 🚧 Blockers
-- None
+- Aucun
 
 ---
 
-## 2026-02-18 — Day 1 (Restart)
+## 📅 2026-02-18 — Day 1 (Restart) 🔄
 
-**Duration:** 60 min
-**Mood:** 5/5
-**Focus:** Linux Fundamentals
+**⏱️ Durée :** 60 min
+**🎯 Focus :** Linux Fundamentals
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Learned basic Linux commands
-- Completed Linux Fundamentals 1 on TryHackMe
+### 🛠️ Ce que j'ai fait
+- Appris les commandes Linux de base
+- Complété Linux Fundamentals 1 sur TryHackMe
 
-### 📚 What I learned
-- Can navigate the filesystem, search files recursively, and use output redirection
+### 🧠 Ce que j'ai appris
+- Navigation dans le filesystem, recherche récursive de fichiers, redirection d'output
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
-- Deepen web exploitation techniques
+### ➡️ Demain
+- Approfondir les techniques d'exploitation web
 
 ---
 
-## 2026-02-19 — Day 2
+## 📅 2026-02-19 — Day 2
 
-**Duration:** 30 min
-**Mood:** 5/5
-**Focus:** Linux Fundamentals Part 2 (TryHackMe)
+**⏱️ Durée :** 30 min
+**🎯 Focus :** Linux Fundamentals Part 2
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Completed Tasks 1 to 5 of Linux Fundamentals Part 2
-- Practiced file management commands on the THM machine
-- Learned about SSH, file operations, and Linux permissions basics
+### 🛠️ Ce que j'ai fait
+- Complété les Tasks 1 à 5 de Linux Fundamentals Part 2
+- Pratiqué les commandes de gestion de fichiers sur la machine THM
+- Appris SSH, opérations fichiers, et bases des permissions Linux
 
-### 📚 What I learned
-- How to connect to a remote machine using SSH (network-based remote access)
-- File and directory management: `touch`, `mkdir`, `cp`, `mv`, `rm`
-- Difference between normal files and directories in `ls -l`
-- Hidden files listing with `ls -a`
-- File type identification using `file`
-- Terminal management using `clear`
-- Understanding Linux permission structure (r, w, x)
-- Permission logic on directories (read = list, execute = traverse)
-- Numeric permissions system (e.g., 777, 750)
-- Basic usage of `su` to switch users
+### 🧠 Ce que j'ai appris
+- 🔐 Connexion à une machine distante via SSH
+- 📁 Gestion fichiers et répertoires : `touch`, `mkdir`, `cp`, `mv`, `rm`
+- 📋 Différence entre fichiers et répertoires dans `ls -l`
+- 👁️ Fichiers cachés avec `ls -a`
+- 🔍 Identification de type avec `file`
+- 🔒 Structure des permissions Linux (r, w, x)
+- 🔢 Système numérique de permissions (777, 750)
+- 👤 Changement d'utilisateur avec `su`
 
 ### 🚧 Blockers
-- Minor confusion about permission semantics on directories (r vs x)
+- Légère confusion sur la sémantique des permissions sur les répertoires (r vs x)
 
 ---
 
-## 2026-02-22/23 — Days 3 and 4
+## 📅 2026-02-22/23 — Days 3 & 4
 
-**Duration:** ~1h
-**Mood:** 5/5
-**Focus:** Linux Fundamentals Part 2 & Part 3 (completed)
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Linux Fundamentals Part 2 & Part 3 (complétés)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Completed Linux Fundamentals Part 2 and Part 3 on TryHackMe
-- Practiced file transfer, process management, services, and logging
-- Reviewed Linux filesystem structure and system directories
+### 🛠️ Ce que j'ai fait
+- Complété Linux Fundamentals Part 2 et Part 3
+- Pratiqué transfert de fichiers, gestion de processus, services et logging
+- Revu la structure du filesystem Linux
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Filesystem Structure
-- `/etc` → system configuration files
-- `/var` → variable data (logs, cache, spool)
-- `/home` → user home directories
-- `/root` → root user's home directory
-- `/tmp` → temporary files storage
+#### 📂 Structure du filesystem
+- `/etc` → fichiers de configuration système
+- `/var` → données variables (logs, cache, spool)
+- `/home` → répertoires utilisateurs
+- `/root` → répertoire du superutilisateur
+- `/tmp` → fichiers temporaires
 
-#### File Editing & Transfers
-- Used `nano` to create and edit files
-- Downloaded files using `wget`
-- Transferred files between machines using `scp`
+#### 📝 Édition & transferts de fichiers
+- `nano` pour créer et éditer des fichiers
+- `wget` pour télécharger des fichiers
+- `scp` pour transférer entre machines
 
-#### Process Management
-- Viewed processes with `ps` and `ps aux`
-- Monitored live processes using `top`
-- Managed processes with `kill` (SIGTERM, SIGKILL, SIGSTOP)
-- Suspended tasks with `CTRL+Z`, resumed with `fg` / `bg`
+#### ⚙️ Gestion de processus
+- `ps` et `ps aux` pour visualiser les processus
+- `top` pour le monitoring en temps réel
+- `kill` avec SIGTERM, SIGKILL, SIGSTOP
+- `CTRL+Z` pour suspendre, `fg` / `bg` pour reprendre
 
-#### Services & System Control
-- Managed services using `systemctl` (start, stop, enable, disable, status)
+#### 🔧 Services & contrôle système
+- `systemctl` (start, stop, enable, disable, status)
 
-#### Task Automation
-- Understood cron job structure and scheduling format (`* * * * *`)
+#### ⏰ Automatisation
+- Structure et format cron job (`* * * * *`)
 
-#### Package Management
-- Learned how `apt` installs and updates packages from repositories
+#### 📦 Gestion de paquets
+- `apt` pour installer et mettre à jour depuis les dépôts
 
-#### Logging Basics
-- Read Apache access logs in `/var/log/apache2/access.log`
-- Identified:
-  - Client IP
-  - HTTP method (GET / POST)
-  - Requested resource
-  - HTTP status code
+#### 📊 Bases de logging
+- Lecture des access logs Apache dans `/var/log/apache2/access.log`
+- Identification : IP client, méthode HTTP, ressource demandée, status code
 
 ### 🚧 Blockers
-- Need deeper understanding of log analysis
-- Minor confusion around HTTP request semantics
+- Besoin d'approfondir l'analyse de logs
+- Légère confusion autour de la sémantique HTTP
 
 ---
 
-## 2026-02-24 — Day 5 🏁
+## 📅 2026-02-24 — Day 5 🏁
 
-**Duration:** ~2–3h
-**Mood:** 4/5
-**Focus:** OverTheWire – Bandit (Level 0 → 15)
+**⏱️ Durée :** ~2–3h
+**🎯 Focus :** OverTheWire – Bandit (Level 0 → 15)
+**📍 Plateforme :** OverTheWire
 
-### 🛠️ What I did
-- Completed Bandit levels 0 to 15
-- Practiced SSH authentication and private key usage
-- Applied Linux file manipulation, search and filtering techniques
-- Used networking tools (`nc`)
-- Worked with encodings and compression formats
+### 🛠️ Ce que j'ai fait
+- Complété les niveaux Bandit 0 à 15
+- Pratiqué l'authentification SSH et l'utilisation de clés privées
+- Appliqué des techniques de manipulation, recherche et filtrage de fichiers
+- Utilisé des outils réseau (`nc`)
+- Travaillé avec des encodages et formats de compression
 
-### 💪 Key Skills Reinforced
-- Handling tricky filenames (dashes, spaces, hidden files)
-- Efficient file searching using `find`
-- Filtering data with `grep`, `sort`, `uniq`
-- Understanding stdout vs stderr (`2>/dev/null`)
-- Base64 decoding
-- ROT13 decoding using `tr`
-- Working with hex dumps (`xxd -r`)
-- Identifying file types with `file`
-- Extracting compressed archives (`gzip`, `bzip2`, `tar`)
-- Using SSH private keys (`chmod 400`, `ssh -i`)
-- Basic TCP interaction using `nc`
+### 💪 Compétences renforcées
+- 📄 Gestion de noms de fichiers piégés (tirets, espaces, fichiers cachés)
+- 🔍 Recherche efficace avec `find`
+- 🔎 Filtrage avec `grep`, `sort`, `uniq`
+- 🔇 Compréhension stdout vs stderr (`2>/dev/null`)
+- 🔓 Décodage Base64 et ROT13 (`tr`)
+- 🔢 Hex dumps (`xxd -r`)
+- 📦 Extraction d'archives (`gzip`, `bzip2`, `tar`)
+- 🔑 Clés SSH privées (`chmod 400`, `ssh -i`)
+- 🌐 Interaction TCP basique avec `nc`
 
-### ⚠️ Weaknesses Identified
-- Tendency to use Google too early
-- Need stronger reflex with `man` pages
-- Slight hesitation with text processing tools
+### ⚠️ Faiblesses identifiées
+- Tendance à utiliser Google trop tôt
+- Besoin de renforcer le réflexe `man`
+- Légère hésitation avec les outils de traitement de texte
 
-### 🗺️ Action Plan
-- Redo levels 5 → 12 without any external help
-- Use `man` before Google
-- Focus on mastering text-processing commands
+### 🗺️ Plan d'action
+- Refaire les niveaux 5 → 12 sans aide externe
+- Utiliser `man` avant Google
+- Focus sur la maîtrise des commandes de traitement de texte
 
 ---
 
-## 2026-02-26 — Week 2 Day 1
+## 📅 2026-02-26 — Week 2 Day 1
 
-**Duration:** ~1h
-**Mood:** 4/5
-**Focus:** Bash Scripting – Automated Backup Script
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Bash Scripting – Script de backup automatisé
 
-### 🛠️ What I did
-- Built a complete Bash backup script from scratch
-- Implemented variables for source and destination paths
-- Used `date +"%Y-%m-%d"` for dynamic date formatting
-- Used `basename` to extract directory names cleanly
-- Added directory existence validation with `if [ ! -d ]`
-- Added error handling with `exit 1`
-- Used `mkdir -p` to safely create the destination directory
-- Used `cp -r` to copy directory contents recursively
+### 🛠️ Ce que j'ai fait
+- Construit un script Bash de backup complet from scratch
+- Implémenté variables, validation de répertoire, gestion d'erreurs
+- Utilisé `date`, `basename`, `mkdir -p`, `cp -r`
 
-### 📚 What I learned
-- Shebang portability: `#!/usr/bin/env bash` locates bash via `PATH` instead of a hardcoded path
-- Variable declaration: `VAR=value`, referenced with `$VAR`
-- Command substitution: `VAR=$(command)` stores a command's output in a variable
-- Conditionals: `if [ condition ]; then ... fi`
-- Directory existence check: `[ -d "$DIR" ]`
-- Exit codes: `0` = success, non-zero = error
-- Always quote variables (`"$VAR"`) to handle paths with spaces
-- `cp -r "$SOURCE"` copies the directory itself; `cp -r "$SOURCE"/*` copies its contents
-- `basename /path/to/dir` returns only the last component of a path
+### 🧠 Ce que j'ai appris
+- 📜 Shebang portable : `#!/usr/bin/env bash` localise bash via `PATH`
+- 📝 Déclaration de variables : `VAR=value`, référencé avec `$VAR`
+- 🔄 Substitution de commande : `VAR=$(command)`
+- 🔀 Conditionnels : `if [ condition ]; then ... fi`
+- ✅ Vérification d'existence : `[ -d "$DIR" ]`
+- 🚪 Codes de sortie : `0` = succès, non-zéro = erreur
+- 💬 Toujours quoter les variables (`"$VAR"`) pour les chemins avec espaces
+- 📂 `cp -r "$SOURCE"` copie le répertoire ; `cp -r "$SOURCE"/*` copie son contenu
+- ✂️ `basename /path/to/dir` retourne uniquement le dernier composant
 
-### ⚠️ Weaknesses Identified
-- Initially confused `>` (redirect) with copy logic
-- Attempted to use `|` between unrelated, independent commands
-- Minor hesitation with `date` format specifiers
+### ⚠️ Faiblesses identifiées
+- Confusion initiale entre `>` (redirect) et logique de copie
+- Tentative d'utiliser `|` entre commandes indépendantes
+- Hésitation avec les spécificateurs de format `date`
 
-### ➡️ Next
-- Make the script accept arguments instead of hardcoded paths
-- Add logging capability
+### ➡️ Prochaine étape
+- Accepter des arguments au lieu de chemins hardcodés
+- Ajouter du logging
 
 ---
 
-## 2026-02-27 — Week 2 Day 2
+## 📅 2026-02-27 — Week 2 Day 2
 
-**Duration:** ~1h
-**Mood:** 3/5
-**Focus:** TryHackMe – Bash Scripting & Linux Shells
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Bash Scripting & Linux Shells
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Completed TryHackMe – Bash Scripting module
-- Completed TryHackMe – Linux Shells module
+### 🛠️ Ce que j'ai fait
+- Complété TryHackMe – Bash Scripting
+- Complété TryHackMe – Linux Shells
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Bash Scripting THM
-- Nothing new — concepts already covered when building the backup script the day before
+#### 📜 Bash Scripting THM
+- Rien de nouveau — concepts déjà couverts avec le script de backup la veille
 
-#### Linux Shells THM
-- Learned about different shell types and shell-specific features
-- Covered environment variables, shell variables, and scripting basics
-- *(Notes from this session were lost before saving)*
+#### 🐚 Linux Shells THM
+- Différents types de shells et fonctionnalités spécifiques
+- Variables d'environnement, variables shell, bases du scripting
+- *(Notes perdues avant sauvegarde)*
 
 ### 🚧 Blockers
-- Frustrating to lose the Linux Shells notes — need to write them down immediately next time
+- Frustrant de perdre les notes Linux Shells — les écrire immédiatement la prochaine fois
 
-### ➡️ Tomorrow
-- Move on to OverTheWire Bandit — continue from level 15
+### ➡️ Demain
+- Continuer OverTheWire Bandit depuis le level 15
 
 ---
 
-## 2026-02-28 — Week 2 Day 3
+## 📅 2026-02-28 — Week 2 Day 3
 
-**Duration:** ~2h30
-**Mood:** 4/5
-**Focus:** OverTheWire – Bandit (Level 15 → 25)
+**⏱️ Durée :** ~2h30
+**🎯 Focus :** OverTheWire – Bandit (Level 15 → 25)
+**📍 Plateforme :** OverTheWire
 
-### 🛠️ What I did
-- Completed Bandit levels 15 to 25
-- Worked with SSL/TLS connections using `openssl s_client`
-- Used `nmap` to scan port ranges and identify SSL-speaking services
-- Retrieved and used an RSA private key
-- Bypassed a hostile `.bashrc` by passing commands directly to SSH
-- Exploited a SUID binary to read protected files
-- Set up a `nc` listener in the background to interact with a TCP daemon
-- Analyzed cron jobs to find auto-executed scripts
-- Reverse-engineered a cron script generating MD5-based filenames
-- Injected a custom script into a cron-monitored directory
-- Brute-forced a 4-digit PIN by piping all combinations to a daemon via `nc`
+### 🛠️ Ce que j'ai fait
+- Complété les niveaux Bandit 15 à 25
+- 🔐 Connexions SSL/TLS avec `openssl s_client`
+- 🔍 Scan de ports avec `nmap` pour identifier les services SSL
+- 🔑 Récupération et utilisation d'une clé RSA privée
+- 🛡️ Bypass d'un `.bashrc` hostile via commande SSH directe
+- ⚡ Exploitation d'un binaire SUID pour lire des fichiers protégés
+- 📡 Setup d'un listener `nc` en background
+- ⏰ Analyse de cron jobs et reverse-engineering de scripts
+- 💣 Brute-force d'un PIN 4 chiffres via `nc`
 
-### 📚 What I learned
-- `openssl s_client` connects to SSL/TLS services — unlike `nc` which is plaintext
-- `-ign_eof` keeps the connection alive until a response is received
-- `nmap -p PORT_RANGE localhost` scans a range of ports for open services
-- `diff` compares two files and shows differences (`<` = file1, `>` = file2)
-- SSH can execute a single command without loading a shell: `ssh user@host command`
-- SUID binaries run with the file owner's privileges — can be used to read protected files
-- `nc -l -p PORT` creates a TCP listener — `&` runs it in the background
-- `* * * * *` in cron = every minute; cron jobs can be found in `/etc/cron.d/`
-- `md5sum` generates a hash; `cut -d ' ' -f 1` extracts the hash part
-- `chmod 777` on a directory allows any user to write inside it
-- `seq 0 9999` generates a numeric sequence; `printf '%04d'` formats with leading zeros
-- Piping all PIN combinations in one `nc` session avoids 10,000 reconnections
+### 🧠 Ce que j'ai appris
+- `openssl s_client` connecte aux services SSL/TLS — contrairement à `nc` (plaintext)
+- `-ign_eof` maintient la connexion jusqu'à réception de la réponse
+- `nmap -p PORT_RANGE localhost` scanne un range de ports
+- `diff` compare deux fichiers (`<` = file1, `>` = file2)
+- SSH peut exécuter une commande sans charger un shell : `ssh user@host command`
+- Les binaires SUID tournent avec les privilèges du propriétaire
+- `nc -l -p PORT` crée un listener TCP — `&` le lance en background
+- `* * * * *` en cron = chaque minute ; cron jobs dans `/etc/cron.d/`
+- `md5sum` génère un hash ; `cut -d ' ' -f 1` extrait le hash
+- `seq 0 9999` + `printf '%04d'` pour générer toutes les combinaisons
+- Piper toutes les combinaisons en un seul `nc` évite 10 000 reconnexions
 
 ### 🚧 Blockers
-- Level 22 required understanding the exact string fed to `md5sum` — took time to reconstruct it
+- Level 22 : comprendre la chaîne exacte passée à `md5sum` a pris du temps
 
-### ➡️ Tomorrow
-- Root-Me App Script challenges
-- Start Python scripting
+### ➡️ Demain
+- Challenges Root-Me App Script
+- Démarrer le scripting Python
 
 ---
 
-## 2026-03-01 — Week 2 Day 4
+## 📅 2026-03-01 — Week 2 Day 4
 
-**Duration:** ~2h
-**Mood:** 4/5
-**Focus:** Root-Me App Script + Python Scripting
+**⏱️ Durée :** ~2h
+**🎯 Focus :** Root-Me App Script + Python Scripting
+**📍 Plateformes :** Root-Me, Python
 
-### 🛠️ What I did
-- Solved 4 Root-Me App Script challenges
-- Built a Python script to check service status via `systemctl`
-- Built a Python script to parse SSH auth logs and detect brute force attempts
+### 🛠️ Ce que j'ai fait
+- Résolu 4 challenges Root-Me App Script
+- Construit un script Python de vérification de status de services via `systemctl`
+- Construit un script Python d'analyse de logs SSH pour détecter le brute force
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Root-Me — App Script
+#### 🏴 Root-Me — App Script
 
-**PATH Hijacking (System 1 & 2)**
-- A SUID binary calling a command without an absolute path can be hijacked
-- Create a fake binary with the same name, put its directory first in `$PATH`
-- When the binary has arguments (`ls -lA`), `$1` can't be used — hardcode the path instead
+**🔀 PATH Hijacking (System 1 & 2)**
+- Un binaire SUID appelant une commande sans chemin absolu peut être hijacké
+- Créer un faux binaire avec le même nom, placer son répertoire en premier dans `$PATH`
+- Quand le binaire a des arguments (`ls -lA`), `$1` ne marche pas — hardcoder le chemin
 
-**Sudo Path Traversal**
-- A `*` wildcard in a sudo rule (`/bin/cat notes/*`) can be abused with `../` to escape the allowed directory
-- `sudo -u user /bin/cat /allowed/path/../target/.passwd` reads outside the intended scope
+**📁 Sudo Path Traversal**
+- Un wildcard `*` dans une règle sudo (`/bin/cat notes/*`) est abusable avec `../`
+- `sudo -u user /bin/cat /allowed/path/../target/.passwd` lit hors du scope prévu
 
-**LaTeX Injection**
-- A script compiling user-supplied `.tex` with elevated rights can be exploited
-- `\openin` + `\read` + `\typeout` reads a file and prints its content to the compile log
-- `%` is a LaTeX comment character — `\catcode\`\%=12` must disable it if the secret starts with `%`
+**📄 LaTeX Injection**
+- Un script compilant du `.tex` fourni par l'utilisateur avec des droits élevés est exploitable
+- `\openin` + `\read` + `\typeout` lit un fichier et affiche son contenu dans le log
+- `%` est un caractère commentaire en LaTeX — `\catcode\`\%=12` le désactive si nécessaire
 
-**PowerShell Command Injection**
-- Unsanitized input in a PowerShell script allows injecting commands via `;`
-- `gc` is PowerShell's alias for `Get-Content` (equivalent of `cat`)
+**💻 PowerShell Command Injection**
+- Un input non sanitisé dans un script PowerShell permet d'injecter via `;`
+- `gc` = alias PowerShell pour `Get-Content` (équivalent `cat`)
 
-#### Python Scripting
-- `sys.argv` — access command-line arguments
-- `subprocess.run(["cmd", "arg"], capture_output=True, text=True)` — run a shell command from Python
-- `result.stdout.strip()` — clean the command output
-- `open(file, "r")` + `for line in f` — read a file line by line
-- `line.split()` + `.index("word")` — parse structured log lines
-- `dict.get(key, default)` — count occurrences safely with a default value
+#### 🐍 Python Scripting
+- `sys.argv` — accès aux arguments CLI
+- `subprocess.run(["cmd", "arg"], capture_output=True, text=True)` — exécuter une commande shell
+- `result.stdout.strip()` — nettoyer l'output
+- `open(file, "r")` + `for line in f` — lire ligne par ligne
+- `line.split()` + `.index("word")` — parser des lignes structurées
+- `dict.get(key, default)` — compter des occurrences avec valeur par défaut
 
 ### 🚧 Blockers
-- LaTeX Injection took multiple attempts due to the `%` character issue
+- LaTeX Injection a nécessité plusieurs tentatives à cause du caractère `%`
 
-### ➡️ Next
-- Publish write-up for Bandit 15–25
-- Continue Root-Me challenges
+### ➡️ Prochaine étape
+- Publier le write-up pour Bandit 15–25
+- Continuer les challenges Root-Me
 
 ---
 
-## 2026-03-02 — Week 3 Day 1
+## 📅 2026-03-02 — Week 3 Day 1
 
-**Duration:** ~45min
-**Mood:** 4/5
-**Focus:** TryHackMe – What Is Networking
+**⏱️ Durée :** ~45min
+**🎯 Focus :** What Is Networking
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Completed TryHackMe – What Is Networking module
+### 🛠️ Ce que j'ai fait
+- Complété TryHackMe – What Is Networking
 
-### 📚 What I learned
-- Mostly consolidation — nothing fundamentally new, but good to have structured mémos for review
-- A network = two or more devices connected to share resources
-- Devices are identified by IP address and MAC address
+### 🧠 Ce que j'ai appris
+- Consolidation — rien de fondamentalement nouveau, mais bon d'avoir des mémos structurés
+- 🌐 Un réseau = deux appareils ou plus connectés pour partager des ressources
+- 🏷️ Identification par adresse IP et adresse MAC
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
-- OSI Model in depth
+### ➡️ Demain
+- Modèle OSI en profondeur
 
 ---
 
-## 2026-03-03 — Week 3 Day 2
+## 📅 2026-03-03 — Week 3 Day 2
 
-**Duration:** ~1h
-**Mood:** 4/5
-**Focus:** TryHackMe – Introductory Networking (OSI Model)
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Introductory Networking (Modèle OSI)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Studied the OSI model in full (7 layers)
+### 🛠️ Ce que j'ai fait
+- Étudié le modèle OSI en entier (7 couches)
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### OSI Model (7 layers — application to physical)
-- Layer 7 Application — interface between apps and the network (browser, mail client, API)
-- Layer 6 Presentation — data format translation, encryption/decryption, compression
-- Layer 5 Session — session creation and management, allows multiple simultaneous connections
-- Layer 4 Transport — transport protocol selection (TCP vs UDP), data segmentation
-  - TCP: reliable, verifies packets, retransmits on loss — segments
-  - UDP: fast, no verification, used for streaming/VoIP — datagrams
-- Layer 3 Network — packet routing, IP addressing (logical addressing)
-- Layer 2 Data Link — LAN communication, MAC addressing (physical addressing), NIC
-- Layer 1 Physical — physical data transmission, converts bits to signals (electrical / optical / radio)
+#### 🌐 Modèle OSI (7 couches — application → physique)
+- 7️⃣ **Application** — interface entre les apps et le réseau (navigateur, client mail, API)
+- 6️⃣ **Presentation** — traduction de format, chiffrement/déchiffrement, compression
+- 5️⃣ **Session** — création et gestion de sessions, connexions simultanées
+- 4️⃣ **Transport** — sélection du protocole (TCP vs UDP), segmentation
+  - 🔒 TCP : fiable, vérifie les paquets, retransmet en cas de perte — segments
+  - ⚡ UDP : rapide, pas de vérification, streaming/VoIP — datagrams
+- 3️⃣ **Network** — routage de paquets, adressage IP (logique)
+- 2️⃣ **Data Link** — communication LAN, adressage MAC (physique), NIC
+- 1️⃣ **Physical** — transmission physique, convertit les bits en signaux
 
-Mnemonic (FR): "Alain part servir trois nachos à des péruviens"
+🧠 Mnémonique (FR) : "Alain part servir trois nachos à des péruviens"
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
-- TCP/IP model
+### ➡️ Demain
+- Modèle TCP/IP
 
 ---
 
-## 2026-03-04 — Week 3 Day 3
+## 📅 2026-03-04 — Week 3 Day 3
 
-**Duration:** ~1h
-**Mood:** 4/5
-**Focus:** TryHackMe – Introductory Networking (TCP/IP model)
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Introductory Networking (Modèle TCP/IP)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Studied the TCP/IP model and its historical context
-- Compared TCP/IP layers to OSI layers
+### 🛠️ Ce que j'ai fait
+- Étudié le modèle TCP/IP et son contexte historique
+- Comparé les couches TCP/IP aux couches OSI
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### TCP/IP Model (4 layers)
+#### 🌐 Modèle TCP/IP (4 couches)
 - Application / Transport / Internet / Network Interface
-- TCP/IP is the real standard used on the internet — OSI is a pedagogical model
-- Standardized in 1982 by the US DoD to replace incompatible proprietary systems
+- TCP/IP = le vrai standard utilisé sur Internet — OSI = modèle pédagogique
+- Standardisé en 1982 par le DoD US pour remplacer les systèmes propriétaires incompatibles
 
-#### TCP vs UDP
-- TCP: reliable, verifies packets, retransmits on loss, slower
-- UDP: fast, no verification, used for streaming and VoIP
+#### 🔒 TCP vs ⚡ UDP
+- TCP : fiable, vérifie les paquets, retransmet en cas de perte, plus lent
+- UDP : rapide, pas de vérification, streaming et VoIP
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
-- Three-Way Handshake + common ports
+### ➡️ Demain
+- Three-Way Handshake + ports courants
 
 ---
 
-## 2026-03-05 — Week 3 Day 4
+## 📅 2026-03-05 — Week 3 Day 4
 
-**Duration:** ~45min
-**Mood:** 4/5
-**Focus:** TryHackMe – Introductory Networking (Three-Way Handshake + ports)
+**⏱️ Durée :** ~45min
+**🎯 Focus :** Introductory Networking (Three-Way Handshake + ports)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Analyzed the TCP Three-Way Handshake in detail
-- Mapped common port numbers to their protocols
+### 🛠️ Ce que j'ai fait
+- Analysé le TCP Three-Way Handshake en détail
+- Mappé les numéros de ports courants à leurs protocoles
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Three-Way Handshake (TCP connection setup)
-1. SYN — client requests connection
-2. SYN + ACK — server accepts
-3. ACK — client confirms, connection established
+#### 🤝 Three-Way Handshake (établissement de connexion TCP)
+1. 📤 **SYN** — le client demande la connexion
+2. 📥 **SYN + ACK** — le serveur accepte
+3. 📤 **ACK** — le client confirme, connexion établie
 
-#### Common ports
-| Port | Protocol |
-|------|----------|
-| 21   | FTP      |
-| 22   | SSH      |
-| 43   | DNS      |
-| 80   | HTTP     |
-| 443  | HTTPS    |
-| 3389 | RDP      |
+#### 🔌 Ports courants
+| Port | Protocole |
+|------|-----------|
+| 21   | 📂 FTP   |
+| 22   | 🔐 SSH   |
+| 53   | 🌐 DNS   |
+| 80   | 🌍 HTTP  |
+| 443  | 🔒 HTTPS |
+| 3389 | 🖥️ RDP  |
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
-- DNS in depth
+### ➡️ Demain
+- DNS en profondeur
 
 ---
 
-## 2026-03-06 — Week 3 Day 5
+## 📅 2026-03-06 — Week 3 Day 5
 
-**Duration:** ~1h
-**Mood:** 4/5
-**Focus:** TryHackMe – Introductory Networking (DNS)
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Introductory Networking (DNS)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Studied DNS resolution process and hierarchy in depth
-- Practiced with `dig` to query DNS manually
+### 🛠️ Ce que j'ai fait
+- Étudié le processus de résolution DNS et sa hiérarchie en profondeur
+- Pratiqué avec `dig` pour requêter le DNS manuellement
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### DNS (Domain Name System)
-- Translates domain names to IP addresses (`www.google.com → 142.250.x.x`)
-- Resolution order:
-  1. Local hosts file (`/etc/hosts`)
-  2. DNS cache
-  3. Recursive DNS server (ISP or public like 8.8.8.8)
+#### 🌐 DNS (Domain Name System)
+- Traduit les noms de domaine en adresses IP (`www.google.com → 142.250.x.x`)
+- 🔄 Ordre de résolution :
+  1. Fichier hosts local (`/etc/hosts`)
+  2. Cache DNS
+  3. Serveur DNS récursif (FAI ou public comme 8.8.8.8)
   4. Root Name Server → TLD Server (.com / .org) → Authoritative Name Server
 
-#### TTL (Time To Live)
-- Tells the computer how long to cache a DNS record before re-querying
-- Example: TTL = 157 → after 157 seconds, a new DNS query is required
+#### ⏳ TTL (Time To Live)
+- Indique combien de temps cacher un enregistrement DNS avant de re-requêter
+- Exemple : TTL = 157 → après 157 secondes, nouvelle requête DNS nécessaire
 
-#### dig
-- `dig domain` — standard DNS lookup
-- `dig domain @8.8.8.8` — query a specific DNS server
-- ANSWER section shows resolved IP; TTL shows cache duration
+#### 🔧 dig
+- `dig domain` — lookup DNS standard
+- `dig domain @8.8.8.8` — requêter un serveur DNS spécifique
+- La section ANSWER montre l'IP résolue ; TTL montre la durée de cache
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
+### ➡️ Demain
 - ping, traceroute, whois
 
 ---
 
-## 2026-03-07 — Week 3 Day 6
+## 📅 2026-03-07 — Week 3 Day 6
 
-**Duration:** ~1h
-**Mood:** 4/5
-**Focus:** TryHackMe – Introductory Networking (ping / traceroute / whois)
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Introductory Networking (ping / traceroute / whois)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Studied `ping`, `traceroute`, and `whois` — flags and use cases
+### 🛠️ Ce que j'ai fait
+- Étudié `ping`, `traceroute` et `whois` — flags et cas d'usage
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### ping
-- Sends ICMP echo requests to test host reachability
-- `-4` forces IPv4, `-i` sets interval between packets, `-v` verbose output
+#### 📡 ping
+- Envoie des requêtes ICMP echo pour tester l'accessibilité d'un hôte
+- `-4` force IPv4, `-i` définit l'intervalle, `-v` output verbeux
 
-#### traceroute
-- Maps the path packets take to a destination, recording each hop
-- Uses the Internet layer by default
-- `-i` specifies the interface, `-t` uses TCP SYN instead of default UDP
+#### 🗺️ traceroute
+- Mappe le chemin des paquets vers une destination, enregistre chaque saut
+- Utilise la couche Internet par défaut
+- `-i` spécifie l'interface, `-t` utilise TCP SYN au lieu d'UDP
 
-#### whois
-- Queries domain registration info and IP address ownership
-- Predecessor to domain name resolution (pre-DNS era)
+#### 🔍 whois
+- Requête les infos d'enregistrement de domaine et propriété d'adresse IP
+- Prédécesseur de la résolution DNS (ère pré-DNS)
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
-- Wireshark practical
+### ➡️ Demain
+- Pratique Wireshark
 
 ---
 
-## 2026-03-08 — Week 3 Day 7
+## 📅 2026-03-08 — Week 3 Day 7
 
-**Duration:** ~1h30
-**Mood:** 4/5
-**Focus:** Wireshark – Live traffic capture and analysis
+**⏱️ Durée :** ~1h30
+**🎯 Focus :** Wireshark – Capture et analyse de trafic en direct
 
-### 🛠️ What I did
-- Installed and configured Wireshark
-- Captured a TCP Three-Way Handshake
-- Captured DNS traffic using `dig`
-- Captured HTTP traffic using `curl`
+### 🛠️ Ce que j'ai fait
+- Installé et configuré Wireshark
+- 🤝 Capturé un TCP Three-Way Handshake
+- 🌐 Capturé du trafic DNS avec `dig`
+- 🌍 Capturé du trafic HTTP avec `curl`
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Wireshark
-- Open source cross-platform packet analyzer
-- Captures and inspects live network traffic in real time
-- Allows filtering by protocol, IP, port, and other criteria
+#### 🦈 Wireshark
+- Analyseur de paquets open source multiplateforme
+- Capture et inspecte le trafic réseau en temps réel
+- Filtrage par protocole, IP, port et autres critères
 
-#### TCP Handshake capture
-- Observed SYN → SYN+ACK → ACK sequence
-- Confirms TCP connection establishment between client and server
+#### 🤝 Capture TCP Handshake
+- Observé la séquence SYN → SYN+ACK → ACK
+- Confirme l'établissement de connexion TCP entre client et serveur
 
-#### DNS capture
-- Generated with `dig example.com`
-- Observed: standard query (client → DNS server) + standard query response
+#### 🌐 Capture DNS
+- Générée avec `dig example.com`
+- Observé : requête standard (client → serveur DNS) + réponse
 
-#### HTTP capture
-- Generated with `curl http://example.com`
-- Observed: `GET / HTTP/1.1` request → `200 OK` response
+#### 🌍 Capture HTTP
+- Générée avec `curl http://example.com`
+- Observé : requête `GET / HTTP/1.1` → réponse `200 OK`
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Next
-- Continue Root-Me challenges
-- Start PortSwigger Web Security Academy
+### ➡️ Prochaine étape
+- Continuer les challenges Root-Me
+- Démarrer PortSwigger Web Security Academy
 
 ---
 
-## 2026-03-09 — Week 4 Day 1
+## 📅 2026-03-09 — Week 4 Day 1
 
-**Duration:** ~1h30
-**Mood:** 4/5
-**Focus:** TryHackMe – NMAP (types de scans & bases)
+**⏱️ Durée :** ~1h30
+**🎯 Focus :** NMAP (types de scans & bases)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
+### 🛠️ Ce que j'ai fait
 - Étudié les trois types de scans principaux (TCP Connect, SYN, UDP)
 - Mémorisé la structure des 65535 ports et les ports courants
 - Pratiqué les options nmap en ligne de commande
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Structure des ports
+#### 🔌 Structure des ports
 - Chaque machine possède 65535 ports
 - Ports 0–1023 = well-known (protocoles réservés)
 - HTTP: 80 / HTTPS: 443 / NetBIOS: 139 / SMB: 445
 
-#### TCP Connect Scan (-sT)
+#### 🔗 TCP Connect Scan (`-sT`)
 - Complète le Three-Way Handshake complet sur chaque port
-- Plus bruyant — laisse des traces dans les logs de la cible
-- Utilisé sans accès root (quand -sS n'est pas disponible)
+- 🔊 Plus bruyant — laisse des traces dans les logs de la cible
+- Utilisé sans accès root (quand `-sS` n'est pas disponible)
 
-#### SYN "Half-open" Scan (-sS)
+#### ⚡ SYN "Half-open" Scan (`-sS`)
 - Scan le plus populaire — nécessite root/sudo
 - Envoie SYN → reçoit SYN+ACK → envoie RST (handshake incomplet)
-- Plus rapide et plus discret que -sT
+- 🤫 Plus rapide et plus discret que `-sT`
 
-#### UDP Scan (-sU)
+#### 🐢 UDP Scan (`-sU`)
 - Plus lent — pas de handshake, repose sur ICMP "port unreachable" pour les ports fermés
 - Aucune réponse → port marqué open|filtered
 - RFC 9293 définit le comportement correct du protocole TCP
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
+### ➡️ Demain
 - Types de scans avancés (NULL, FIN, Xmas) et NSE
 
 ---
 
-## 2026-03-10 — Week 4 Day 2
+## 📅 2026-03-10 — Week 4 Day 2
 
-**Duration:** ~1h30
-**Mood:** 4/5
-**Focus:** TryHackMe – NMAP (scans avancés & NSE)
+**⏱️ Durée :** ~1h30
+**🎯 Focus :** NMAP (scans avancés & NSE)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
+### 🛠️ Ce que j'ai fait
 - Étudié les scans NULL, FIN et Xmas
-- Exploré le Nmap Scripting Engine (NSE) et ses catégories de scripts
+- Exploré le Nmap Scripting Engine (NSE) et ses catégories
 - Pratiqué les flags d'output et de timing
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Types de scans avancés
-- NULL (-sN) — paquet TCP sans aucun flag ; cible envoie RST si port fermé
-- FIN (-sF) — flag FIN envoyé ; cible envoie RST si port fermé
-- Xmas (-sX) — flags PSH, URG, FIN (ressemble à un sapin en Wireshark) ; RST si fermé
-- Ces trois types sont utilisés pour l'**évasion de firewall**
-- Windows peut répondre avec RST sur tous les ports — peu fiable sur Windows
+#### 🥷 Types de scans avancés
+- **NULL** (`-sN`) — paquet TCP sans aucun flag ; RST si port fermé
+- **FIN** (`-sF`) — flag FIN envoyé ; RST si port fermé
+- **Xmas** (`-sX`) — flags PSH, URG, FIN (ressemble à un sapin en Wireshark 🎄) ; RST si fermé
+- Ces trois types servent à l'**évasion de firewall**
+- ⚠️ Windows peut répondre RST sur tous les ports — peu fiable sur Windows
 
-#### Catégories NSE
-- `safe` — aucun impact sur la cible
-- `intrusive` — peut affecter la cible
-- `vuln` — scan de vulnérabilités connues
-- `exploit` — tentative d'exploitation
-- `auth` — bypass d'authentification (ex: FTP anonyme)
-- `brute` — brute-force de credentials
-- `discovery` — interroge les services pour obtenir des infos réseau
+#### 📜 Catégories NSE
+| Catégorie     | Description                                        |
+|---------------|----------------------------------------------------|
+| `safe`        | ✅ Aucun impact sur la cible                       |
+| `intrusive`   | ⚠️ Peut affecter la cible                         |
+| `vuln`        | 🔍 Scan de vulnérabilités connues                  |
+| `exploit`     | 💣 Tentative d'exploitation                        |
+| `auth`        | 🔓 Bypass d'authentification (ex: FTP anonyme)     |
+| `brute`       | 🔑 Brute-force de credentials                      |
+| `discovery`   | 🌐 Interroge les services pour obtenir des infos   |
 
-#### Flags principaux
+#### 🎛️ Flags principaux
 - `-o` — détection d'OS
 - `-sV` — détection de version des services
-- `-v` / `-vv` — verbosité (recommandé: `-vv`)
-- `-oA` — output dans les 3 formats majeurs simultanément
+- `-v` / `-vv` — verbosité (recommandé : `-vv`)
+- `-oA` — output dans les 3 formats simultanément
 - `-oN` — output normal vers fichier
 - `-oG` — output au format grep
 - `-a` — mode agressif
-- `-T<0-5>` — timing template (plus élevé = plus rapide = plus bruyant)
+- `-T<0-5>` — timing template (+ élevé = + rapide = + bruyant)
 - `-p <port>` / `-p-` — port spécifique ou tous les 65535
 - `--script <nom>` — exécuter un script NSE spécifique
 - `--script=vuln` — exécuter tous les scripts de la catégorie vuln
 - `--top-ports <n>` — scanner les n ports les plus courants
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
+### ➡️ Demain
 - Évasion de firewall avec NMAP + Passive Reconnaissance
 
 ---
 
-## 2026-03-11 — Week 4 Day 3
+## 📅 2026-03-11 — Week 4 Day 3
 
-**Duration:** ~1h
-**Mood:** 4/5
-**Focus:** TryHackMe – NMAP (évasion firewall) + Passive Reconnaissance
+**⏱️ Durée :** ~1h
+**🎯 Focus :** NMAP (évasion firewall) + Passive Reconnaissance
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
+### 🛠️ Ce que j'ai fait
 - Complété la section évasion de firewall NMAP
-- Complété le module THM Passive Reconnaissance
+- Complété le module Passive Reconnaissance
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### NMAP — Évasion de firewall
+#### 🛡️ NMAP — Évasion de firewall
 - `-Pn` — skip le ping de découverte (utile quand ICMP est bloqué)
-- `-f` — fragmente les paquets en morceaux plus petits pour tromper l'IDS
+- `-f` — fragmente les paquets pour tromper l'IDS
 - `--mtu <n>` — taille de transmission maximum personnalisée (multiple de 8)
 - `--scan-delay <n>ms` — délai entre paquets (évasion de triggers temporels)
 - `--badsum` — checksum invalide pour détecter la présence d'un firewall
 - `--data-length <n>` — ajoute des données aléatoires aux paquets
 - Protocole bloqué par `-Pn` : ICMP
 
-#### Passive vs Active Reconnaissance
-- Passive : aucun contact direct (DNS, offres d'emploi, articles de presse)
-- Active : contact direct (connexion aux serveurs, social engineering, accès physique)
+#### 🔍 Passive vs 🎯 Active Reconnaissance
+- 🔍 Passive : aucun contact direct (DNS, offres d'emploi, articles de presse)
+- 🎯 Active : contact direct (connexion aux serveurs, social engineering, accès physique)
 
-#### Types d'enregistrements DNS
+#### 📋 Types d'enregistrements DNS
 | Type  | Résultat             |
 |-------|----------------------|
-| A     | Adresses IPv4        |
-| AAAA  | Adresses IPv6        |
-| CNAME | Canonical Name       |
-| MX    | Serveurs de mail     |
-| SOA   | Start of Authority   |
-| TXT   | Enregistrements TXT  |
+| A     | 🌐 Adresses IPv4    |
+| AAAA  | 🌐 Adresses IPv6    |
+| CNAME | 🔗 Canonical Name   |
+| MX    | 📧 Serveurs de mail |
+| SOA   | 🏛️ Start of Authority |
+| TXT   | 📝 Enregistrements TXT |
 
-#### nslookup
+#### 🔧 nslookup
 - `nslookup -type=A domain` — lookup IPv4
 - `nslookup -type=MX domain 1.1.1.1` — enregistrements MX via serveur spécifique
 - `nslookup -type=TXT domain` — enregistrements TXT
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
+### ➡️ Demain
 - Active Reconnaissance
 
 ---
 
-## 2026-03-12 — Week 4 Day 4
+## 📅 2026-03-12 — Week 4 Day 4
 
-**Duration:** ~1h
-**Mood:** 4/5
-**Focus:** TryHackMe – Active Reconnaissance
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Active Reconnaissance
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
-- Complété le module THM Active Reconnaissance
+### 🛠️ Ce que j'ai fait
+- Complété le module Active Reconnaissance
 - Pratiqué le banner grabbing avec telnet
 - Revu les options netcat et leurs cas d'usage
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### ping — détails
+#### 📡 ping — détails
 - `-s` — définit la taille des données portées par la requête ICMP echo
 - Taille de l'en-tête ICMP : 8 bytes
-- Le Firewall Windows bloque ping par défaut
+- ⚠️ Le Firewall Windows bloque ping par défaut
 
-#### Telnet pour le banner grabbing
+#### 🏷️ Telnet pour le banner grabbing
 - Telnet ouvre une connexion TCP brute — il faut parler le protocole du service manuellement
 - Port 80 → HTTP → `GET / HTTP/1.0` + deux Entrées
 - Port 25 → SMTP → `EHLO`, `MAIL FROM:`, etc.
 - Port 110 → POP3 → `USER`, `PASS`
 - Les headers de réponse révèlent le nom et la version du service (`Server: nginx/1.6.2`)
 
-#### Netcat — options
-- `-l` — mode écoute
-- `-p` — spécifier le port
-- `-n` — numérique uniquement, pas de résolution DNS
-- `-v` — output verbeux
-- `-vv` — très verbeux
-- `-k` — continuer à écouter après déconnexion du client
-- Port < 1024 nécessite root pour écouter
+#### 🔧 Netcat — options
+| Flag   | Description                                    |
+|--------|------------------------------------------------|
+| `-l`   | 👂 Mode écoute                                 |
+| `-p`   | 🔌 Spécifier le port                           |
+| `-n`   | 🔢 Numérique uniquement, pas de résolution DNS |
+| `-v`   | 📢 Output verbeux                              |
+| `-vv`  | 📢📢 Très verbeux                              |
+| `-k`   | 🔄 Continuer à écouter après déconnexion       |
+
+- ⚠️ Port < 1024 nécessite root pour écouter
 
 ### 🚧 Blockers
-- None
+- Aucun
 
-### ➡️ Tomorrow
+### ➡️ Demain
 - Module Linux PrivEsc
 
 ---
 
-## 2026-03-13 — Week 4 Day 5
+## 📅 2026-03-13 — Week 4 Day 5
 
-**Duration:** ~2h
-**Mood:** 4/5
-**Focus:** TryHackMe – Linux PrivEsc (énumération + exploitation shadow/passwd)
+**⏱️ Durée :** ~2h
+**🎯 Focus :** Linux PrivEsc (énumération + exploitation shadow/passwd)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
+### 🛠️ Ce que j'ai fait
 - Démarré le module Linux Privilege Escalation
 - Pratiqué les techniques d'énumération système
-- Exploité /etc/shadow et /etc/passwd en world-writable
+- Exploité `/etc/shadow` et `/etc/passwd` en world-writable
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Énumération
-- `uname -a` — infos système (kernel, architecture)
-- `id && whoami` — utilisateur courant
-- `cat /etc/passwd` — liste des utilisateurs
-- `sudo -l` — droits sudo de l'utilisateur courant
-- `ps aux` — processus en cours
-- `find / -perm -u=s -type f 2>/dev/null` — fichiers SUID
-- `cat /etc/crontab` — tâches cron planifiées
-- `cat ~/.*history | less` — historique des commandes
-- `cat /etc/exports` — configuration NFS
+#### 🔍 Énumération
+| Commande | Résultat |
+|----------|----------|
+| `uname -a` | 🖥️ Infos système (kernel, architecture) |
+| `id && whoami` | 👤 Utilisateur courant |
+| `cat /etc/passwd` | 👥 Liste des utilisateurs |
+| `sudo -l` | 🔐 Droits sudo de l'utilisateur courant |
+| `ps aux` | ⚙️ Processus en cours |
+| `find / -perm -u=s -type f 2>/dev/null` | 💎 Fichiers SUID |
+| `cat /etc/crontab` | ⏰ Tâches cron planifiées |
+| `cat ~/.*history \| less` | 📜 Historique des commandes |
+| `cat /etc/exports` | 📂 Configuration NFS |
 
-#### Cracker /etc/shadow
-- Extraire le hash: `grep "root" /etc/shadow > hash.txt`
-- Craquer: `john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`
-- Afficher: `john --show hash.txt`
-- John doit tourner sur **Kali**, pas sur la cible
+#### 🔓 Cracker /etc/shadow
+- Extraire le hash : `grep "root" /etc/shadow > hash.txt`
+- Craquer : `john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`
+- Afficher : `john --show hash.txt`
+- ⚠️ John doit tourner sur **Kali**, pas sur la cible
 
-#### /etc/shadow world-writable
-- Générer un hash: `mkpasswd -m sha-512 monmotdepasse`
+#### ✏️ /etc/shadow world-writable
+- Générer un hash : `mkpasswd -m sha-512 monmotdepasse`
 - Remplacer le hash root directement dans `/etc/shadow`
 - `su root`
 
-#### /etc/passwd world-writable
-- Générer un hash: `openssl passwd monmotdepasse`
-- Ajouter: `echo 'newroot:HASH:0:0:root:/root:/bin/bash' >> /etc/passwd`
+#### ✏️ /etc/passwd world-writable
+- Générer un hash : `openssl passwd monmotdepasse`
+- Ajouter : `echo 'newroot:HASH:0:0:root:/root:/bin/bash' >> /etc/passwd`
 - `su newroot`
 
 ### 🚧 Blockers
-- None
+- Aucun
 
 ---
 
-## 2026-03-14 — Week 4 Day 6
+## 📅 2026-03-14 — Week 4 Day 6
 
-**Duration:** ~1h30
-**Mood:** 4/5
-**Focus:** TryHackMe – Linux PrivEsc (GTFOBins sudo + LD_PRELOAD)
+**⏱️ Durée :** ~1h30
+**🎯 Focus :** Linux PrivEsc (GTFOBins sudo + LD_PRELOAD)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
+### 🛠️ Ce que j'ai fait
 - Exploité des permissions sudo mal configurées via GTFOBins
 - Exploité LD_PRELOAD et LD_LIBRARY_PATH pour escalader les privilèges
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Sudo — GTFOBins
+#### 🔓 Sudo — GTFOBins
 - `sudo find . -exec /bin/sh \; -quit`
 - `sudo vim -c ':!/bin/sh'`
 - `sudo awk 'BEGIN {system("/bin/sh")}'`
 - `sudo nmap --interactive` puis `!sh`
 - `sudo less /etc/passwd` puis `!/bin/sh`
-- Référence : https://gtfobins.github.io
+- 📚 Référence : https://gtfobins.github.io
 
-#### LD_PRELOAD
+#### 💉 LD_PRELOAD
 - Si `env_keep+=LD_PRELOAD` dans sudoers → injecter une shared library avant tout `sudo`
 - `gcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c`
 - `sudo LD_PRELOAD=/tmp/preload.so find`
 
-#### LD_LIBRARY_PATH
+#### 📚 LD_LIBRARY_PATH
 - `ldd /usr/sbin/apache2` — lister les bibliothèques utilisées par un binaire
 - Remplacer l'une d'elles par une version malveillante compilée dans /tmp
 - `sudo LD_LIBRARY_PATH=/tmp apache2`
 
 ### 🚧 Blockers
-- None
+- Aucun
 
 ---
 
-## 2026-03-15 — Week 4 Day 7
+## 📅 2026-03-15 — Week 4 Day 7
 
-**Duration:** ~1h30
-**Mood:** 4/5
-**Focus:** TryHackMe – Linux PrivEsc (cron hijacking + NFS)
+**⏱️ Durée :** ~1h30
+**🎯 Focus :** Linux PrivEsc (cron hijacking + NFS)
+**📍 Plateforme :** TryHackMe
 
-### 🛠️ What I did
+### 🛠️ Ce que j'ai fait
 - Exploité le PATH hijacking sur des cron jobs
-- Exploité la misconfiguration NFS no_root_squash
+- Exploité la misconfiguration NFS `no_root_squash`
 
-### 📚 What I learned
+### 🧠 Ce que j'ai appris
 
-#### Cron Jobs — PATH Hijacking
+#### ⏰ Cron Jobs — PATH Hijacking
 - `cat /etc/crontab` — vérifier si le PATH commence par un répertoire inscriptible
 - Créer un faux script avec le même nom que le binaire cron dans ce répertoire
-- Le script copie /bin/bash vers /tmp/rootbash avec le bit SUID
+- Le script copie `/bin/bash` vers `/tmp/rootbash` avec le bit SUID
 - Attendre 1 minute, puis exécuter `/tmp/rootbash -p`
-- Toujours nettoyer : `rm /tmp/rootbash && exit`
+- 🧹 Toujours nettoyer : `rm /tmp/rootbash && exit`
 
-#### NFS — no_root_squash
+#### 📂 NFS — no_root_squash
 - `cat /etc/exports` — chercher les partages avec `no_root_squash`
-- Avec cette option, root sur la machine attaquante est traité comme root sur le partage NFS
+- Avec cette option, root sur la machine attaquante = root sur le partage NFS
 - Sur Kali (en root) : monter le partage, créer un binaire SUID avec msfvenom, `chmod +xs`
 - Sur la cible : exécuter le binaire → shell root
 
-#### Recall d'énumération
+#### 🔄 Rappels d'énumération
 - `cat ~/.*history | grep -i 'mysql\|pass\|ssh'` — chercher des credentials dans l'historique
 - Toujours `exit` proprement après un shell root
-- Nettoyer les fichiers temporaires après chaque exploit
+- 🧹 Nettoyer les fichiers temporaires après chaque exploit
 
 ### 🚧 Blockers
-- None
+- Aucun
 
 ---
 
-## 2026-03-17 — Week 5 Day 1
+## 📅 2026-03-17 — Week 5 Day 1
 
-**Duration:** ~2h
-**Mood:** 4/5
-**Focus:** TryHackMe – Python Basics (module complet)
+**⏱️ Durée :** ~2h
+**🎯 Focus :** Python Basics (module complet)
+**📍 Plateforme :** TryHackMe
 
-### What I did
+### 🛠️ Ce que j'ai fait
 - Complété le module TryHackMe Python Basics en entier
 - Couvert : syntaxe de base, opérateurs, variables, conditions, boucles, fonctions, fichiers, imports
 
-### What I learned
+### 🧠 Ce que j'ai appris
 
-#### Print & syntaxe de base
+#### 🖨️ Print & syntaxe de base
 - `print("texte")` — affiche du texte à l'écran
 - `#` — commentaire, non exécuté par l'interpréteur
 
-#### Opérateurs mathématiques
+#### ➕ Opérateurs mathématiques
 | Opérateur      | Syntaxe | Exemple           |
 |----------------|---------|-------------------|
 | Addition       | `+`     | `1 + 1 = 2`      |
@@ -913,7 +899,7 @@ Mnemonic (FR): "Alain part servir trois nachos à des péruviens"
 | Modulo         | `%`     | `10 % 2 = 0`     |
 | Exposant       | `**`    | `5**2 = 25`      |
 
-#### Opérateurs de comparaison
+#### ⚖️ Opérateurs de comparaison
 | Symbole | Signification          |
 |---------|------------------------|
 | `>`     | Supérieur à            |
@@ -923,38 +909,127 @@ Mnemonic (FR): "Alain part servir trois nachos à des péruviens"
 | `>=`    | Supérieur ou égal à    |
 | `<=`    | Inférieur ou égal à    |
 
-#### Variables et types de données
+#### 📦 Variables et types de données
 - Déclaration directe (pas de `var`/`let`/`const` comme en JS) : `age = 30`
 - Types : `str`, `int`, `float`, `bool`, `list`
 - Conversion : `str(nombre)` pour concaténer un nombre avec un string
 
-#### Opérateurs logiques et booléens
+#### 🔀 Opérateurs logiques et booléens
 - `and` (équivalent JS `&&`), `or` (`||`), `not` (`!`)
 - Structure conditionnelle : `if` / `elif` / `else` — l'indentation définit les blocs (pas de `{}`)
 
-#### Boucles
+#### 🔁 Boucles
 - `while condition:` — tourne tant que la condition est vraie (attention aux boucles infinies)
 - `for item in liste:` — itère sur une liste
 - `for i in range(n):` — itère de 0 à n-1 (remplace le `for (let i = 0; i < n; i++)` du JS)
 
-#### Fonctions
+#### 🧩 Fonctions
 - `def nomFonction(param1, param2):` — définition (pas de `function` ni `{}`)
 - `return` pour renvoyer une valeur
 - Une fonction = une responsabilité
 
-#### Fichiers
+#### 📄 Fichiers
 - Lecture : `open("fichier.txt", "r")` → `.read()` (tout) ou `.readlines()` (ligne par ligne)
 - Écriture : `"a"` (append) ou `"w"` (écrase/crée)
 - Context manager : `with open(...) as f:` — ferme automatiquement le fichier
-- Use case cyber : importer une wordlist, exporter des résultats de scan
+- 🎯 Use case cyber : importer une wordlist, exporter des résultats de scan
 
-#### Imports
+#### 📥 Imports
 - `import lib` puis `lib.methode()`
 - Libs utiles en pentest : `requests` (HTTP), `scapy` (paquets réseau), `pwntools` (CTF & exploit dev)
 - Installation : `pip install nom_lib`
 
-### Blockers
-- None
+### 🚧 Blockers
+- Aucun
 
-### Tomorrow
+### ➡️ Demain
 - Continuer avec les challenges Python ou démarrer un nouveau module
+
+---
+
+## 📅 2026-03-21 — Week 5 Day 2
+
+**⏱️ Durée :** ~3h
+**🎯 Focus :** Python for Pentesters
+**📍 Plateforme :** TryHackMe
+
+### 🛠️ Ce que j'ai fait
+- Complété la room TryHackMe Python for Pentesters
+- Développé/adapté des scripts : directory enumeration, hash cracker, SSH brute force
+- Pratiqué les modules requests, socket, sys, re, hashlib, paramiko, scapy
+
+### 🧠 Ce que j'ai appris
+
+#### ⌨️ Entrée utilisateur
+- `input()` — saisie interactive pendant l'exécution
+- `sys.argv[1]` — argument passé directement en CLI
+
+#### 🔎 Regex et pattern matching
+- `re.search(r'[a-f0-9]{32}', r.text)` — chercher un pattern MD5 dans une réponse HTTP
+- Hash MD5 = 32 caractères hexadécimaux `[a-f0-9]`
+- Hash SHA-256 = 64 caractères hexadécimaux
+- `re.search` pour des patterns, `in` pour des mots exacts
+
+#### 🔐 Hashing et cracking
+- `hashlib.md5()` / `hashlib.sha256()` pour générer des hashes
+- Hash cracking = comparer des hashes générés depuis une wordlist avec le hash cible (pas de "reverse", juste de la comparaison)
+
+#### 💀 Kill Chain
+- Lateral Movement = phase où PSexec est utilisé (déjà dans le réseau, déplacement d'une machine à l'autre)
+
+#### 🐍 Modules Python vus
+
+| Module   | Usage                                       |
+|----------|---------------------------------------------|
+| requests | 🌐 Requêtes HTTP (`requests.get()`)         |
+| socket   | 🔌 Connexions TCP bas niveau (port scanner) |
+| sys      | ⚙️ `sys.argv[]`, `sys.stdout.flush()`      |
+| re       | 🔎 Regex pour chercher des patterns         |
+| hashlib  | 🔐 Générer des hashes MD5/SHA-256           |
+| paramiko | 🔑 Connexions SSH (brute force)             |
+| scapy    | 📡 Créer des paquets réseau (ARP)           |
+| keyboard | ⌨️ Enregistrer/rejouer des frappes clavier  |
+| pyfiglet | 🎨 Bannières ASCII (cosmétique)             |
+| py2exe   | 📦 Convertir scripts Python en .exe Windows |
+
+### 📜 Scripts développés / adaptés
+
+#### 🔍 Directory enumeration
+- Charger une wordlist, construire des URLs, vérifier status 200
+- Adapter la condition pour chercher du contenu spécifique :
+  `if "username" in r.text` — trouver page de login/userlist
+  `if re.search(r'[a-f0-9]{32}', r.text)` — trouver un hash caché
+
+#### 🔓 Hash cracker
+- Lire une wordlist, hasher chaque ligne, comparer au hash cible
+- Adapter `hashlib.md5` → `hashlib.sha256` selon le type de hash
+
+#### 🔑 SSH brute force
+- Fonction `ssh_connect()` avec paramiko
+- code=0 si auth réussie, code=1 si échec
+- Itérer sur une wordlist jusqu'à trouver le bon password
+
+### ❌ Erreurs faites
+- Typo `passwsord` dans paramiko → erreur keyword argument
+- `def (password)` sans nom de fonction → SyntaxError
+- `input_file.close()` sur une variable inexistante → NameError
+- `reponse` vs `response` → NameError silencieux dans le flux
+- Oublier de passer l'IP en argument → IndexError `sys.argv`
+
+### 💡 Réflexes à garder
+- Toujours vérifier la cohérence des noms de variables (`response` vs `reponse` → bug silencieux)
+- `count += 1` ≠ `count = 1` — ne jamais réassigner un compteur
+- L'indentation Python = structure du code, une erreur = bug logique
+- Filtrer sur status 200 (valide) plutôt que 404 (invalide)
+- Penser à `| grep` pour filtrer un output volumineux
+
+### 🔌 Protocoles / ports à retenir
+- 🔐 SSH → TCP 22
+- 🌐 DNS → utilisable pour énumération de sous-domaines
+- 📡 ARP → découverte réseau local (Scapy)
+
+### 🏆 Résultat final
+- Trouvé page privée : `private.html`
+- Trouvé page login avec username : `tiffany`
+- Cracké password SSH : `trustno1`
+- Lu `flag.txt` via SSH connecté en tant que tiffany
