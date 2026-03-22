@@ -259,6 +259,67 @@
 
 ---
 
+## 🗓️ Week 5 — 17 → 22 mars 2026
+
+### 📊 Stats
+
+| Métrique              | Valeur        |
+|-----------------------|---------------|
+| 📅 Jours complétés   | 3 / 7         |
+| ⏱️ Temps total       | ~8h           |
+| 😊 Humeur moyenne    | 4 / 5         |
+| 📝 Score quiz        | 4 / 5         |
+
+---
+
+### ✅ Accomplissements
+
+- [x] 🐍 Complété TryHackMe – Python Basics (module complet)
+- [x] 🐍 Complété TryHackMe – Python for Pentesters
+- [x] 🔧 Construit un port scanner Python from scratch (socket, threading, argparse, banner grabbing)
+- [x] 🔧 Développé/adapté 3 scripts offensifs : directory enumeration, hash cracker, SSH brute force
+
+---
+
+### 🧠 Compétences acquises
+
+- 🐍 Python fondamentaux : variables, types, conditions, boucles, fonctions, fichiers, imports
+- 🌐 `requests` — requêtes HTTP, vérification de status codes, analyse de contenu
+- 🔌 `socket` — connexions TCP bas niveau, `connect_ex()` pour scan de ports
+- 🔎 `re` — regex pour détecter des patterns (hashes MD5/SHA-256 dans des réponses HTTP)
+- 🔐 `hashlib` — génération de hashes MD5/SHA-256, cracking par comparaison wordlist
+- 🔑 `paramiko` — connexions SSH, brute force de credentials
+- 📡 `scapy` — création de paquets réseau (ARP)
+- 🧵 `threading` + `Semaphore` — scan parallèle avec limitation de threads actifs
+- ⚙️ `argparse` — parsing d'arguments CLI (`--host`, `--start`, `--end`)
+- 🏷️ Banner grabbing — identification de services et versions après connexion
+
+---
+
+### ⚠️ Faiblesses identifiées
+
+- 🐛 Incohérence de nommage de variables (`response` vs `reponse`) — source de bugs silencieux
+- 🔌 Placement du socket dans la boucle — créer un nouveau socket par connexion
+- 🧵 Gestion des threads sans Semaphore → `Too many open files`
+
+---
+
+### 📦 Livrables publiés
+
+- [x] 🔧 Script publié : port scanner Python (socket + threading + argparse + banner grabbing)
+- [x] 📋 Logbook mis à jour (W5D1 à W5D3)
+- [ ] 🚀 Code poussé sur GitHub
+
+---
+
+### 🎯 Objectifs semaine suivante
+
+1. Démarrer PortSwigger Web Security Academy
+2. Approfondir les scripts Python offensifs — ajouter des fonctionnalités au port scanner
+3. Pratiquer NMAP + Python ensemble sur des labs
+
+---
+
 ## 📋 Template – Semaines futures
 
 ### 📊 Stats

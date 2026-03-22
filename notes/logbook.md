@@ -1,5 +1,13 @@
 # 🛡️ Progress Logbook – Pentest Journey
 
+> [Semaine 1](#-semaine-1--setup--fondations-0203--0224) | [Semaine 2](#-semaine-2--scripting--challenges-0226--0301) | [Semaine 3](#-semaine-3--networking-0302--0308) | [Semaine 4](#-semaine-4--scanning--privesc-0309--0315) | [Semaine 5](#-semaine-5--python-offensif-0317--0322)
+>
+> *Les liens fonctionnent sur GitHub / VS Code Markdown Preview*
+
+---
+
+# 📌 SEMAINE 1 — Setup & Fondations (02/03 – 02/24)
+
 ---
 
 ## 📅 2026-02-03 — Day 1
@@ -13,12 +21,6 @@
 ### 🧠 Ce que j'ai appris
 - Concepts de base du penetration testing
 - Principes fondamentaux de la sécurité
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Mettre en place l'environnement de travail
 
 ---
 
@@ -35,12 +37,6 @@
 - Comment poser une base solide pour les exercices de pentesting
 - Bonnes pratiques système Linux
 
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Passer aux tutoriels de sécurité web
-
 ---
 
 ## 📅 2026-02-05 — Day 3
@@ -56,9 +52,6 @@
 - Configuration système pour le pentesting
 - Bases de l'exploitation d'applications web (React)
 
-### 🚧 Blockers
-- Aucun
-
 ---
 
 ## 📅 2026-02-18 — Day 1 (Restart) 🔄
@@ -73,12 +66,6 @@
 
 ### 🧠 Ce que j'ai appris
 - Navigation dans le filesystem, recherche récursive de fichiers, redirection d'output
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Approfondir les techniques d'exploitation web
 
 ---
 
@@ -102,9 +89,6 @@
 - 🔒 Structure des permissions Linux (r, w, x)
 - 🔢 Système numérique de permissions (777, 750)
 - 👤 Changement d'utilisateur avec `su`
-
-### 🚧 Blockers
-- Légère confusion sur la sémantique des permissions sur les répertoires (r vs x)
 
 ---
 
@@ -152,10 +136,6 @@
 - Lecture des access logs Apache dans `/var/log/apache2/access.log`
 - Identification : IP client, méthode HTTP, ressource demandée, status code
 
-### 🚧 Blockers
-- Besoin d'approfondir l'analyse de logs
-- Légère confusion autour de la sémantique HTTP
-
 ---
 
 ## 📅 2026-02-24 — Day 5 🏁
@@ -171,7 +151,7 @@
 - Utilisé des outils réseau (`nc`)
 - Travaillé avec des encodages et formats de compression
 
-### 💪 Compétences renforcées
+### 🧠 Ce que j'ai appris
 - 📄 Gestion de noms de fichiers piégés (tirets, espaces, fichiers cachés)
 - 🔍 Recherche efficace avec `find`
 - 🔎 Filtrage avec `grep`, `sort`, `uniq`
@@ -182,15 +162,9 @@
 - 🔑 Clés SSH privées (`chmod 400`, `ssh -i`)
 - 🌐 Interaction TCP basique avec `nc`
 
-### ⚠️ Faiblesses identifiées
-- Tendance à utiliser Google trop tôt
-- Besoin de renforcer le réflexe `man`
-- Légère hésitation avec les outils de traitement de texte
+---
 
-### 🗺️ Plan d'action
-- Refaire les niveaux 5 → 12 sans aide externe
-- Utiliser `man` avant Google
-- Focus sur la maîtrise des commandes de traitement de texte
+# 📌 SEMAINE 2 — Scripting & Challenges (02/26 – 03/01)
 
 ---
 
@@ -215,15 +189,6 @@
 - 📂 `cp -r "$SOURCE"` copie le répertoire ; `cp -r "$SOURCE"/*` copie son contenu
 - ✂️ `basename /path/to/dir` retourne uniquement le dernier composant
 
-### ⚠️ Faiblesses identifiées
-- Confusion initiale entre `>` (redirect) et logique de copie
-- Tentative d'utiliser `|` entre commandes indépendantes
-- Hésitation avec les spécificateurs de format `date`
-
-### ➡️ Prochaine étape
-- Accepter des arguments au lieu de chemins hardcodés
-- Ajouter du logging
-
 ---
 
 ## 📅 2026-02-27 — Week 2 Day 2
@@ -245,12 +210,6 @@
 - Différents types de shells et fonctionnalités spécifiques
 - Variables d'environnement, variables shell, bases du scripting
 - *(Notes perdues avant sauvegarde)*
-
-### 🚧 Blockers
-- Frustrant de perdre les notes Linux Shells — les écrire immédiatement la prochaine fois
-
-### ➡️ Demain
-- Continuer OverTheWire Bandit depuis le level 15
 
 ---
 
@@ -284,20 +243,13 @@
 - `seq 0 9999` + `printf '%04d'` pour générer toutes les combinaisons
 - Piper toutes les combinaisons en un seul `nc` évite 10 000 reconnexions
 
-### 🚧 Blockers
-- Level 22 : comprendre la chaîne exacte passée à `md5sum` a pris du temps
-
-### ➡️ Demain
-- Challenges Root-Me App Script
-- Démarrer le scripting Python
-
 ---
 
 ## 📅 2026-03-01 — Week 2 Day 4
 
 **⏱️ Durée :** ~2h
 **🎯 Focus :** Root-Me App Script + Python Scripting
-**📍 Plateformes :** Root-Me, Python
+**📍 Plateforme :** Root-Me, Python
 
 ### 🛠️ Ce que j'ai fait
 - Résolu 4 challenges Root-Me App Script
@@ -334,12 +286,9 @@
 - `line.split()` + `.index("word")` — parser des lignes structurées
 - `dict.get(key, default)` — compter des occurrences avec valeur par défaut
 
-### 🚧 Blockers
-- LaTeX Injection a nécessité plusieurs tentatives à cause du caractère `%`
+---
 
-### ➡️ Prochaine étape
-- Publier le write-up pour Bandit 15–25
-- Continuer les challenges Root-Me
+# 📌 SEMAINE 3 — Networking (03/02 – 03/08)
 
 ---
 
@@ -356,12 +305,6 @@
 - Consolidation — rien de fondamentalement nouveau, mais bon d'avoir des mémos structurés
 - 🌐 Un réseau = deux appareils ou plus connectés pour partager des ressources
 - 🏷️ Identification par adresse IP et adresse MAC
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Modèle OSI en profondeur
 
 ---
 
@@ -389,12 +332,6 @@
 
 🧠 Mnémonique (FR) : "Alain part servir trois nachos à des péruviens"
 
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Modèle TCP/IP
-
 ---
 
 ## 📅 2026-03-04 — Week 3 Day 3
@@ -417,12 +354,6 @@
 #### 🔒 TCP vs ⚡ UDP
 - TCP : fiable, vérifie les paquets, retransmet en cas de perte, plus lent
 - UDP : rapide, pas de vérification, streaming et VoIP
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Three-Way Handshake + ports courants
 
 ---
 
@@ -452,12 +383,6 @@
 | 80   | 🌍 HTTP  |
 | 443  | 🔒 HTTPS |
 | 3389 | 🖥️ RDP  |
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- DNS en profondeur
 
 ---
 
@@ -490,12 +415,6 @@
 - `dig domain @8.8.8.8` — requêter un serveur DNS spécifique
 - La section ANSWER montre l'IP résolue ; TTL montre la durée de cache
 
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- ping, traceroute, whois
-
 ---
 
 ## 📅 2026-03-07 — Week 3 Day 6
@@ -521,12 +440,6 @@
 #### 🔍 whois
 - Requête les infos d'enregistrement de domaine et propriété d'adresse IP
 - Prédécesseur de la résolution DNS (ère pré-DNS)
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Pratique Wireshark
 
 ---
 
@@ -560,12 +473,9 @@
 - Générée avec `curl http://example.com`
 - Observé : requête `GET / HTTP/1.1` → réponse `200 OK`
 
-### 🚧 Blockers
-- Aucun
+---
 
-### ➡️ Prochaine étape
-- Continuer les challenges Root-Me
-- Démarrer PortSwigger Web Security Academy
+# 📌 SEMAINE 4 — Scanning & PrivEsc (03/09 – 03/15)
 
 ---
 
@@ -601,12 +511,6 @@
 - Plus lent — pas de handshake, repose sur ICMP "port unreachable" pour les ports fermés
 - Aucune réponse → port marqué open|filtered
 - RFC 9293 définit le comportement correct du protocole TCP
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Types de scans avancés (NULL, FIN, Xmas) et NSE
 
 ---
 
@@ -655,12 +559,6 @@
 - `--script=vuln` — exécuter tous les scripts de la catégorie vuln
 - `--top-ports <n>` — scanner les n ports les plus courants
 
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Évasion de firewall avec NMAP + Passive Reconnaissance
-
 ---
 
 ## 📅 2026-03-11 — Week 4 Day 3
@@ -703,12 +601,6 @@
 - `nslookup -type=MX domain 1.1.1.1` — enregistrements MX via serveur spécifique
 - `nslookup -type=TXT domain` — enregistrements TXT
 
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Active Reconnaissance
-
 ---
 
 ## 📅 2026-03-12 — Week 4 Day 4
@@ -747,12 +639,6 @@
 | `-k`   | 🔄 Continuer à écouter après déconnexion       |
 
 - ⚠️ Port < 1024 nécessite root pour écouter
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Module Linux PrivEsc
 
 ---
 
@@ -798,9 +684,6 @@
 - Ajouter : `echo 'newroot:HASH:0:0:root:/root:/bin/bash' >> /etc/passwd`
 - `su newroot`
 
-### 🚧 Blockers
-- Aucun
-
 ---
 
 ## 📅 2026-03-14 — Week 4 Day 6
@@ -832,9 +715,6 @@
 - `ldd /usr/sbin/apache2` — lister les bibliothèques utilisées par un binaire
 - Remplacer l'une d'elles par une version malveillante compilée dans /tmp
 - `sudo LD_LIBRARY_PATH=/tmp apache2`
-
-### 🚧 Blockers
-- Aucun
 
 ---
 
@@ -868,8 +748,9 @@
 - Toujours `exit` proprement après un shell root
 - 🧹 Nettoyer les fichiers temporaires après chaque exploit
 
-### 🚧 Blockers
-- Aucun
+---
+
+# 📌 SEMAINE 5 — Python Offensif (03/17 – 03/22)
 
 ---
 
@@ -938,12 +819,6 @@
 - `import lib` puis `lib.methode()`
 - Libs utiles en pentest : `requests` (HTTP), `scapy` (paquets réseau), `pwntools` (CTF & exploit dev)
 - Installation : `pip install nom_lib`
-
-### 🚧 Blockers
-- Aucun
-
-### ➡️ Demain
-- Continuer avec les challenges Python ou démarrer un nouveau module
 
 ---
 
@@ -1033,3 +908,45 @@
 - Trouvé page login avec username : `tiffany`
 - Cracké password SSH : `trustno1`
 - Lu `flag.txt` via SSH connecté en tant que tiffany
+
+---
+
+## 📅 2026-03-22 — Week 5 Day 3
+
+**⏱️ Durée :** ~3h
+**🎯 Focus :** Port Scanner Python (socket, threading, argparse, banner grabbing)
+**📍 Plateforme :** Python
+
+### 🛠️ Ce que j'ai fait
+- Construit un port scanner en Python avec socket, multi-threading, argparse et banner grabbing
+
+### 🧠 Ce que j'ai appris
+
+#### 🔌 socket
+- Module Python pour faire des connexions réseau TCP bas niveau
+- `connect_ex(host, port)` retourne `0` si le port est ouvert, autre chose sinon
+
+#### 🧵 threading + Semaphore
+- Permet de scanner plusieurs ports en parallèle au lieu d'un par un
+- `Semaphore(100)` limite le nombre de threads actifs pour éviter de saturer le système
+
+#### ⚙️ argparse
+- Permet de passer des arguments au script depuis le terminal (`--host`, `--start`, `--end`)
+- Plus besoin de hardcoder les valeurs dans le code
+
+#### 🏷️ Banner grabbing
+- Après connexion sur un port ouvert, on envoie une requête et on lit la réponse du service
+- Ça révèle le nom et la version du service (ex: `Apache/2.4.7 Ubuntu`)
+
+### 📜 Commande type
+```bash
+python3 scanner.py --host scanme.nmap.org --start 1 --end 1024
+```
+
+### ❌ Erreurs fréquentes
+- `connect.ex` au lieu de `connect_ex` (underscore, pas un point)
+- Socket créé en dehors de la boucle → bug sur les connexions multiples
+- Trop de threads sans Semaphore → `Too many open files`
+- `banner.decode()` sans `errors='ignore'` → crash sur bytes non-UTF-8
+
+---

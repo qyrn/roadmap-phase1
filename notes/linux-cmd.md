@@ -832,7 +832,16 @@ Key sections in the output:
 
 ---
 
-### `python3 -m http.server`
+### `python3`
+Runs Python scripts or starts an interactive interpreter.
+
+```bash
+python3 script.py                                          # run a script
+python3 scanner.py --host 10.10.1.1 --start 1 --end 1024  # pass CLI arguments (argparse)
+python3 -c "import hashlib; print(hashlib.md5(b'test').hexdigest())"  # one-liner
+```
+
+#### `python3 -m http.server`
 Starts a simple HTTP server in the current directory. Useful for transferring files between machines.
 
 ```bash
@@ -925,6 +934,29 @@ sudo apt update                    # refresh package list
 sudo apt upgrade                   # upgrade installed packages
 sudo apt install package_name      # install a package
 ```
+
+---
+
+### `pip` / `pip3`
+Python package manager. Installs third-party libraries from PyPI.
+
+```bash
+pip install requests               # install a package
+pip install paramiko scapy         # install multiple packages
+pip install -r requirements.txt    # install from a requirements file
+pip list                           # list installed packages
+pip show requests                  # show package details
+```
+
+Common pentest libraries:
+
+| Package  | Usage                                |
+|----------|--------------------------------------|
+| requests | HTTP requests (directory enumeration, web scraping) |
+| paramiko | SSH connections (brute force)         |
+| scapy    | Network packet crafting (ARP, ICMP)  |
+| hashlib  | Built-in — hash generation (MD5, SHA-256) |
+| pwntools | CTF & exploit development            |
 
 ---
 
