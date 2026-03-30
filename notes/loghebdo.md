@@ -320,6 +320,63 @@
 
 ---
 
+## 🗓️ Week 6 — 23 → 29 mars 2026
+
+### 📊 Stats
+
+| Métrique              | Valeur        |
+|-----------------------|---------------|
+| 📅 Jours complétés   | 3 / 7         |
+| ⏱️ Temps total       | ~2h45         |
+| 😊 Humeur moyenne    | 4 / 5         |
+| 📝 Score quiz        | 4 / 5         |
+
+---
+
+### ✅ Accomplissements
+
+- [x] 🔧 Complété TryHackMe – Burp Suite: The Basics
+- [x] 🔁 Complété TryHackMe – Burp Suite: Repeater
+- [x] 🏴 Complété 3 labs PortSwigger (Access Control + Information Disclosure)
+
+---
+
+### 🧠 Compétences acquises
+
+- 🔧 Burp Suite — architecture générale : proxy d'interception, HTTP History, Forward/Drop
+- 🗺️ Onglet Target — Site map, Scope settings, Issue definitions
+- 🔁 Repeater — workflow de test manuel (capture → modification → renvoi → analyse)
+- 🤖 `robots.txt` comme vecteur de reconnaissance — security through obscurity
+- 🔑 IDOR — exploitation d'identifiants prévisibles, faille côté serveur
+- 🔍 Information Disclosure — provoquer des erreurs pour exposer la stack technique
+- 🌐 Distinction GET (paramètres dans l'URL) vs POST (paramètres dans le body)
+- 🔌 Setup VPN TryHackMe (OpenVPN) et accès direct PortSwigger
+
+---
+
+### ⚠️ Faiblesses identifiées
+
+- 🔌 VPN TryHackMe instable — bloque les challenges nécessitant des IPs internes
+- 📝 Besoin de pratiquer plus de labs PortSwigger pour consolider les réflexes
+
+---
+
+### 📦 Livrables publiés
+
+- [x] 📋 Cheatsheet créée : `burp.md`
+- [x] 📋 Logbook mis à jour (W6D1 à W6D3)
+- [ ] 🚀 Code poussé sur GitHub
+
+---
+
+### 🎯 Objectifs semaine suivante
+
+1. Résoudre le challenge sitemap Burp (VPN stable requis)
+2. Continuer les labs PortSwigger — OWASP Top 10 : Broken Access Control
+3. Explorer Burp Intruder pour du fuzzing basique
+
+---
+
 ## 📋 Template – Semaines futures
 
 ### 📊 Stats

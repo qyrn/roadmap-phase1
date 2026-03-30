@@ -1,6 +1,6 @@
 # 🛡️ Progress Logbook – Pentest Journey
 
-> [Semaine 1](#-semaine-1--setup--fondations-0203--0224) | [Semaine 2](#-semaine-2--scripting--challenges-0226--0301) | [Semaine 3](#-semaine-3--networking-0302--0308) | [Semaine 4](#-semaine-4--scanning--privesc-0309--0315) | [Semaine 5](#-semaine-5--python-offensif-0317--0322)
+> [Semaine 1](#-semaine-1--setup--fondations-0203--0224) | [Semaine 2](#-semaine-2--scripting--challenges-0226--0301) | [Semaine 3](#-semaine-3--networking-0302--0308) | [Semaine 4](#-semaine-4--scanning--privesc-0309--0315) | [Semaine 5](#-semaine-5--python-offensif-0317--0322) | [Semaine 6](#-semaine-6--burp-suite--http-0323--0329)
 >
 > *Les liens fonctionnent sur GitHub / VS Code Markdown Preview*
 
@@ -950,3 +950,151 @@ python3 scanner.py --host scanme.nmap.org --start 1 --end 1024
 - `banner.decode()` sans `errors='ignore'` → crash sur bytes non-UTF-8
 
 ---
+
+# 📌 SEMAINE 6 — Burp Suite & HTTP (03/23 – 03/29)
+
+---
+
+## 📅 2026-03-27 — Week 6 Day 1
+
+**⏱️ Durée :** ~1h
+**🎯 Focus :** Burp Suite: The Basics
+**📍 Plateforme :** TryHackMe
+
+### 🛠️ Ce que j'ai fait
+- Complété le module Burp Suite: The Basics sur TryHackMe
+- Configuré le proxy Burp et intercepté des requêtes HTTP
+- Exploré les onglets Target (Site map, Scope, Issue definitions)
+- ⚠️ Challenge pratique sitemap (`http://10.10.x.x/`) non réalisé — IP interne THM inaccessible sans VPN fonctionnel
+
+### 🧠 Ce que j'ai appris
+
+#### 🔧 Burp Suite — Architecture générale
+- Burp Suite est un **proxy d'interception HTTP** : il se place entre le navigateur et le serveur pour capturer, lire et modifier les requêtes
+- **Proxy** → intercepte le trafic HTTP en temps réel
+- **HTTP History** → liste toutes les requêtes capturées pendant la session
+- **Intercept on/off** → active ou désactive l'interception manuelle
+- **Forward / Drop** → envoie ou bloque une requête interceptée
+
+#### 🗺️ Onglet Target
+- **Site map** → carte visuelle en arbre des pages visitées ; utile pour la reconnaissance et la découverte d'endpoints API
+- **Scope settings** → définit sur quels domaines/URLs Burp doit travailler (évite de capturer du trafic inutile)
+- **Issue definitions** → liste des vulnérabilités cherchées par le scanner Pro, accessible en lecture en Community — utile pour les rapports
+
+#### 🤖 robots.txt
+- Fichier public censé indiquer aux moteurs de recherche les pages à ne pas indexer
+- **Problème** : il est lisible par tout le monde — si une page sensible y est référencée, elle est exposée
+- Concept : **security through obscurity** — cacher n'est pas protéger
+
+#### 🔌 Infra & Setup
+- VPN TryHackMe (OpenVPN) requis pour accéder aux IPs internes `10.10.x.x`
+- Labs PortSwigger accessibles directement via compte web (pas de VPN nécessaire)
+- Commande VPN : `sudo openvpn ~/chemin/vers/fichier.ovpn`
+
+---
+
+## 📅 2026-03-28 — Week 6 Day 2
+
+**⏱️ Durée :** ~45min
+**🎯 Focus :** Burp Suite: Repeater
+**📍 Plateforme :** TryHackMe
+
+### 🛠️ Ce que j'ai fait
+- Complété le module Burp Suite: Repeater sur TryHackMe
+
+### 🧠 Ce que j'ai appris
+
+#### 🔁 Repeater — Concept
+- Outil pour renvoyer manuellement une requête HTTP autant de fois que voulu, en la modifiant à chaque envoi
+- Indispensable pour tester des paramètres, provoquer des erreurs volontaires, ou fuzzer manuellement
+
+#### 🔄 Workflow typique
+1. Capturer une requête dans **Proxy > HTTP History**
+2. Clic droit → **Send to Repeater**
+3. Modifier la requête (paramètres, headers, body, valeurs d'ID...)
+4. Cliquer **Send** et analyser la réponse
+
+#### 🎯 Cas d'usage courants
+- Tester des IDs différents dans une URL pour détecter un IDOR
+- Provoquer des erreurs volontaires pour extraire de l'info sur la stack technique
+- Vérifier le comportement du serveur selon différents inputs
+
+---
+
+## 📅 2026-03-29 — Week 6 Day 3
+
+**⏱️ Durée :** ~1h
+**🎯 Focus :** PortSwigger — 3 labs Access Control & Information Disclosure
+**📍 Plateforme :** PortSwigger Web Security Academy
+
+### 🛠️ Ce que j'ai fait
+- Complété 3 labs PortSwigger sans VPN (accès direct via compte)
+- Lab 1 : Unprotected admin functionality
+- Lab 2 : Insecure Direct Object References (IDOR)
+- Lab 3 : Information disclosure in error messages
+
+### 🧠 Ce que j'ai appris
+
+#### 🔓 Lab 1 — Unprotected Admin Functionality
+
+**Concept : Security through obscurity**
+
+Le panel admin était référencé dans `robots.txt` — fichier public lisible par tout le monde.
+Naviguer vers `/robots.txt` exposait directement le chemin du panel admin.
+
+- **Réflexe :** toujours vérifier `robots.txt` en début de reconnaissance — c'est souvent une mine d'info sur la structure de l'app
+
+#### 🔑 Lab 2 — IDOR (Insecure Direct Object Reference)
+
+**Concept : Accès non autorisé à des ressources via manipulation d'identifiant**
+
+- Le transcript du chat était téléchargé via une URL prévisible (ex: `2.txt`)
+- En changeant l'identifiant (`2.txt` → `1.txt`), on accède au fichier d'un autre utilisateur
+- La faille est **côté serveur** : le serveur ne vérifie pas si l'utilisateur a le droit d'accéder à la ressource demandée
+
+**Méthode utilisée :**
+1. Cliquer "View transcript" → pas d'URL visible directement
+2. Ouvrir **DevTools (F12) > Network** et relancer l'action
+3. Repérer la requête de téléchargement et l'URL du fichier
+4. Modifier l'identifiant dans l'URL → accès au fichier de Carlos
+
+- **Réflexe :** tout identifiant prévisible dans une URL ou une requête → tester l'IDOR
+
+#### 🔍 Lab 3 — Information Disclosure in Error Messages
+
+**Concept : Les erreurs mal gérées exposent des infos sur la stack technique**
+
+- En provoquant une erreur volontaire (ID produit invalide), le serveur retourne sa version Apache dans le message d'erreur
+- Ces infos permettent de cibler des CVE connues sur cette version
+
+**Méthode utilisée :**
+1. **Proxy > HTTP History** → repérer `GET /product?productId=1`
+2. Clic droit → **Send to Repeater**
+3. Modifier `productId=1` par une valeur invalide (ex: `"abc"`)
+4. Lire la réponse → version Apache exposée dans l'erreur
+
+- **Réflexe :** provoquer des erreurs = source d'info sur la stack — ne jamais laisser des error messages verbeux en production
+
+#### 📋 Concepts clés consolidés
+
+| Concept | Résumé |
+|---|---|
+| **Security through obscurity** | Cacher une ressource ne la protège pas — `robots.txt` est public |
+| **IDOR** | Faille serveur : accès à la ressource d'un autre user en changeant un identifiant |
+| **Information disclosure** | Erreurs verbeux exposent la version du serveur → vecteur de ciblage CVE |
+| **GET vs POST** | GET → paramètres dans l'URL / POST → paramètres dans le **body** |
+
+### 💡 Réflexes à garder
+- Toujours checker `robots.txt` en recon
+- Tout identifiant prévisible dans une URL → tenter l'IDOR
+- Provoquer des erreurs volontairement → extraire de l'info sur la stack
+- DevTools > Network si une requête n'est pas visible directement dans le navigateur
+- Burp Repeater = outil principal pour tester manuellement une requête
+
+### ❌ Erreurs / points à consolider
+- IDOR = faille **serveur** (pas client) — le client exploite, mais la vulnérabilité est dans la vérification côté serveur
+- POST → paramètres dans le **body** (pas "dans la requête HTTP" de façon vague)
+
+### ⚠️ Reporté en S7
+- Challenge sitemap Burp (VPN stable requis) — endpoint inhabituel sur `http://10.10.x.x/`
+- OWASP Top 10 (~2h) — #1 : Broken Access Control
