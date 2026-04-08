@@ -377,6 +377,69 @@
 
 ---
 
+## 🗓️ Week 7 — 30 mars → 8 avril 2026
+
+### 📊 Stats
+
+| Métrique              | Valeur        |
+|-----------------------|---------------|
+| 📅 Jours complétés   | 5 / 7         |
+| ⏱️ Temps total       | ~10h30        |
+| 😊 Humeur moyenne    | 4.2 / 5       |
+| 📝 Score quiz        | 31 / 45       |
+
+---
+
+### ✅ Accomplissements
+
+- [x] 📝 Quiz récapitulatif S1→S6 : 31/45 (69%) — lacunes identifiées et ciblées
+- [x] 🔌 Drill ports courants mémorisés 10/10 (FTP/SSH/Telnet/SMTP/DNS/HTTP/HTTPS/SMB/RDP/MySQL)
+- [x] 🦈 Wireshark : filtres tcp.dstport, ip.src, dns, tcp.flags.syn pratiqués en live
+- [x] 🐍 Port scanner Python réécrit from scratch (socket, threading, Semaphore, argparse, banner grabbing)
+- [x] 🔧 Burp Suite redéfini (Proxy/Repeater/Intruder/Decoder/Site Map) + labs PortSwigger refaits sans notes
+- [x] 🔍 Projet OSINT `osint-domain-recon` livré et poussé sur GitHub
+
+---
+
+### 🧠 Compétences acquises
+
+- 📊 Auto-évaluation structurée — identifier les lacunes par quiz et cibler la consolidation
+- 🔌 Ports courants ancrés en mémoire (10 services clés)
+- 🦈 Wireshark — filtres de capture en live (tcp.dstport, ip.src, dns, tcp.flags.syn)
+- 🗺️ Traceroute `* * *` = routeur muet aux ICMP TTL Exceeded, pas une coupure réseau
+- 🔍 Nmap `filtered` (firewall, silence) vs `closed` (RST reçu, pas de service)
+- 🐍 Port scanner reconstruit de zéro — maîtrise socket, threading, Semaphore, argparse, banner grabbing
+- 🔐 Hashlib workflow : `.encode()` → `hashlib.algo()` → `.hexdigest()`
+- 🔧 Burp Suite — rôle précis de chaque outil (Proxy, Repeater, Intruder, Decoder, Site Map)
+- 🔍 OSINT — WHOIS, crt.sh (Certificate Transparency), DNS records (A, MX, TXT, NS)
+- 📄 Génération automatique de rapports Markdown
+
+---
+
+### ⚠️ Faiblesses identifiées
+
+- 📊 Score quiz 69% — les bases sont là mais pas encore solides sur tout
+- 🧵 Threading/Semaphore nécessitait une réécriture complète pour être maîtrisé
+- 🔧 Outils Burp (surtout Intruder et Decoder) pas encore pratiqués en conditions réelles
+
+---
+
+### 📦 Livrables publiés
+
+- [x] 🔍 Projet poussé sur GitHub : `qyrnsec/osint-domain-recon`
+- [x] 📋 Logbook mis à jour (W7D1 à W7D5)
+- [x] 🚀 Code poussé sur GitHub
+
+---
+
+### 🎯 Objectifs semaine suivante
+
+1. Pratiquer Burp Intruder sur des labs PortSwigger (fuzzing, brute force)
+2. Continuer OWASP Top 10 — Broken Access Control en profondeur
+3. Étendre le projet OSINT avec des sources supplémentaires (Shodan, theHarvester)
+
+---
+
 ## 📋 Template – Semaines futures
 
 ### 📊 Stats

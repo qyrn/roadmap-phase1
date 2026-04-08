@@ -1,6 +1,6 @@
 # 🛡️ Progress Logbook – Pentest Journey
 
-> [Semaine 1](#-semaine-1--setup--fondations-0203--0224) | [Semaine 2](#-semaine-2--scripting--challenges-0226--0301) | [Semaine 3](#-semaine-3--networking-0302--0308) | [Semaine 4](#-semaine-4--scanning--privesc-0309--0315) | [Semaine 5](#-semaine-5--python-offensif-0317--0322) | [Semaine 6](#-semaine-6--burp-suite--http-0323--0329)
+> [Semaine 1](#-semaine-1--setup--fondations-0203--0224) | [Semaine 2](#-semaine-2--scripting--challenges-0226--0301) | [Semaine 3](#-semaine-3--networking-0302--0308) | [Semaine 4](#-semaine-4--scanning--privesc-0309--0315) | [Semaine 5](#-semaine-5--python-offensif-0317--0322) | [Semaine 6](#-semaine-6--burp-suite--http-0323--0329) | [Semaine 7](#-semaine-7--osint--consolidation-0330--0408)
 >
 > *Les liens fonctionnent sur GitHub / VS Code Markdown Preview*
 
@@ -1098,3 +1098,185 @@ Naviguer vers `/robots.txt` exposait directement le chemin du panel admin.
 ### ⚠️ Reporté en S7
 - Challenge sitemap Burp (VPN stable requis) — endpoint inhabituel sur `http://10.10.x.x/`
 - OWASP Top 10 (~2h) — #1 : Broken Access Control
+
+---
+
+# 📌 SEMAINE 7 — OSINT & Consolidation (03/30 – 04/08)
+
+---
+
+## 📅 2026-03-31 — Week 7 Day 1
+
+**⏱️ Durée :** ~1h30
+**🎯 Focus :** Quiz récapitulatif S1→S6 + identification des lacunes
+**📍 Plateforme :** Auto-évaluation
+
+### 🛠️ Ce que j'ai fait
+- Passé un quiz couvrant les 6 premières semaines (45 questions)
+- Score obtenu : 31/45 (69%)
+- Identifié trois axes faibles : S3 réseau, S5 Python, S6 Burp
+
+### 🧠 Ce que j'ai appris
+
+#### 📊 Bilan par semaine
+- **S1-S2 (Linux, Bash, Bandit)** — solide, pas de lacune majeure
+- **S3 (Networking)** — faiblesses sur les ports courants, les filtres Wireshark, et le comportement de traceroute
+- **S4 (Nmap, PrivEsc)** — correct, quelques hésitations sur la distinction `filtered` vs `closed`
+- **S5 (Python offensif)** — lacunes sur threading/Semaphore, hashlib workflow, banner grabbing
+- **S6 (Burp Suite)** — outils Burp pas assez précis, IDOR côté serveur mal formulé
+
+#### 🎯 Plan de consolidation
+- Drill des ports jusqu'à 10/10 (FTP/SSH/Telnet/SMTP/DNS/HTTP/HTTPS/SMB/RDP/MySQL)
+- Revoir Wireshark filtres, traceroute `* * *`, Nmap `filtered` vs `closed`
+- Réécrire le port scanner Python de zéro
+- Refaire les labs PortSwigger sans notes
+
+---
+
+## 📅 2026-04-02 — Week 7 Day 2
+
+**⏱️ Durée :** ~2h
+**🎯 Focus :** Consolidation réseau — ports, Wireshark, traceroute, Nmap
+**📍 Plateforme :** Révision active + Wireshark
+
+### 🛠️ Ce que j'ai fait
+- Drill mémorisation des ports courants jusqu'à score parfait 10/10
+- Pratiqué les filtres Wireshark en live sur du trafic capturé
+- Revu le comportement de traceroute et la distinction Nmap `filtered` vs `closed`
+
+### 🧠 Ce que j'ai appris
+
+#### 🔌 Ports mémorisés (drill 10/10)
+
+| Port | Service |
+|------|---------|
+| 21   | FTP     |
+| 22   | SSH     |
+| 23   | Telnet  |
+| 25   | SMTP    |
+| 53   | DNS     |
+| 80   | HTTP    |
+| 443  | HTTPS   |
+| 445  | SMB     |
+| 3389 | RDP     |
+| 3306 | MySQL   |
+
+#### 🦈 Wireshark — filtres pratiqués
+- `tcp.dstport == 80` — trafic HTTP sortant
+- `ip.src == 10.0.0.1` — paquets depuis une IP source spécifique
+- `dns` — tout le trafic DNS
+- `tcp.flags.syn == 1` — paquets SYN (début de connexion TCP)
+
+#### 🗺️ Traceroute — `* * *`
+- `* * *` signifie que le routeur à ce hop ne répond pas aux paquets ICMP TTL Exceeded
+- Ce n'est **pas** une coupure réseau — le routeur est simplement muet aux requêtes ICMP
+- Le paquet continue son chemin vers le hop suivant
+
+#### 🔍 Nmap — `filtered` vs `closed`
+- `filtered` → silence complet, aucune réponse — un firewall bloque le paquet
+- `closed` → le port répond avec un RST — le port existe mais aucun service n'écoute
+
+---
+
+## 📅 2026-04-04 — Week 7 Day 3
+
+**⏱️ Durée :** ~2h30
+**🎯 Focus :** Consolidation Python — port scanner from scratch + hashlib
+**📍 Plateforme :** Python
+
+### 🛠️ Ce que j'ai fait
+- Réécrit le port scanner de zéro sans regarder le code précédent
+- Revu le workflow complet hashlib (encode → hash → hexdigest)
+
+### 🧠 Ce que j'ai appris
+
+#### 🔧 Port scanner — reconstruction complète
+- `socket` — créer un nouveau socket par connexion, `connect_ex()` retourne 0 si ouvert
+- `threading` + `Semaphore(100)` — paralléliser les scans tout en limitant les threads actifs
+- `argparse` — `--host`, `--start`, `--end` pour un script paramétrable depuis le terminal
+- Banner grabbing — après connexion, `sock.recv(1024).decode(errors='ignore')` pour lire la bannière du service
+
+#### 🔐 Hashlib — workflow complet
+```python
+import hashlib
+message = "test"
+hash_obj = hashlib.md5(message.encode())
+result = hash_obj.hexdigest()
+```
+- `.encode()` → convertir la string en bytes (obligatoire avant le hashing)
+- `hashlib.md5()` / `hashlib.sha256()` → créer l'objet hash
+- `.hexdigest()` → obtenir le hash en string hexadécimale lisible
+
+---
+
+## 📅 2026-04-05 — Week 7 Day 4
+
+**⏱️ Durée :** ~1h30
+**🎯 Focus :** Consolidation Burp Suite + labs PortSwigger refaits sans notes
+**📍 Plateforme :** PortSwigger Web Security Academy
+
+### 🛠️ Ce que j'ai fait
+- Revu les outils Burp Suite : Proxy, Repeater, Intruder, Decoder, Site Map
+- Refait 2 labs PortSwigger sans aucune note :
+  - Unprotected Admin Functionality (robots.txt)
+  - IDOR (transcripts)
+
+### 🧠 Ce que j'ai appris
+
+#### 🔧 Burp Suite — outils redéfinis
+
+| Outil      | Rôle |
+|------------|------|
+| **Proxy**    | Intercepte le trafic HTTP entre le navigateur et le serveur |
+| **Repeater** | Renvoie et modifie manuellement une requête capturée |
+| **Intruder** | Automatise l'envoi de requêtes avec des payloads variables (fuzzing, brute force) |
+| **Decoder**  | Encode/décode des données (Base64, URL encoding, HTML entities, hex) |
+| **Site Map** | Carte en arbre de toutes les pages et endpoints découverts pendant la session |
+
+#### 🔓 Lab repassé — Unprotected Admin Functionality
+- `/robots.txt` → chemin du panel admin exposé en clair
+- Navigation directe → accès complet sans authentification
+- Réflexe : toujours checker `robots.txt` en début de reconnaissance
+
+#### 🔑 Lab repassé — IDOR (transcripts)
+- Téléchargement via URL prévisible (`2.txt`)
+- Changement d'identifiant (`2.txt` → `1.txt`) → accès au fichier d'un autre utilisateur
+- La faille est **côté serveur** : aucune vérification d'autorisation sur la ressource demandée
+- DevTools > Network pour repérer la requête de téléchargement quand l'URL n'est pas visible
+
+---
+
+## 📅 2026-04-07 — Week 7 Day 5
+
+**⏱️ Durée :** ~3h
+**🎯 Focus :** Projet OSINT — osint-domain-recon
+**📍 Plateforme :** Python + GitHub
+
+### 🛠️ Ce que j'ai fait
+- Construit et livré le projet `osint-domain-recon` de A à Z
+- Push sur GitHub : `qyrnsec/osint-domain-recon`
+
+### 🧠 Ce que j'ai appris
+
+#### 🔍 WHOIS
+- Récupération des informations d'enregistrement d'un domaine : registrar, dates de création/expiration, nameservers
+- Données publiques sauf si protection WHOIS activée (privacy proxy)
+
+#### 🌐 Subdomains via crt.sh
+- `crt.sh` est un moteur de recherche de Certificate Transparency logs
+- Requête sur `%.domaine.com` → liste tous les certificats émis pour les sous-domaines
+- Source passive (pas de scan actif) — parfait pour la reconnaissance OSINT
+
+#### 📡 DNS Records
+- Résolution des enregistrements A (IPv4), MX (mail), TXT (SPF/DKIM/vérification), NS (nameservers)
+- Chaque type d'enregistrement révèle un aspect différent de l'infrastructure
+
+#### 📄 Rapport Markdown auto-généré
+- Le script produit un rapport `.md` structuré avec toutes les données collectées
+- Sections : WHOIS, Subdomains, DNS Records
+- Format directement lisible sur GitHub
+
+#### 📦 Structure du projet
+- `README.md` — description, installation, usage
+- `requirements.txt` — dépendances Python
+- Script principal avec fonctions modulaires (WHOIS, crt.sh, DNS, rapport)
