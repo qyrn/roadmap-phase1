@@ -17,8 +17,8 @@ This folder contains personal notes organized by topic, built up over the course
 | File | Content |
 |---|---|
 | `logbook.md` | Daily progress log |
-| `loghebdo.md` | Weekly review template |
-| `logmensu.md` | Monthly review template |
+| `loghebdo.md` | Weekly reviews |
+| `logmensu.md` | Monthly reviews |
 | `linux-cmd.md` | Linux commands reference |
 | `bandit_shell_tools.md` | Command memo – OverTheWire Bandit |
 | `vids.md` | Notes on videos watched |

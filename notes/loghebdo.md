@@ -440,6 +440,63 @@
 
 ---
 
+## 🗓️ Week 8 — 6 → 12 avril 2026
+
+### 📊 Stats
+
+| Métrique              | Valeur        |
+|-----------------------|---------------|
+| 📅 Jours complétés   | 2 / 7         |
+| ⏱️ Temps total       | ~4h30         |
+| 😊 Humeur moyenne    | 4 / 5         |
+| 📝 Score quiz        | — / —         |
+
+---
+
+### ✅ Accomplissements
+
+- [x] 🔑 Complété 4 labs PortSwigger Access Control (robots.txt, URL unpredictable, cookie tampering, JSON body tampering)
+- [x] 🕹️ Résolu 7 challenges Root Me Web Client (HTML disabled, JS Source, JS Auth 1/2, JS Obfuscation 1/2, JS Native Code)
+- [x] 🧰 Setup complet Burp + Chrome finalisé (FoxyProxy, certificat CA, contournement SSL)
+
+---
+
+### 🧠 Compétences acquises
+
+- 🔍 Reconnaissance web — réflexe `robots.txt` → code source → cookies → requêtes réseau
+- 🔑 Access Control côté client vs serveur — modification de cookies et de body JSON pour escalader les privilèges
+- 🧪 JSON body tampering — ajout/modification de paramètres comme `roleid` dans les requêtes API
+- 🕹️ DOM tampering — suppression d'attributs `disabled` pour réactiver des boutons bloqués côté client
+- 🔓 Bypass d'authentification JS côté client via la console DevTools
+- 🧩 Déobfuscation JavaScript — outils en ligne pour les encodages standards, analyse manuelle pour le code natif
+- 🧰 Setup pro Burp + Chrome — FoxyProxy pour toggle, certificat CA via Windows Certificate Store, `thisisunsafe` en dernier recours
+
+---
+
+### ⚠️ Faiblesses identifiées
+
+- 📆 Seulement 2 jours effectifs sur 7 — rythme à resserrer en S9
+- 🔌 Dépendance aux plateformes payantes (abonnement THM) qui bloque certaines pistes
+- 📝 Pas de quiz récap sur la semaine — à réintroduire à chaque fin de cycle
+
+---
+
+### 📦 Livrables publiés
+
+- [x] 📋 Logbook mis à jour (W8D1 à W8D2)
+- [x] 📋 Loghebdo mis à jour (Week 8)
+- [ ] 🚀 Code poussé sur GitHub
+
+---
+
+### 🎯 Objectifs semaine suivante
+
+1. Reprendre les 2 labs PortSwigger Authentication laissés en plan
+2. Démarrer SQL Injection et Content Discovery (THM ou PortSwigger équivalent)
+3. Enchaîner sur OWASP Top 10 #1 Broken Access Control en profondeur
+
+---
+
 ## 📋 Template – Semaines futures
 
 ### 📊 Stats

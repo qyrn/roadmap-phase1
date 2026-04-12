@@ -21,6 +21,7 @@ Each file documents:
 |---|---|
 | `overthewire_bandit_0-15.md` | Detailed write-up – Bandit levels 0 to 15 |
 | `overthewire_bandit_0-15v2.md` | Quick command reference – Bandit 0–15 |
+| `overthewire_bandit_15-25.md` | Detailed write-up – Bandit levels 15 to 25 |
 
 ---
 

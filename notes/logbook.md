@@ -1,6 +1,6 @@
 # 🛡️ Progress Logbook – Pentest Journey
 
-> [Semaine 1](#-semaine-1--setup--fondations-0203--0224) | [Semaine 2](#-semaine-2--scripting--challenges-0226--0301) | [Semaine 3](#-semaine-3--networking-0302--0308) | [Semaine 4](#-semaine-4--scanning--privesc-0309--0315) | [Semaine 5](#-semaine-5--python-offensif-0317--0322) | [Semaine 6](#-semaine-6--burp-suite--http-0323--0329) | [Semaine 7](#-semaine-7--osint--consolidation-0330--0408)
+> [Semaine 1](#-semaine-1--setup--fondations-0203--0224) | [Semaine 2](#-semaine-2--scripting--challenges-0226--0301) | [Semaine 3](#-semaine-3--networking-0302--0308) | [Semaine 4](#-semaine-4--scanning--privesc-0309--0315) | [Semaine 5](#-semaine-5--python-offensif-0317--0322) | [Semaine 6](#-semaine-6--burp-suite--http-0323--0329) | [Semaine 7](#-semaine-7--osint--consolidation-0330--0408) | [Semaine 8](#-semaine-8--web-vulns-intro-0406--0412)
 >
 > *Les liens fonctionnent sur GitHub / VS Code Markdown Preview*
 
@@ -1280,3 +1280,74 @@ result = hash_obj.hexdigest()
 - `README.md` — description, installation, usage
 - `requirements.txt` — dépendances Python
 - Script principal avec fonctions modulaires (WHOIS, crt.sh, DNS, rapport)
+
+---
+
+# 📌 SEMAINE 8 — Web Vulns Intro (04/06 – 04/12)
+
+---
+
+## 📅 2026-04-11 — Week 8 Day 1
+
+**⏱️ Durée :** ~2h30
+**🎯 Focus :** Access Control — PortSwigger Web Security Academy
+**📍 Plateforme :** PortSwigger
+
+### 🛠️ Ce que j'ai fait
+- Setup propre de l'environnement Burp + Chrome pour la session
+- Complété 4 labs PortSwigger Access Control :
+  - **Unprotected admin functionality** — panel révélé via `/robots.txt` → `/administrator-panel`
+  - **Unprotected admin functionality with unpredictable URL** — URL cachée repérée dans le code source HTML
+  - **User role controlled by request parameter** — cookie `admin=false` modifié en `admin=true` via DevTools
+  - **User role can be modified in user profile** — ajout de `"roleid": 2` dans le body JSON via Burp Repeater
+
+### 🧠 Ce que j'ai appris
+
+#### 🔍 Réflexes de reconnaissance web
+- `robots.txt` = premier fichier à checker, expose souvent des chemins admins cachés
+- Code source HTML/JS = mine d'or — URLs, credentials, logique d'auth traînent parfois en clair
+- Ordre type sur cible web : `robots.txt` → code source → cookies → requêtes réseau
+
+#### 🔑 Access Control côté client vs serveur
+- Cookies côté client (ex: `admin=false`) = jamais fiables, modifiables via DevTools
+- JSON body tampering — modifier les paramètres d'une requête API (ex: `roleid`) pour escalader les privilèges
+- La validation d'autorisation doit **toujours** être faite côté serveur, jamais uniquement côté client
+
+#### 🧰 Setup Burp + Chrome (à retenir)
+- **FoxyProxy** — toggle du proxy Burp en un clic, sans casser le navigateur global
+- **Certificat Burp CA** — importé via Windows Certificate Store (Autorités racines de confiance)
+- **Erreur SSL persistante sur Chrome** — taper `thisisunsafe` directement sur la page d'erreur
+
+### ⚠️ Difficultés rencontrées
+- Configuration Burp + Chrome (certificat SSL, proxy) — résolue avec FoxyProxy
+- Labs PortSwigger qui expirent entre deux sessions
+
+---
+
+## 📅 2026-04-12 — Week 8 Day 2
+
+**⏱️ Durée :** ~2h
+**🎯 Focus :** Web Client — Root Me
+**📍 Plateforme :** Root Me
+
+### 🛠️ Ce que j'ai fait
+- Complété 7 challenges Root Me (catégorie Web Client) :
+  - **HTML — Boutons désactivés** — modification du DOM pour réactiver des boutons `disabled`
+  - **Javascript — Source** — mot de passe trouvé en clair dans le code source JS
+  - **Javascript — Authentification** — logique d'auth côté client contournée via la console
+  - **Javascript — Authentification 2** — variante plus complexe, même principe
+  - **Javascript — Obfuscation 1** — code déobfusqué via outil en ligne
+  - **Javascript — Obfuscation 2** — idem, encodage différent
+  - **Javascript — Native code** — code natif analysé, mécanisme décodé manuellement
+
+### 🧠 Ce que j'ai appris
+
+#### 🕹️ Client-side = jamais une barrière de sécurité
+- Tout paramètre envoyé par le client peut être falsifié (cookies, body, headers, attributs HTML)
+- Un bouton `disabled` n'empêche rien — l'attribut se retire en deux clics dans DevTools
+- Une auth implémentée en JS côté client = contournable via la console
+
+#### 🧪 Obfuscation JS ≠ sécurité
+- L'obfuscation ralentit l'analyse, elle ne protège rien
+- Outils en ligne + lecture patiente suffisent à retrouver la logique d'origine
+- Native code plus coriace : nécessite une analyse manuelle du mécanisme, mais reste décodable

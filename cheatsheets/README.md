@@ -19,3 +19,13 @@ These files are meant for:
 - Short, clear, practical
 - One command = one line with its purpose
 - No fluff, only operational content
+
+---
+
+## Files
+
+| File | Content |
+|---|---|
+| `network.md` | Networking reference – OSI/TCP, DNS, nmap, recon |
+| `nmap.md` | Nmap scan types, NSE categories, firewall evasion flags |
+| `burp.md` | Burp Suite reference – Proxy, Repeater, Intruder, Decoder, Site Map |
