@@ -1,26 +1,9 @@
+## Phase 1 archived
+
 # Pentest Journey
 
 Documentation of my cybersecurity learning journey — 11-month structured roadmap starting February 18, 2026.
-Goals: SOC analyst position in Lyon by January 2027, then Berlin as a pentester by 2028.
-
----
-
-## 🗺️ Timeline
-
-| Period | Focus | Certification | Cost |
-|--------|-------|---------------|------|
-| Feb–Apr 2026 | Phase 1: Foundations | — | THM ~€12/mo |
-| Apr–Jun 2026 | Phase 2: Web Security | — | — |
-| Aug 2026 | Blue Team | BTL1 | ~€500 |
-| Oct 2026 | Pentest basics | eJPT | ~€250 |
-| Nov–Dec 2026 | Job Hunt Lyon | — | — |
-| **Jan 2027** | **SOC Junior — Lyon** | — | — |
-| Mar 2027 | Web advanced | BSCP | ~€100 |
-| Sep 2027 | Network pentest | PNPT | ~€500 |
-| Oct 2027 | Job Hunt Berlin | — | — |
-| **Jan 2028** | **Berlin** | — | — |
-| Jun 2028 | HTB advanced | CPTS | ~€300 |
-| Dec 2028 | Gold standard | OSCP | ~€1750 |
+Goals: SOC analyst position in Paris by April 2027.
 
 ---
 
